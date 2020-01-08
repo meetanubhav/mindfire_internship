@@ -1,6 +1,24 @@
 body{
-    background: red;
+    /* background: red; */
 }
 .lgb{
     float: right;
+}
+div >img{
+    height: 280px;
+    width: fit-content;
+}
+small{
+    color: grey;
+}
+nav>img{
+    height: 40px;
+    width: 40px;;
+}
+section{
+    margin-top: 5px;;
+}
+nav > span{
+    margin-left: 10px;;
+   
 }
