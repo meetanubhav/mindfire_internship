@@ -7,6 +7,7 @@ body{
 div >img{
     height: 280px;
     width: fit-content;
+    width: -webkit-fill-available;
 }
 small{
     color: grey;
