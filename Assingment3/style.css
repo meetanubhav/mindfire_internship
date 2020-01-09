@@ -1,5 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background: url();
 }
 div > img{
     transform: rotateY(190deg);
@@ -43,6 +44,9 @@ header > nav{
     margin-left: -10px;
     margin-right: -10px;
 }
+#email{
+    padding-right: 300px;
+}
 nav>h1{
     padding: 15px;
 }
@@ -84,7 +88,13 @@ input{
     margin-right: 20px;
 }
 #address1,#address2{
-    padding-right: 500px;
+    padding-right: 300px;
+    padding-bottom: 30px;
+}
+#state,#country,#gender{
+    padding-right:100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 input:hover{
     background-color: #f1f1f1;
