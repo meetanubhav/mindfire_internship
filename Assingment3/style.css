@@ -4,7 +4,6 @@ body{
 div > img{
     transform: rotateY(190deg);
     position: absolute;
-    height: 100px;
 }
 .animate{
     /* background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif); */
@@ -19,22 +18,22 @@ div > img{
     -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
     animation: myfirst 5s infinite;
     animation-direction: alternate;
-    border-radius: 50px 50px 50px 50px;
+    /* border-radius: 0px 100px 100px 0px; */
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes myfirst {
-    0%   {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 30px;}
-    25%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 200px; top: 30px;}
-    50%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 200px; top: 200px;}
-    75%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 200px;}
-    100% {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 30px;}
+    0%   {background: #FF5733;transform: rotateX(180deg);  left: 30px; top: 30px;}
+    25%  {background: #C70039;transform: rotateY(180deg);  left: 200px; top: 30px;}
+    50%  {background: #900C3F;  left: 200px;transform: rotateX(180deg); top: 200px;}
+    75%  {background: #581845;transform: rotateY(180deg);  left: 30px; top: 200px;}
+    100% {background: #FF5733; transform: rotateX(180deg); left: 30px; top: 30px;}
   }
 keyframes myfirst {
-    0%   {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 30px;}
-    25%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 200px; top: 30px;}
-    50%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 200px; top: 200px;}
-    75%  {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 200px;}
-    100% {background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif);  left: 30px; top: 30px;}
+    0%   {background: #FF5733;  left: 30px; top: 30px;}
+    25%  {background: #C70039;  left: 200px; top: 30px;}
+    50%  {background: #900C3F;  left: 200px; top: 200px;}
+    75%  {background: #581845;  left: 30px; top: 200px;}
+    100% {background: #FF5733;  left: 30px; top: 30px;}
 }
 header > nav{
     background-color: #187DA3;
