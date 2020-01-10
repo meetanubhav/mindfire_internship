@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -17,40 +18,75 @@
         <a class="navbar-brand text-white" href="#"> <i class="fa fa-fire" aria-hidden="true"></i>  Mindfire </a>
     </nav>
     <section>
-        <div class="container-fluid jumbotron">
-            <form action="">
-                <div class="form-group">
-                    <label for="name"><i class="fa fa-user" aria-hidden="true"></i> Name</label>
-                    <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="First">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Last">
-                        </div>
-                      </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-5 m-5">
+                    <img src="https://b4a9a5v6.stackpathcdn.com/wp-content/uploads/2018/04/1-1-1.jpg" class="img-fluid p-5" alt="logo">
+                    <h1 class="text-info text-center">Create an account</h1>
+                    <p class="text-center">It's quick and easy.</p>
                 </div>
-                <div class="form-group">
-                    <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
-                    <input type="email" class="form-control" placeholder="abc@xzy.com">
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                            <label for="name"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
-                          <input type="password" class="form-control" placeholder="********** ">
+            </div>
+            <div class="col-md-6">
+                <div class="container-fluid jumbotron">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name"><i class="fa fa-user" aria-hidden="true"></i> Name</label>
+                            <div class="row">
+                                <div class="col">
+                                  <input type="text" class="form-control" placeholder="First">
+                                </div>
+                                <div class="col">
+                                  <input type="text" class="form-control" placeholder="Last">
+                                </div>
+                              </div>
                         </div>
-                        <div class="col">
-                            <label for="name">Confirm Password</label>
-                          <input type="password" class="form-control" placeholder="**********">
+                        <div class="form-group">
+                            <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                            <input type="email" class="form-control" placeholder="abc@xzy.com">
                         </div>
-                      </div>
-                </div>
-                <div class="form-group">
-                    <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth</label>
-                    <input type="date" class="form-control" placeholder="">
-                </div>
-            </form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="name"><i class="fa fa-key" aria-hidden="true"></i> Password</label>
+                                  <input type="password" class="form-control" placeholder="********** ">
+                                </div>
+                                <div class="col">
+                                    <label for="name">Confirm Password</label>
+                                  <input type="password" class="form-control" placeholder="**********">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth</label>
+                            <input type="date" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender"><i class="fa fa-male" aria-hidden="true"></i> Gender</label>
+                            <select class="form-control" id="sel1">
+                                <option>Male</option>
+                                <option>Female</option>
+                              </select>                            
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="name"><i class="fa fa-home" aria-hidden="true"></i> Address 1</label>
+                                  <input type="textarea" class="form-control" placeholder="Address 1">
+                                </div>
+                                <div class="col">
+                                    <label for="name"><i class="fa fa-home" aria-hidden="true"></i> Address 2</label>
+                                  <input type="textarea" class="form-control" placeholder="Address 2">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox" value="">  <i class="fa fa-rss" aria-hidden="true"></i> Subscribe to Newsletter</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <span
+                    </form>
+                </div>                
+            </div>
         </div>
     </section>
 </body>
