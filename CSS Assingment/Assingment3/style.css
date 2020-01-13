@@ -71,7 +71,7 @@ span{
 label{
     margin-top: 10px;
 }
-input,select,option{
+input,select,option,textarea{
     margin-top: 3px;
     background-color: #E5DEDD;
     border-radius: 5px 5px 5px 5px;
@@ -95,7 +95,7 @@ input{
     margin-right: 20px;
 }
 #address1,#address2{
-    padding-right: 300px;
+    /* padding-right: 300px; */
     padding-bottom: 30px;
 }
 #state,#country,#gender{
