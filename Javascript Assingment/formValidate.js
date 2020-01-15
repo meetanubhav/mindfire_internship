@@ -79,7 +79,7 @@ function validateForm(){
         alert("Password Mismatch");
         counter+=1;
         document.getElementById("password").value="";
-        document.getElementById("password").value="";
+        document.getElementById("confirmPassword").value="";
     }
     if(counter==0){
         location.replace("index.html");
