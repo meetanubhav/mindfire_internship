@@ -23,9 +23,17 @@ function validate_captcha(){
     if(val1 != val2){
         // alert("Wrong Captcha");
         // location.reload();
-        document.getElementById("captcha_msg").textContent="Wrong Input! Re-enter captcha";     
+        document.getElementById("captcha_msg").textContent="Invalid! Re-enter captcha";     
         document.getElementById("captcha_msg").style.color = "RED";
+        document.getElementById("captchaFailed").style.display = "Block";
         
+    }
+    if(val1==val2){
+      document.getElementById("submit").style.display = "Block";
+      document.getElementById("captchaDiv").style.display = "None";
+      document.getElementById("captchaVerified").style.display = "Block";
+      document.getElementById("captchaFailed").style.display = "None";
+      // captchaDiv
     }
 
 }
@@ -35,7 +43,6 @@ function print(){
 }
 // operations
 function add(){
-    // getNumbers();
     console.log("addition");
     print();
     document.getElementById('operator').textContent = "+";
