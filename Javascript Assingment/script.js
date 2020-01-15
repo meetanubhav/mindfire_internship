@@ -18,7 +18,7 @@ function reload_captcha(){
 
 function validate_captcha(){
     var val2 = document.getElementById("captchaInput").value;
-    console.log("input val = "+val2," &  Actual val = ",val1);
+    // console.log("input val = "+val2," &  Actual val = ",val1);
     document.getElementById("captcha_msg").textContent="Captcha Verified";
     document.getElementById("captcha_msg").style.color = "GREEN";
     if(val1 != val2){
@@ -42,25 +42,25 @@ function print(){
 }
 // operations
 function add(){
-    console.log("addition");
+    // console.log("addition");
     print();
     document.getElementById('operator').textContent = "+";
     val1= num1+num2;
   }
   function sub(){
-    console.log("substraction");
+    // console.log("substraction");
     print();
     document.getElementById('operator').textContent = "-";
     val1=num1-num2;
   }
   function mul(){
-    console.log("multiplication");
+    // console.log("multiplication");
     print();
     document.getElementById('operator').textContent = "*";
     val1=num1*num2;
   }
   function div(){
-    console.log("division");
+    // console.log("division");
     print();
     document.getElementById('operator').textContent = "/";
     val1=Math.floor(num1/num2);
