@@ -15,7 +15,7 @@
 </head>
 <body onload="captcha_load()">
     <nav class="navbar navbar-expand-sm navbar-light bg-danger">
-        <a class="navbar-brand text-white" href="#"> <i class="fa fa-fire" aria-hidden="true"></i>  Mindfire </a>
+        <a class="navbar-brand text-white" href="index.html"> <i class="fa fa-fire" aria-hidden="true"></i>  Mindfire </a>
     </nav>
     <section>
         <div class="row">
@@ -30,10 +30,10 @@
             <!-- Form part -->
             <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
                 <div class="container-fluid jumbotron">
-                    <form action="" >
+                    <form action="">
                         <div class="form-group">
                             <label for="name"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
-                            <p class="text-danger" id="nameErrorMsg">Please enter only Alphabets</p>
+                            <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                   <input type="text" class="form-control" id="firstName" onblur="fname('firstName')" placeholder="First">
@@ -44,30 +44,46 @@
                               </div>
                         </div>
                         <div class="form-group">
+                            <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
                             <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" placeholder="abc@xzy.com">
+                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="abc@xzy.com">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <label for="pno1"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 1<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" onblur="pno('pno1')" id="pno1" placeholder="95xxxxxx23">
+                                </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                <label for="pno2"><i class="fa fa-phone" aria-hidden="true"></i> Phone text 2</label>
+                                <input type="text" class="form-control" id="pno2" placeholder="95xxxxxx23">
+                            </div>
+                            <small>
+                                <span class="text-danger" id="nameErrorMsg2">Please enter only Numbers</span>
+                                <span class="text-danger" id="nameErrorMsg3">Your phone number should be of length 10</span>
+                            </small>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="name"><i class="fa fa-key" aria-hidden="true"></i> Password <span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="********** ">
+                                  <input type="password" class="form-control" placeholder="**********" id="password">
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="name">Confirm Pass<span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********">
+                                  <input type="password" class="form-control" placeholder="**********" id="confirmPassword">
                                 </div>
-                              </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" placeholder="">
+                            <input type="date" class="form-control" id="dob">
                         </div>
                         <div class="form-group">
                             <label for="gender"><i class="fa fa-male" aria-hidden="true"></i> Gender <span class="text-danger">*</span></label>
-                            <select class="form-control" id="sel1">
-                                <option>Male</option>
-                                <option>Female</option>
+                            <select class="form-control" id="gender">
+                                <option id="male">Male</option>
+                                <option male="female">Female</option>
                               </select>                            
                         </div>
                         <div class="form-group">
@@ -91,11 +107,11 @@
                             <i class="fa fa-exclamation-circle text-danger" aria-hidden="true" id="captchaFailed"></i>
                             <span id="captcha_msg"></span>
                         </p>
-                        <button type="submit" class="btn btn-block btn-primary" id="submit">Submit</button>                        
+                        <button type="button" class="btn btn-block btn-primary" onclick="validateForm()" id="submit">Submit</button>                        
                     </form>
                     <!-- Captcha -->
                     <div class="p-3 captcha" id="captchaDiv">
-                        <div class="row container-fluid">
+                        <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <span id="num1" class=""></span>
                                 <span id="operator" class="p-2"></span>
@@ -103,8 +119,8 @@
                                 <span class="p-2"> = </span>
                                 <input type="text" class="bg-muted" id="captchaInput"></div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
-                                <button onclick="validate_captcha()" class="btn btn-sm btn-success">Validate!</button>
-                                <button onclick="reload_captcha()" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
+                                <button type="button" onclick="validate_captcha()" class="btn btn-sm btn-success">Validate!</button>
+                                <button type="button" onclick="reload_captcha()" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
                             </div>
                         </div>
                         

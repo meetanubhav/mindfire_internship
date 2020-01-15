@@ -22,8 +22,6 @@ function validate_captcha(){
     document.getElementById("captcha_msg").textContent="Captcha Verified";
     document.getElementById("captcha_msg").style.color = "GREEN";
     if(val1 != val2){
-        // alert("Wrong Captcha");
-        // location.reload();
         document.getElementById("captcha_msg").textContent="Invalid! Re-enter captcha";     
         document.getElementById("captcha_msg").style.color = "RED";
         document.getElementById("captchaFailed").style.display = "Block";

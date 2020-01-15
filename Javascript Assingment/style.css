@@ -16,6 +16,6 @@ body{
     border-color: rgba(0, 0, 0, 0.438);
     font-weight: bold;
 }
-#nameErrorMsg{
+#nameErrorMsg,#nameErrorMsg2,#nameErrorMsg3,#emailErrorMsg{
     display: none;
 }
