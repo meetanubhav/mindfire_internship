@@ -9,6 +9,7 @@ function getNumbers(){
 }
 
 function reload_captcha(){
+  document.getElementById("captchaFailed").style.display = "None";
     document.getElementById("captchaInput").value="";
     document.getElementById("captcha_msg").textContent="";
     console.log("captcha reloaded");

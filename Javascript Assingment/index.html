@@ -33,12 +33,13 @@
                     <form action="" >
                         <div class="form-group">
                             <label for="name"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
+                            <p class="text-danger" id="nameErrorMsg">Please enter only Alphabets</p>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="firstName" onblur="fname()" placeholder="First">
+                                  <input type="text" class="form-control" id="firstName" onblur="fname('firstName')" placeholder="First">
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="lastName" onblur="lname()" placeholder="Last">
+                                  <input type="text" class="form-control" id="lastName" onblur="fname('lastName')" placeholder="Last">
                                 </div>
                               </div>
                         </div>
