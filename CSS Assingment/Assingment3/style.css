@@ -6,10 +6,10 @@ div > img{
     transform: rotateY(190deg);
     position: absolute;
 }
-#confirm_pass{
+.confirm_pass{
     margin-left: 19%;
 }
-#pno2{
+.phoneNumber2{
     margin-left: 14%;
 }
 #country_label{
@@ -71,7 +71,7 @@ section{
     margin-left: 33%;
     /* font-size: 1.1em; */
 }
-span{
+#required_sign{
     color: red;
 }
 label{
@@ -104,7 +104,7 @@ input{
     /* padding-right: 300px; */
     padding-bottom: 30px;
 }
-#state,#country,#gender{
+#city,#state,#country,#gender{
     padding-right:100px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -125,3 +125,6 @@ button{
     padding-right: 5%;
     border-radius: 10px 10px 10px 10px;
 }
+#lblState{
+    padding-right: 100px;
+}   
