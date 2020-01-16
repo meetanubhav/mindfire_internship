@@ -33,7 +33,6 @@
                     <form action="">
                         <div class="form-group">
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
-                            <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                   <input type="text" class="form-control" id="firstName" onblur="fname('firstName')" placeholder="First">
@@ -42,11 +41,12 @@
                                   <input type="text" class="form-control" id="lastName" onblur="fname('lastName')" placeholder="Last">
                                 </div>
                               </div>
+                              <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                         </div>
-                        <div class="form-group">
-                            <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
+                        <div class="form-group"> 
                             <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="abc@xzy.com">
+                            <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
                         </div>
                         <div class="form-group">
                             <div class="row">
@@ -58,10 +58,11 @@
                                     <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 2</label>
                                     <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23">
                                 </div>
+                            </div>
                             <small>
-                                <span class="text-danger" id="nameErrorMsg2">Please enter only Numbers</span>
-                                <span class="text-danger" id="nameErrorMsg3">Your phone number should be of length 10</span>
-                            </small>
+                                <span class="text-danger" id="phoneErrorMsg1">Please enter only Numbers</span>
+                                <span class="text-danger" id="phoneErrorMsg2">Your phone number should be of length 10</span>
+                            </small>    
                         </div>
                         <div class="form-group">
                             <div class="row">
@@ -70,14 +71,17 @@
                                   <input type="password" class="form-control" placeholder="**********" id="password">
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <label for="confirmPassword>Confirm Pass<span class="text-danger">*</span></label>
+                                    <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
                                   <input type="password" class="form-control" placeholder="**********" id="confirmPassword">
                                 </div>
                             </div>
+                            <small><span class="text-danger" id="passwordErrorMsg"></span></small>
+                            <small><span class="text-danger" id="confirmPasswordErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
                             <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
                             <input type="date" class="form-control" id="dob">
+                            <small><span class="text-danger" id="dobErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
                             <label for="gender"><i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> Gender <span class="text-danger">*</span></label>
@@ -86,60 +90,74 @@
                                 <option value="male" id="male">Male</option>
                                 <option value="female" id="female">Female</option>
                                 <option value="other" id="other">Other</option>
-                            </select>                            
+                            </select> 
+                            <small><span class="text-danger" id="genderErrorMsg"></span></small>                           
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
                                     <label for="address1"><i class="fa fa-home" aria-hidden="true"></i> Address 1 <span class="text-danger">*</span></label>
                                   <textarea name="address_1" id="address1" class="form-control" placeholder="Address 1"></textarea>
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <!-- <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="address2"><i class="fa fa-home" aria-hidden="true"></i> Address 2</label>
                                     <textarea name="address_2" id="address2" class="form-control" placeholder="Address 2"></textarea>
-                                </div>
-                              </div>
+                                </div> -->
+                            </div>
+                            <small><span class="text-danger" id="addressErrorMsg1"></span></small>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <!-- City -->
+                                    <label for="city"> <i class="fa fa-map-marker" aria-hidden="true"></i> City <span class="text-danger">*</span> </label>
+                                    <select class="form-control" id="city">
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="bakersfield" id="bakersfield">Bakersfield</option>
+                                        <option value="losangeles" id="losangeles">Los Angeles</option>
+                                        <option value="sanfranciso" id="sanfranciso">San Franciso</option>
+                                        <option value="Other" id="Other">Other</option>
+                                      </select> 
+                                      <small><span class="text-danger" id="cityErrorMsg"></span></small>
                                     <!-- state 1 -->
-                                    <label for="state1"> <i class="fa fa-map" aria-hidden="true"></i> State <span class="text-danger">*</span> </label>
-                                    <select class="form-control" id="state1">
+                                    <label for="state"> <i class="fa fa-map" aria-hidden="true"></i> State <span class="text-danger">*</span> </label>
+                                    <select class="form-control" id="state">
                                         <option value="select" id="select">--select--</option>
                                         <option value="arizona" id="arizona">Arizona</option>
                                         <option value="califonia" id="califonia">Califonia</option>
                                         <option value="florida" id="florida">Florida</option>
                                         <option value="Other" id="Other">Other</option>
                                       </select> 
+                                      <small><span class="text-danger" id="stateErrorMsg"></span></small>
                                        <!--country 1  -->
-                                       <label for="country1"> <i class="fas fa-globe-americas"></i> Country <span class="text-danger">*</span> </label>
-                                        <select class="form-control" id="country1">
+                                       <label for="country"> <i class="fas fa-globe-americas"></i> Country <span class="text-danger">*</span> </label>
+                                        <select class="form-control" id="country">
                                             <option value="select" id="select">--select--</option>
                                             <option value="mexico" id="mexico">Mexico</option>
-                                            <option value="USA" id="USA">Califonia</option>
+                                            <option value="USA" id="USA">USA</option>
                                             <option value="Other" id="Other">Other</option>
                                         </select>
+                                        <small><span class="text-danger" id="countryErrorMsg"></span></small>
                                 </div>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                <!-- <div class="col-sm-6 col-md-6 col-lg-6"> -->
                                     <!-- state 2 -->
-                                    <label for="state2"> <i class="fa fa-map" aria-hidden="true"></i> State</label>
+                                    <!-- <label for="state2"> <i class="fa fa-map" aria-hidden="true"></i> State</label>
                                     <select class="form-control" id="state2">
                                         <option value="select" id="select">--select--</option>
                                         <option value="arizona" id="arizona">Arizona</option>
                                         <option value="califonia" id="califonia">Califonia</option>
                                         <option value="florida" id="florida">Florida</option>
                                         <option value="Other" id="Other">Other</option>
-                                      </select> 
+                                      </select>  -->
                                        <!--country 2  -->
-                                       <label for="country2"> <i class="fas fa-globe-americas"></i> Country</label>
+                                       <!-- <label for="country2"> <i class="fas fa-globe-americas"></i> Country</label>
                                         <select class="form-control" id="country2">
                                             <option value="select" id="select">--select--</option>
                                             <option value="mexico" id="mexico">Mexico</option>
                                             <option value="USA" id="USA">Califonia</option>
                                             <option value="Other" id="Other">Other</option>
-                                        </select>
-                                </div>
+                                        </select> -->
+                                <!-- </div> -->
                             </div>
                         </div>
                         <div class="form-group">
@@ -153,7 +171,7 @@
                             <i class="fa fa-exclamation-circle text-danger" aria-hidden="true" id="captchaFailed"></i>
                             <span id="captcha_msg"></span>
                         </p>
-                        <button type="button" class="btn btn-block btn-primary" onclick="validateForm()" id="submit">Submit</button>                        
+                        <button type="button" class="btn btn-block btn-primary" onclick="submitOnSuccess()" id="submit">Submit</button>                        
                     </form>
                     <!-- Captcha -->
                     <div class="p-3 captcha" id="captchaDiv">
@@ -167,8 +185,9 @@
                                 <span class="p-2"> = </span>
                                 <input type="text" class="bg-muted" id="captchaInput"></div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
-                                <button type="button" onclick="validate_captcha()" class="btn btn-sm btn-success">Validate!</button>
-                                <button type="button" onclick="reload_captcha()" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
+                                <!-- validate_captcha(), -->
+                                <button type="button" onclick="var ValidationCheck = validateForm();if(ValidationCheck==1){ validate_captcha()}if(ValidationCheck==0){reload_captcha(0);};" class="btn btn-sm btn-success">Validate!</button>
+                                <button type="button" onclick="reload_captcha(1)" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
                             </div>
                         </div>
                         

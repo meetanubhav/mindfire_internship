@@ -8,10 +8,18 @@ function getNumbers(){
         num1+=num2;
 }
 
-function reload_captcha(){
+function reload_captcha(x){
+  if(x==1){
   document.getElementById("captchaFailed").style.display = "None";
     document.getElementById("captchaInput").value="";
     document.getElementById("captcha_msg").textContent="";
+  }
+  if(x==0){
+    document.getElementById("captchaFailed").style.display = "Block";
+    document.getElementById("captcha_msg").textContent="Invalid! Re-enter";     
+    document.getElementById("captcha_msg").style.color = "RED";
+    document.getElementById("captchaInput").value="";
+  }
     console.log("captcha reloaded");
    captcha_load();
 }
@@ -25,6 +33,7 @@ function validate_captcha(){
         document.getElementById("captcha_msg").textContent="Invalid! Re-enter captcha";     
         document.getElementById("captcha_msg").style.color = "RED";
         document.getElementById("captchaFailed").style.display = "Block";
+        reload_captcha(0);
         
     }
     if(val1==val2){
@@ -81,4 +90,3 @@ function captcha_load(){
     break;
   }
 }
-  
