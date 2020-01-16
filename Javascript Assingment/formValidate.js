@@ -13,7 +13,7 @@ function fname(x){
     }
     uc(document.getElementById(x));
 }
-function pno(x){
+function phoneNumber(x){
     document.getElementById("nameErrorMsg2").style.display = "None";
     document.getElementById("nameErrorMsg3").style.display = "None";
     if(!/^[0-9]+$/.test(document.getElementById(x).value))
@@ -55,7 +55,7 @@ function validateForm(){
         alert("Please fill email");
         counter+=1;
     }
-    if(document.getElementById("pno1").value.length==0){
+    if(document.getElementById("phoneNumber1").value.length==0){
         alert("Please fill Phone Number 1");
         counter+=1;
     }
@@ -81,16 +81,16 @@ function validateForm(){
         alert("Select your gender");
         counter+=1;
     }
-    if(document.getElementById("addr_1").value.length==0){
+    if(document.getElementById("address1").value.length==0){
         alert("Please fill Address 1");
         counter+=1;
     }
     if(document.getElementById("state1").value=="select"){
-        alert("Select your state");
+        alert("Select your state for address 1");
         counter+=1;
     }
     if(document.getElementById("country1").value=="select"){
-        alert("Select your country");
+        alert("Select your country for address 1");
         counter+=1;
     }
     if(counter==0){
