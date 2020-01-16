@@ -55,16 +55,8 @@ function validateForm(){
         alert("Please fill email");
         counter+=1;
     }
-    if(document.getElementById("lastName").value.length==0){
+    if(document.getElementById("pno1").value.length==0){
         alert("Please fill Phone Number 1");
-        counter+=1;
-    }
-    if(document.getElementById("dob").value.length==0){
-        alert("Please fill Date of Birth");
-        counter+=1;
-    }
-    if(document.getElementById("addr_1").value.length==0){
-        alert("Please fill Address 1");
         counter+=1;
     }
     if(document.getElementById("password").value.length==0){
@@ -74,12 +66,32 @@ function validateForm(){
     if(document.getElementById("confirmPassword").value.length==0){
         alert("Confirm Password left blank");
         counter+=1;
-    }
+    }   
     if(document.getElementById("password").value!=document.getElementById("confirmPassword").value){
         alert("Password Mismatch");
         counter+=1;
         document.getElementById("password").value="";
         document.getElementById("confirmPassword").value="";
+    }
+    if(document.getElementById("dob").value.length==0){
+        alert("Please fill Date of Birth");
+        counter+=1;
+    }
+    if(document.getElementById("gender").value=="select"){
+        alert("Select your gender");
+        counter+=1;
+    }
+    if(document.getElementById("addr_1").value.length==0){
+        alert("Please fill Address 1");
+        counter+=1;
+    }
+    if(document.getElementById("state1").value=="select"){
+        alert("Select your state");
+        counter+=1;
+    }
+    if(document.getElementById("country1").value=="select"){
+        alert("Select your country");
+        counter+=1;
     }
     if(counter==0){
         location.replace("index.html");
