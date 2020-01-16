@@ -13,10 +13,10 @@ div > img{
     margin-left: 14%;
 }
 #country_label{
-    margin-left: 24%;
+    margin-left: 16%;
 }
 #country{
-    margin-left: 8%;
+    /* margin-left: 8%; */
 }
 .animate{
     /* background: url(https://i.pinimg.com/originals/5d/e3/03/5de303950e41d173820c0b6cebae7359.gif); */
@@ -126,5 +126,5 @@ button{
     border-radius: 10px 10px 10px 10px;
 }
 #lblState{
-    padding-right: 100px;
+    margin-left: 20%;
 }   
