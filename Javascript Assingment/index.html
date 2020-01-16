@@ -35,28 +35,28 @@
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First">
+                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last">
+                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last" />
                                 </div>
                               </div>
                               <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                         </div>
                         <div class="form-group"> 
                             <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="abc@xzy.com">
+                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="youremailid@domain.com" />
                             <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber1"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 1<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" onblur="phoneNumber('phoneNumber1')" id="phoneNumber1" placeholder="95xxxxxx23">
+                                    <input type="text" class="form-control" onblur="phoneNumber('phoneNumber1')" id="phoneNumber1" placeholder="95xxxxxx23" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 2</label>
-                                    <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23">
+                                    <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23" />
                                 </div>
                             </div>
                             <small>
@@ -68,11 +68,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password <span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" id="password">
+                                  <input type="password" class="form-control" placeholder="**********" id="password" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" id="confirmPassword">
+                                  <input type="password" class="form-control" placeholder="**********" id="confirmPassword" />
                                 </div>
                             </div>
                             <small><span class="text-danger" id="passwordErrorMsg"></span></small>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="form-group">
                             <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" id="dob">
+                            <input type="date" class="form-control" id="dob" />
                             <small><span class="text-danger" id="dobErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
@@ -162,7 +162,7 @@
                         </div>
                         <div class="form-group">
                             <label for="subscibe" class="checkbox-inline">
-                                <input type="checkbox" value="true" id="subscibe">
+                                <input type="checkbox" value="true" id="subscibe" />
                                 <i class="fa fa-rss" aria-hidden="true"></i> Subscribe to Newsletter</label>
                         </div>
                         <!-- captcha message -->
@@ -183,7 +183,8 @@
                                 <span id="operator" class="p-2"></span>
                                 <span id="num2" class="p-2"></span>
                                 <span class="p-2"> = </span>
-                                <input type="text" class="bg-muted" id="captchaInput"></div>
+                                <input type="text" class="bg-muted" id="captchaInput" />
+                            </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <!-- validate_captcha(), -->
                                 <button type="button" onclick="var ValidationCheck = validateForm();if(ValidationCheck==1){ validate_captcha()}if(ValidationCheck==0){reload_captcha(0);};" class="btn btn-sm btn-success">Validate!</button>
