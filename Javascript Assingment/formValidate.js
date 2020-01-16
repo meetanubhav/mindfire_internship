@@ -1,11 +1,8 @@
-// Declarations
-var strFirstName ="";
-
-function uc(mystr){
+function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
 }
 
-function fname(x){
+function inputName(x){
     document.getElementById("nameErrorMsg").style.display = "None";
     if(!/^[a-zA-Z]+$/.test(document.getElementById(x).value))
     {
@@ -13,7 +10,7 @@ function fname(x){
         document.getElementById(x).value=""; 
         document.getElementById(x).focus();  
     }
-    uc(document.getElementById(x));
+    changeToUpper(document.getElementById(x));
 }
 function phoneNumber(x){
     document.getElementById("phoneErrorMsg1").style.display = "None";
@@ -30,7 +27,7 @@ function phoneNumber(x){
         document.getElementById(x).value=""; 
         document.getElementById(x).focus();  
     }
-    uc(document.getElementById(x));
+    changeToUpper(document.getElementById(x));
 }
 function ValidateEmail(mail) 
 {
@@ -45,10 +42,13 @@ function ValidateEmail(mail)
   }
 function validateForm(){
     var counter=0;
+    var strFirstName ="";
+    var changeconfirmPassword="";
+    var passwordText="";
     if(document.getElementById("firstName").value.length==0){
         document.getElementById("nameErrorMsg").style.display="Block";
         document.getElementById("nameErrorMsg").textContent="Fill up your Name";
-        var strFirstName = "First name & ";
+        strFirstName = "First name & ";
         counter+=1;
     }
     if(document.getElementById("lastName").value.length==0){
@@ -67,15 +67,16 @@ function validateForm(){
         counter+=1;
     }
     if(document.getElementById("password").value.length==0){
-        document.getElementById("passwordErrorMsg").style.display="Block";
-        document.getElementById("passwordErrorMsg").textContent="Fill up your Password";
+        passwordText = "Password"
         counter+=1;
     }
     if(document.getElementById("confirmPassword").value.length==0){
-        document.getElementById("confirmPasswordErrorMsg").style.display="Block";
-        document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your Confirm Password";
+        changeconfirmPassword=" - Confirm Password"
         counter+=1;
     }   
+    document.getElementById("confirmPasswordErrorMsg").style.display="Block";
+    document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
+    
     if(document.getElementById("password").value!=document.getElementById("confirmPassword").value){
         document.getElementById("confirmPasswordErrorMsg").textContent="Password Mismatch";
         document.getElementById("PasswordErrorMsg").textContent="Password Mismatch";
