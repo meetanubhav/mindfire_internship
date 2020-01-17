@@ -26,6 +26,7 @@ function reload_captcha(x){
     document.getElementById("captchaFailed").style.display = "Block";
     document.getElementById("captcha_msg").textContent="Invalid! Re-enter";     
     document.getElementById("captcha_msg").style.color = "RED";
+    document.getElementById("captchaInput").style.borderColor="RED";
     document.getElementById("captchaInput").value="";
   }
     console.log("captcha reloaded");

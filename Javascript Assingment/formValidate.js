@@ -136,22 +136,12 @@ function validateForm(){
     document.getElementById("confirmPasswordErrorMsg").style.display="Block";
     document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
     
-    // if(document.getElementById("dob").value.length===0){
-    //     document.getElementById("dobErrorMsg").style.display="Block";
-    //     document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
-    //     counter+=1;
-    // }
     dateOfBirthValidation();
     if(document.getElementById("gender").value==="select"){
         document.getElementById("genderErrorMsg").style.display="Block";
         document.getElementById("genderErrorMsg").textContent="Select Gender";
         counter+=1;
     }
-    // if(document.getElementById("address").value.length===0){
-    //     document.getElementById("addressErrorMsg1").style.display="Block";
-    //     document.getElementById("addressErrorMsg1").textContent="Fill up your Address";
-    //     counter+=1;
-    // }
     addressValidation();
     if(document.getElementById("city").value==="select"){
         document.getElementById("cityErrorMsg").style.display="Block";
