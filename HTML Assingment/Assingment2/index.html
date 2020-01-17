@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" href="https://www.favicon.cc/logo3d/601819.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Registration</title>
 </head>
 <body>
@@ -23,77 +24,178 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="https://www.arihantwebtech.com/images/design-notice/banner-design.png" alt="banner">
-                    <br>
-                    <small>**This banner is of 280px height as prescribed</small>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                  
+                    <div id="rightBox">
+                      <h1 class="text-info text-center mt-5">Create an account</h1>
+                    <p class="text-center">It's quick and easy.</p>
+                      <img src="https://www.arihantwebtech.com/images/design-notice/banner-design.png" class="img-fluid" alt="banner">
+                      <br>
+                      <small>**This banner is of 280px height as prescribed</small>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <form class="jumbotron" action="">
-                        <h4 class="text-center">Register Here !!</h4>
-                        <div class="form-group">
-                          <label for="">Name</label>
-                          <input type="text" name="" id="name" class="form-control" placeholder="Your Name">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="container-fluid jumbotron">
+                      <form action="" method="POST">
+                          <div class="form-group">
+                              <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
+                              <div class="row">
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required/>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required/>
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
+                              <input type="email" class="form-control" id="email" placeholder="username@domain.com" required/>
+                          </div>
+                          <div class="form-group">
+                              <div class="row">
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                      <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password <span class="text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="password" placeholder="Type Password" required/>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                      <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Type Confirm Password" required/>
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <label for="phoneNumber1"><i class="fa fa-phone" aria-hidden="true"></i> Primary Phone Number<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="phoneNumber1" placeholder="95xxxxxx23" />
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Secondary Phone Number </label>
+                                    <input type="text" class="form-control" id="phoneNumber2"  placeholder="95xxxxxx23" />
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="dateOfBirth"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
+                              <input type="date" class="form-control" id="dateOfBirth" placeholder="Date Of Birth" required/>
+                          </div>
+                          <div class="form-group">
+                              <label for="male"><i class="fa fa-male" aria-hidden="true"></i> Gender <span class="text-danger">*</span></label>
+                              <!-- <select class="form-control" id="sel1">
+                                  <option>Male</option>
+                                  <option>Female</option>
+                                </select>                             -->
+                                <br>
+                                <!-- <div id="gender"> -->
+                                    <label for="male" class="btn active">Male
+                                        <input type="radio" name="gender" id="male" value="male" autocomplete="off" checked />
+                                    </label>
+                                    <label for="female" class="btn active">Female
+                                      <input type="radio" name="gender" id="female" value="female" autocomplete="off" />
+                                  </label>
+                                  <label for="other" class="btn active">Other
+                                      <input type="radio" name="gender" id="other" value="other" autocomplete="off" />
+                                  </label>
+                                <!-- </div> -->
+                          </div>
+                          <div class="form-group">
+                              <div class="row">
+                                  <div class="col-sm-12 col-md-12 col-lg-12">
+                                      <label for="primaryAddress"><i class="fa fa-home" aria-hidden="true"></i> Primary Address <span class="text-danger">*</span></label>
+                                    <textarea name="address_1" id="primaryAddress" class="form-control" placeholder="Primary Address"></textarea>
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <!--country 1  -->
+                                    <label for="country"><i class="fas fa-globe-americas"></i>Country<span class="text-danger">*</span></label>
+                                    <select class="form-control" id="country">
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="mexico" id="mexico">Mexico</option>
+                                        <option value="USA" id="USA">USA</option>
+                                        <option value="Other" id="Other">Other</option>
+                                    </select>
+                               </div>                                
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <!-- state 1 -->
+                                    <label for="state"> <i class="fa fa-map" aria-hidden="true"></i> State <span class="text-danger">*</span> </label>
+                                    <select class="form-control" id="state">
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="arizona" id="arizona">Arizona</option>
+                                        <option value="califonia" id="califonia">Califonia</option>
+                                        <option value="florida" id="florida">Florida</option>
+                                        <option value="Other" id="Other">Other</option>
+                                      </select> 
+                                </div>
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <!-- City -->
+                                    <label for="city"> <i class="fa fa-map-marker" aria-hidden="true"></i> City <span class="text-danger">*</span> </label>
+                                    <select class="form-control" id="city">
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="bakersfield" id="bakersfield">Bakersfield</option>
+                                        <option value="losangeles" id="losangeles">Los Angeles</option>
+                                        <option value="sanfranciso" id="sanfranciso">San Franciso</option>
+                                        <option value="Other" id="Other">Other</option>
+                                      </select>                               
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="password" name="" id="password" class="form-control" placeholder="Your Password">
-                          </div>
+                          <div class="row">
+                              <div class="col-sm-12 col-md-12 col-lg-12">
+                                  <label for="secondryAddress"><i class="fa fa-home" aria-hidden="true"></i> Secondary Address</label>
+                                <textarea name="secondryAddress" id="secondryAddress" class="form-control" placeholder="Secondary Address"></textarea>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <!--country 1  -->
+                                <label for="country2"><i class="fas fa-globe-americas"></i>Country</label>
+                                <select class="form-control" id="country2">
+                                    <option value="select" id="select">--select--</option>
+                                    <option value="mexico" id="mexico">Mexico</option>
+                                    <option value="USA" id="USA">USA</option>
+                                    <option value="Other" id="Other">Other</option>
+                                </select>
+                           </div>                                
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <!-- state 1 -->
+                                <label for="state2"> <i class="fa fa-map" aria-hidden="true"></i> State </label>
+                                <select class="form-control" id="state2">
+                                    <option value="select" id="select">--select--</option>
+                                    <option value="arizona" id="arizona">Arizona</option>
+                                    <option value="califonia" id="califonia">Califonia</option>
+                                    <option value="florida" id="florida">Florida</option>
+                                    <option value="Other" id="Other">Other</option>
+                                  </select> 
+                            </div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <!-- City -->
+                                <label for="city2"> <i class="fa fa-map-marker" aria-hidden="true"></i> City </label>
+                                <select class="form-control" id="city2">
+                                    <option value="select" id="select">--select--</option>
+                                    <option value="bakersfield" id="bakersfield">Bakersfield</option>
+                                    <option value="losangeles" id="losangeles">Los Angeles</option>
+                                    <option value="sanfranciso" id="sanfranciso">San Franciso</option>
+                                    <option value="Other" id="Other">Other</option>
+                                  </select>                               
+                            </div>
+                        </div>
+                    </div>
                           <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="email" class="form-control" placeholder="Your Email">
+                              <label for="subscribe" class="checkbox-inline"><input type="checkbox" id="subscribe" value="true"/>  <i class="fa fa-rss" aria-hidden="true"></i> Subscribe to Newsletter</label>
                           </div>
-                          <div class="form-group">
-                            <label for="">Phone Number</label>
-                            <input type="number" name="" id="number" class="form-control" placeholder="Your Phone Number">
-                          </div>
-                          <div class="form-group">
-                            <label for="">D.O.B</label>
-                            <input type="date" name="" id="dob" class="form-control" placeholder="Your Name">
-                          </div>
-                          <div class="form-group">
-                            <label for="">Gender</label> 
-                            <select name="" id="gender">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="">Current Address</label>
-                            <textarea rows="4" cols="50" name="" id="caddr" class="form-control" placeholder="Your Current Address"></textarea>
-                            <!-- <input type="textarea" name="" id="caddr" class="form-control" placeholder="Your Current Address"> -->
-                          </div>
-                          <div class="form-group">
-                            <label for="">Permanant Address</label>
-                            <textarea rows="4" cols="50" name="" id="paddr" class="form-control" placeholder="Your Permanant Address"></textarea>
-                            <!-- <input type="textarea" name="" id="paddr" class="form-control" placeholder="Your Permanant Address"> -->
-                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
                           
-                          <div class="form-group">
-                            <label for="">State</label>
-                            <input type="text" name="" id="state" class="form-control" placeholder="State">
-                          </div>
-                          <div class="form-group">
-                            <label for="">City</label>
-                            <input type="text" name="" id="city" class="form-control" placeholder="City">
-                          </div>
-                          <div class="form-group">
-                            <label for="">Country</label>
-                            <input type="text" name="" id="country" class="form-control" placeholder="Country">
-                          </div>
-                          <div class="form-group">
-                            <label for=""><b>Intrests</b></label>
-                            <br>
-                            <input type="checkbox" name="" id="" value="" unchecked>Sports
-                            <input type="checkbox" name="" id="" value="checkedValue" unchecked>Books
-                            <input type="checkbox" name="" id="" value="checkedValue" unchecked>Photography
-                            <input type="checkbox" name="" id="" value="checkedValue" unchecked>Fashion
-                            <input type="checkbox" name="" id="" value="checkedValue" unchecked>Other..
-                          </div>
-                          <button class="btn btn-success">Submit</button>
                       </form>
-                </div>
+                  </div>
+                                  <!--  -->
+              </div>
             </div>
         </div>
     </section>
