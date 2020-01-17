@@ -20,15 +20,15 @@
     <section>
         <div class="row">
             <!-- Image & logo area -->
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="p-5 m-5">
+            <div class="col-xs-0 col-sm-0 col-md-6 col-lg-6">
+                <div class="p-5 m-5" id="sideFixed">
                     <img src="https://b4a9a5v6.stackpathcdn.com/wp-content/uploads/2018/04/1-1-1.jpg" class="img-fluid" alt="logo">
                     <h1 class="text-info text-center mt-5">Create an account</h1>
                     <p class="text-center">It's quick and easy.</p>
                 </div>
             </div>
             <!-- Form part -->
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="container-fluid jumbotron">
                     <form action="">
                         <div class="form-group">
@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">
                                     <label for="address"><i class="fa fa-home" aria-hidden="true"></i> Address<span class="text-danger">*</span></label>
-                                  <textarea name="txtAddress" id="address" class="form-control" placeholder="Address"></textarea>
+                                  <textarea name="txtAddress" id="address" class="form-control" placeholder="Address" onblur=" changeToUpper(document.getElementById('address'));"></textarea>
                                 </div>
                                 <!-- <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="address2"><i class="fa fa-home" aria-hidden="true"></i> Address 2</label>
@@ -110,7 +110,7 @@
                             <div class="row">
                                 <div class="col-sm-4 col-md-4 col-lg-4">
                                     <!--country 1  -->
-                                    <label for="country"> <i class="fas fa-globe-americas"></i> Country <span class="text-danger">*</span> </label>
+                                    <label for="country"><i class="fas fa-globe-americas"></i>Country<span class="text-danger">*</span></label>
                                     <select class="form-control" id="country">
                                         <option value="select" id="select">--select--</option>
                                         <option value="mexico" id="mexico">Mexico</option>
@@ -170,7 +170,7 @@
                                 <span class="p-2"> = </span>
                                 <input type="text" class="bg-white" id="captchaInput"/>
                                 <br>
-                                <small class="text-danger" id="forErrorMsg"></small>
+                                <small class="text-primary" id="forErrorMsg"></small>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <!-- validate_captcha(), -->

@@ -46,6 +46,7 @@ function ValidateEmail(mail)
     document.getElementById(mail).value=""; 
     document.getElementById(mail).focus();  
   }
+  changeToUpper(document.getElementById(mail))
 
 }
 function passwordLengthCheck(){

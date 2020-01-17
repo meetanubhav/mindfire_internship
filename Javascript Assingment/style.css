@@ -37,3 +37,13 @@ body{
       color: #28a745;
     }
 }
+@media only screen and (min-width: 1000px) {
+    #sideFixed{
+        position: fixed;
+        width: 500px;
+    }
+    .img-fluid{
+        width: 100%;
+    }
+}
+
