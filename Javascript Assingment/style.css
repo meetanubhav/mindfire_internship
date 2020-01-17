@@ -8,14 +8,26 @@ body{
     display: none;
 }
 #captchaDiv{
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 #captchaInput{
     width: 30%;
     background-color:#e9ecef;
     border-color: rgba(0, 0, 0, 0.438);
-    font-weight: bold;
+    /* fosnt-weight: bold; */
 }
 #nameErrorMsg,#phoneErrorMsg1,#phoneErrorMsg2,#emailErrorMsg{
     display: none;
+}
+#iconRobot{
+    animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+      color: #28a745;
+    }
 }
