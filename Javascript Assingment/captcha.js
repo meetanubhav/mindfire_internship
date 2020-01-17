@@ -35,8 +35,8 @@ function reload_captcha(x){
 function validate_captcha(){
     var val2 = document.getElementById("captchaInput").value;
     var val2 = parseInt(val2, 10);
-    // console.log("input val = "+val2," &  Actual val = ",val1);
-    // console.log(typeof val2);
+    console.log("input val = "+val2," &  Actual val = ",val1);
+    console.log(typeof val2);
     document.getElementById("captcha_msg").textContent="Captcha Verified";
     document.getElementById("captcha_msg").style.color = "GREEN";
     if(val1 != val2){
@@ -58,6 +58,7 @@ function validate_captcha(){
       document.getElementById("stateErrorMsg").textContent="";
       document.getElementById("countryErrorMsg").textContent="";
       document.getElementById("genderErrorMsg").textContent="";
+      document.getElementById("dobErrorMsg").textContent="";
     }
 
 }

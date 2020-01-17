@@ -6,8 +6,16 @@
   Purpose : To validate form field inputs.
 
 */
+// var progressStats=0;
+// function formProgress(progressStats){
+//     percentValue+=progressStats
+//     console.log(progressStats)
+//     document.getElementById("progressBar").style.width=percentValue+"%";
+// }
+
 function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
+    // formProgress(10)
 }
 function inputName(x){
     document.getElementById("nameErrorMsg").style.display = "None";
@@ -16,6 +24,7 @@ function inputName(x){
         document.getElementById("nameErrorMsg").style.display = "Block";
         document.getElementById(x).value=""; 
         document.getElementById(x).focus();
+        // formProgress(-10)
     }
     changeToUpper(document.getElementById(x));
     
@@ -66,6 +75,23 @@ function passwordValidation(){
         document.getElementById("confirmPassword").value="";
         document.getElementById("password").focus();
     }   
+}
+function dateOfBirthValidation(){
+    document.getElementById("dobErrorMsg").style.display="None";
+    if(document.getElementById("dob").value.length===0){
+        document.getElementById("dobErrorMsg").style.display="Block";
+        document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
+        document.getElementById("dob").focus();
+    }
+}
+
+function addressValidation(){
+    document.getElementById("addressErrorMsg1").style.display="None";
+    if(document.getElementById("address").value.length===0){
+        document.getElementById("addressErrorMsg1").style.display="Block";
+        document.getElementById("addressErrorMsg1").textContent="Fill up your Address";
+        document.getElementById("address").focus();
+    }
 }
 
 function validateForm(){
