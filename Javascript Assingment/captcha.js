@@ -32,6 +32,7 @@ function validate_captcha(){
     if(val1 != val2){
         document.getElementById("captcha_msg").textContent="Invalid! Re-enter captcha";     
         document.getElementById("captcha_msg").style.color = "RED";
+        document.getElementById("captchaInput").style.borderColor="RED";
         document.getElementById("captchaFailed").style.display = "Block";
         reload_captcha(0);
         

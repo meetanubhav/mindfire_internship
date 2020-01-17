@@ -35,27 +35,27 @@
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First" />
+                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First Name" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last" />
+                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last Name" />
                                 </div>
                               </div>
                               <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                         </div>
                         <div class="form-group"> 
                             <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="youremailid@domain.com" />
+                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="yourEmailId@domain.com" />
                             <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <label for="phoneNumber1"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 1<span class="text-danger">*</span></label>
+                                    <label for="phoneNumber1"><i class="fa fa-phone" aria-hidden="true"></i> Primary Phone Number<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" onblur="phoneNumber('phoneNumber1')" id="phoneNumber1" placeholder="95xxxxxx23" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Phone Number 2</label>
+                                    <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Secondary Phone Number 2</label>
                                     <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23" />
                                 </div>
                             </div>
@@ -68,11 +68,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password <span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" id="password" />
+                                  <input type="password" class="form-control" placeholder="**********" onblur="passwordLengthCheck()" id="password" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" id="confirmPassword" />
+                                  <input type="password" class="form-control" placeholder="**********" onblur="passwordValidation()" id="confirmPassword" />
                                 </div>
                             </div>
                             <small><span class="text-danger" id="passwordErrorMsg"></span></small>
@@ -96,8 +96,8 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">
-                                    <label for="address1"><i class="fa fa-home" aria-hidden="true"></i> Address 1 <span class="text-danger">*</span></label>
-                                  <textarea name="address_1" id="address1" class="form-control" placeholder="Address 1"></textarea>
+                                    <label for="address"><i class="fa fa-home" aria-hidden="true"></i> Address<span class="text-danger">*</span></label>
+                                  <textarea name="txtAddress" id="address" class="form-control" placeholder="Address"></textarea>
                                 </div>
                                 <!-- <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="address2"><i class="fa fa-home" aria-hidden="true"></i> Address 2</label>
@@ -183,7 +183,7 @@
                                 <span id="operator" class="p-2"></span>
                                 <span id="num2" class="p-2"></span>
                                 <span class="p-2"> = </span>
-                                <input type="text" class="bg-muted" id="captchaInput" />
+                                <input type="text" class="bg-white" id="captchaInput"/>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
                                 <!-- validate_captcha(), -->
@@ -199,6 +199,11 @@
             </div>
         </div>
     </section>
+    <!-- <footer id="sticky-footer" class="bg-dark text-white-50 fixed-bottom">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progressBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </footer> -->
    <script src="captcha.js" type ="text/javascript"></script>
    <script src="formValidate.js" type ="text/javascript"></script>
 </body>

@@ -1,16 +1,16 @@
 function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
 }
-
 function inputName(x){
     document.getElementById("nameErrorMsg").style.display = "None";
     if(!/^[a-zA-Z]+$/.test(document.getElementById(x).value))
     {
         document.getElementById("nameErrorMsg").style.display = "Block";
         document.getElementById(x).value=""; 
-        document.getElementById(x).focus();  
+        document.getElementById(x).focus();
     }
     changeToUpper(document.getElementById(x));
+    
 }
 function phoneNumber(x){
     document.getElementById("phoneErrorMsg1").style.display = "None";
@@ -39,7 +39,26 @@ function ValidateEmail(mail)
     document.getElementById(mail).focus();  
   }
 
-  }
+}
+function passwordLengthCheck(){
+    if(document.getElementById("password").value.length!=6){
+        document.getElementById("confirmPasswordErrorMsg").textContent="Password should be greater than 6 digits";
+        document.getElementById("password").value="";
+        document.getElementById("password").focus();
+
+    }
+}
+function passwordValidation(){
+    // document.getElementById("confirmPasswordErrorMsg").textContent="";
+    if(document.getElementById("password").value!=document.getElementById("confirmPassword").value){
+        document.getElementById("confirmPasswordErrorMsg").textContent="Password Mismatch";
+        // document.getElementById("PasswordErrorMsg").textContent="Password Mismatch";
+        // document.getElementById("password").value="";
+        document.getElementById("confirmPassword").value="";
+        document.getElementById("password").focus();
+    }   
+}
+
 function validateForm(){
     var counter=0;
     var strFirstName ="";
@@ -63,7 +82,7 @@ function validateForm(){
     }
     if(document.getElementById("phoneNumber1").value.length==0){
         document.getElementById("phoneErrorMsg1").style.display="Block";
-        document.getElementById("phoneErrorMsg1").textContent="Fill up your Phone Number 1";
+        document.getElementById("phoneErrorMsg1").textContent="Fill up your Primary Phone Number";
         counter+=1;
     }
     if(document.getElementById("password").value.length==0){
@@ -77,13 +96,6 @@ function validateForm(){
     document.getElementById("confirmPasswordErrorMsg").style.display="Block";
     document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
     
-    if(document.getElementById("password").value!=document.getElementById("confirmPassword").value){
-        document.getElementById("confirmPasswordErrorMsg").textContent="Password Mismatch";
-        document.getElementById("PasswordErrorMsg").textContent="Password Mismatch";
-        counter+=1;
-        document.getElementById("password").value="";
-        document.getElementById("confirmPassword").value="";
-    }
     if(document.getElementById("dob").value.length==0){
         document.getElementById("dobErrorMsg").style.display="Block";
         document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
@@ -94,9 +106,9 @@ function validateForm(){
         document.getElementById("genderErrorMsg").textContent="Select Gender";
         counter+=1;
     }
-    if(document.getElementById("address1").value.length==0){
+    if(document.getElementById("address").value.length==0){
         document.getElementById("addressErrorMsg1").style.display="Block";
-        document.getElementById("addressErrorMsg1").textContent="Fill up your Address 1";
+        document.getElementById("addressErrorMsg1").textContent="Fill up your Address";
         counter+=1;
     }
     if(document.getElementById("city").value=="select"){
