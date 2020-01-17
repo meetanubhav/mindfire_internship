@@ -7,14 +7,11 @@ body{
 #captchaVerified,#captchaFailed{
     display: none;
 }
-#captchaDiv{
-    /* font-weight: bold; */
-}
+
 #captchaInput{
     width: 30%;
     background-color:#e9ecef;
     border-color: rgba(0, 0, 0, 0.438);
-    /* fosnt-weight: bold; */
 }
 #nameErrorMsg,#phoneErrorMsg1,#phoneErrorMsg2,#emailErrorMsg{
     display: none;
