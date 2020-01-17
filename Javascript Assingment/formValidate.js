@@ -1,3 +1,11 @@
+/*
+
+  Language : JavaScript
+  Developer : Anubhav Gupta
+  Included file in : index.html
+  Purpose : To validate form field inputs.
+
+*/
 function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
 }

@@ -1,9 +1,17 @@
+/*
+
+  Language : JavaScript
+  Developer : Anubhav Gupta
+  Included file in : index.html
+  Purpose : To generate , validate and authenticate captcha.
+
+*/
 var num1 =0;
 var num2=0;
 
 function getNumbers(){
-    window.num1 = Math.floor(Math.random() * 100)+1;
-    window.num2 = Math.floor((Math.random() * 10) +1);
+    num1 = Math.floor(Math.random() * 100)+1;
+    num2 = Math.floor((Math.random() * 10) +1);
     if(num1 < num2)
         num1+=num2;
 }
@@ -42,11 +50,17 @@ function validate_captcha(){
       document.getElementById("captchaDiv").style.display = "None";
       document.getElementById("captchaVerified").style.display = "Block";
       document.getElementById("captchaFailed").style.display = "None";
-      // captchaDiv
+      document.getElementById("confirmPasswordErrorMsg").textContent="";
+      document.getElementById("addressErrorMsg1").textContent="";
+      document.getElementById("cityErrorMsg").textContent="";
+      document.getElementById("stateErrorMsg").textContent="";
+      document.getElementById("countryErrorMsg").textContent="";
+      document.getElementById("genderErrorMsg").textContent="";
     }
 
 }
 function print(){
+    document.getElementById('forErrorMsg').textContent = "";
     document.getElementById('num1').textContent=num1;
     document.getElementById('num2').textContent=num2;
 }
@@ -72,6 +86,7 @@ function add(){
   function div(){
     // console.log("division");
     print();
+    document.getElementById('forErrorMsg').textContent = "For division type result in interger format";
     document.getElementById('operator').textContent = "/";
     val1=Math.floor(num1/num2);
   }
