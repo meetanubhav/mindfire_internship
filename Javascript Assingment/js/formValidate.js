@@ -6,12 +6,7 @@
   Purpose : To validate form field inputs.
 
 */
-// var progressStats=0;
-// function formProgress(progressStats){
-//     percentValue+=progressStats
-//     console.log(progressStats)
-//     document.getElementById("progressBar").style.width=percentValue+"%";
-// }
+
 
 function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
