@@ -17,12 +17,12 @@ function getNumbers(){
 }
 
 function reload_captcha(x){
-  if(x==1){
+  if(x===1){
   document.getElementById("captchaFailed").style.display = "None";
     document.getElementById("captchaInput").value="";
     document.getElementById("captcha_msg").textContent="";
   }
-  if(x==0){
+  if(x===0){
     document.getElementById("captchaFailed").style.display = "Block";
     document.getElementById("captcha_msg").textContent="Invalid! Re-enter";     
     document.getElementById("captcha_msg").style.color = "RED";
@@ -34,7 +34,9 @@ function reload_captcha(x){
 
 function validate_captcha(){
     var val2 = document.getElementById("captchaInput").value;
+    var val2 = parseInt(val2, 10);
     // console.log("input val = "+val2," &  Actual val = ",val1);
+    // console.log(typeof val2);
     document.getElementById("captcha_msg").textContent="Captcha Verified";
     document.getElementById("captcha_msg").style.color = "GREEN";
     if(val1 != val2){
@@ -45,7 +47,7 @@ function validate_captcha(){
         reload_captcha(0);
         
     }
-    if(val1==val2){
+    if(val1===val2){
       document.getElementById("submit").style.display = "Block";
       document.getElementById("captchaDiv").style.display = "None";
       document.getElementById("captchaVerified").style.display = "Block";

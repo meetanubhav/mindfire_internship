@@ -72,7 +72,7 @@ function validateForm(){
     var strFirstName ="";
     var changeconfirmPassword="";
     var passwordText="";
-    if(document.getElementById("firstName").value.length==0){
+    if(document.getElementById("firstName").value.length===0){
         document.getElementById("nameErrorMsg").style.display="Block";
         document.getElementById("nameErrorMsg").textContent="Fill up your Name";
         strFirstName = "First name & ";
@@ -83,53 +83,53 @@ function validateForm(){
         document.getElementById("nameErrorMsg").textContent="Type "+strFirstName+"Last Name";
         counter+=1;
     }
-    if(document.getElementById("email").value.length==0){
+    if(document.getElementById("email").value.length===0){
         document.getElementById("emailErrorMsg").style.display="Block";
         document.getElementById("emailErrorMsg").textContent="Fill up your Email";
         counter+=1;
     }
-    if(document.getElementById("phoneNumber1").value.length==0){
+    if(document.getElementById("phoneNumber1").value.length===0){
         document.getElementById("phoneErrorMsg1").style.display="Block";
         document.getElementById("phoneErrorMsg1").textContent="Fill up your Primary Phone Number";
         counter+=1;
     }
-    if(document.getElementById("password").value.length==0){
+    if(document.getElementById("password").value.length===0){
         passwordText = "Password"
         counter+=1;
     }
-    if(document.getElementById("confirmPassword").value.length==0){
+    if(document.getElementById("confirmPassword").value.length===0){
         changeconfirmPassword=" - Confirm Password"
         counter+=1;
     }   
     document.getElementById("confirmPasswordErrorMsg").style.display="Block";
     document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
     
-    if(document.getElementById("dob").value.length==0){
+    if(document.getElementById("dob").value.length===0){
         document.getElementById("dobErrorMsg").style.display="Block";
         document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
         counter+=1;
     }
-    if(document.getElementById("gender").value=="select"){
+    if(document.getElementById("gender").value==="select"){
         document.getElementById("genderErrorMsg").style.display="Block";
         document.getElementById("genderErrorMsg").textContent="Select Gender";
         counter+=1;
     }
-    if(document.getElementById("address").value.length==0){
+    if(document.getElementById("address").value.length===0){
         document.getElementById("addressErrorMsg1").style.display="Block";
         document.getElementById("addressErrorMsg1").textContent="Fill up your Address";
         counter+=1;
     }
-    if(document.getElementById("city").value=="select"){
+    if(document.getElementById("city").value==="select"){
         document.getElementById("cityErrorMsg").style.display="Block";
         document.getElementById("cityErrorMsg").textContent="Select City";
         counter+=1;
     }
-    if(document.getElementById("state").value=="select"){
+    if(document.getElementById("state").value==="select"){
         document.getElementById("stateErrorMsg").style.display="Block";
         document.getElementById("stateErrorMsg").textContent="Select State";
         counter+=1;
     }
-    if(document.getElementById("country").value=="select"){
+    if(document.getElementById("country").value==="select"){
         document.getElementById("countryErrorMsg").style.display="Block";
         document.getElementById("countryErrorMsg").textContent="Select Country";
         counter+=1;
