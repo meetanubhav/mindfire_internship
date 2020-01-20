@@ -132,7 +132,13 @@ function validateForm(){
     document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
     
     dateOfBirthValidation();
-    if(document.getElementById("gender").value==="select"){
+
+    // if(document.getElementById("gender").value==="select"){
+    //     document.getElementById("genderErrorMsg").style.display="Block";
+    //     document.getElementById("genderErrorMsg").textContent="Select Gender";
+    //     counter+=1;
+    // }
+    if(document.querySelector('input[name="gender"]:checked')==null){
         document.getElementById("genderErrorMsg").style.display="Block";
         document.getElementById("genderErrorMsg").textContent="Select Gender";
         counter+=1;
