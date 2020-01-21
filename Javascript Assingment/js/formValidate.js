@@ -79,10 +79,10 @@ function passwordValidation(){
 }
 function dateOfBirthValidation(){
     document.getElementById("dobErrorMsg").style.display="None";
-    if(document.getElementById("dob").value.length===0){
+    if(document.getElementById("dateOfbirth").value.length===0){
         document.getElementById("dobErrorMsg").style.display="Block";
         document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
-        document.getElementById("dob").focus();
+        document.getElementById("dateOfbirth").focus();
     }
 }
 

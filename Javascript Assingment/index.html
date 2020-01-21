@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Secondary Phone Number </label>
-                                    <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23" />
+                                    <input type="text" class="form-control" id="phoneNumber2" onblur="phoneNumber('phoneNumber2')" placeholder="95xxxxxx23" />
                                 </div>
                             </div>
                             <small>
@@ -83,8 +83,8 @@
                             <small><span class="text-danger" id="confirmPasswordErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
-                            <label for="dob"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" id="dob" onblur="dateOfBirthValidation()"/>
+                            <label for="dateOfbirth"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="dateOfbirth" onblur="dateOfBirthValidation()"/>
                             <small><span class="text-danger" id="dobErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
