@@ -72,11 +72,14 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="password"><i class="fa fa-key" aria-hidden="true"></i> Password <span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" onblur="passwordLengthCheck()" id="password" />
+                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Passwords should be 6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits">
+                                        <i class="fa fa-exclamation-circle text-warning" aria-hidden="true"></i>
+                                    </span>
+                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordLengthCheck()" id="password" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
-                                  <input type="password" class="form-control" placeholder="**********" onblur="passwordValidation()" id="confirmPassword" />
+                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordValidation()" id="confirmPassword" />
                                 </div>
                             </div>
                             <small><span class="text-danger" id="passwordErrorMsg"></span></small>
