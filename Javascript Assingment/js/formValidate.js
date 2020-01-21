@@ -12,34 +12,34 @@ function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
     // formProgress(10)
 }
-function inputName(x){
+function inputName(nameValue){
     document.getElementById("nameErrorMsg").style.display = "None";
-    if(!/^[a-zA-Z]+$/.test(document.getElementById(x).value))
+    if(!/^[a-zA-Z]+$/.test(document.getElementById(nameValue).value))
     {
         document.getElementById("nameErrorMsg").style.display = "Block";
-        document.getElementById(x).value=""; 
-        document.getElementById(x).focus();
+        document.getElementById(nameValue).value=""; 
+        document.getElementById(nameValue).focus();
         // formProgress(-10)
     }
-    changeToUpper(document.getElementById(x));
+    changeToUpper(document.getElementById(nameValue));
     
 }
-function phoneNumber(x){
+function phoneNumber(phoneNumberValue){
     document.getElementById("phoneErrorMsg1").style.display = "None";
     document.getElementById("phoneErrorMsg2").style.display = "None";
-    if(!/^[0-9]+$/.test(document.getElementById(x).value))
+    if(!/^[0-9]+$/.test(document.getElementById(phoneNumberValue).value))
     {
         document.getElementById("phoneErrorMsg1").style.display = "Block";
-        document.getElementById(x).value=""; 
-        document.getElementById(x).focus();  
+        document.getElementById(phoneNumberValue).value=""; 
+        document.getElementById(phoneNumberValue).focus();  
         // alert("Please enter only alphabets");
     }
-    if(document.getElementById(x).value.length!=10){
+    if(document.getElementById(phoneNumberValue).value.length!=10){
         document.getElementById("phoneErrorMsg2").style.display = "Block";
-        document.getElementById(x).value=""; 
-        document.getElementById(x).focus();  
+        document.getElementById(phoneNumberValue).value=""; 
+        document.getElementById(phoneNumberValue).focus();  
     }
-    changeToUpper(document.getElementById(x));
+    changeToUpper(document.getElementById(phoneNumberValue));
 }
 function ValidateEmail(mail) 
 {
