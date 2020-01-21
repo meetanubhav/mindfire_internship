@@ -54,11 +54,14 @@ function ValidateEmail(mail)
 
 }
 function passwordLengthCheck(){
-    if(document.getElementById("password").value.length!=6){
-        document.getElementById("confirmPasswordErrorMsg").textContent="Password should be greater than 6 digits";
+    if(!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/.test(document.getElementById("password").value)){
+        document.getElementById("confirmPasswordErrorMsg").textContent="6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits";
         document.getElementById("password").value="";
         document.getElementById("password").focus();
 
+    }
+    else{
+        document.getElementById("confirmPasswordErrorMsg").textContent="";
     }
 }
 function passwordValidation(){
@@ -70,6 +73,9 @@ function passwordValidation(){
         document.getElementById("confirmPassword").value="";
         document.getElementById("password").focus();
     }   
+    else{
+        document.getElementById("confirmPasswordErrorMsg").textContent="";
+    }
 }
 function dateOfBirthValidation(){
     document.getElementById("dobErrorMsg").style.display="None";
@@ -120,7 +126,7 @@ function validateForm(){
         document.getElementById("phoneNumber1").focus();
     }
     if(document.getElementById("password").value.length===0){
-        passwordText = "Password"
+        passwordText = "Fill up your Password"
         counter+=1;
         document.getElementById("password").focus();        
     }
@@ -132,6 +138,7 @@ function validateForm(){
     document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
     
     dateOfBirthValidation();
+
 
     if(document.querySelector('input[name="gender"]:checked')==null){
         document.getElementById("genderErrorMsg").style.display="Block";
