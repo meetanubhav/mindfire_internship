@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
     <title>Candidate | Registration</title>
 </head>
-<body onload="captcha_load(),">
+<body onload="captcha_load()">
     <nav class="navbar fixed-top navbar-light bg-danger">
-        <a class="navbar-brand text-white" href="index.html"> <i class="fa fa-fire" aria-hidden="true"></i>  Mindfire Solutions</a>
+        <a class="navbar-brand text-white" href="index.html"> <i class="fas fa-magic pr-3"></i> </i>  Hogwarts School of Witchcraft</a>
     </nav>
     <section>
         <div class="row">
             <!-- Image & logo area -->
             <div class="col-xs-0 col-sm-0 col-md-6 col-lg-6">
                 <div class="p-5 m-5" id="sideFixed">
-                    <img src="https://b4a9a5v6.stackpathcdn.com/wp-content/uploads/2018/04/1-1-1.jpg" class="img-fluid" alt="logo">
+                    <img src="https://i.pinimg.com/originals/0a/41/0e/0a410e3a4f03610eed0dbbbcd2f0a3db.png" class="img-fluid" alt="logo">
                     <h1 class="text-info text-center mt-5">Create an account</h1>
                     <p class="text-center">It's quick and easy.</p>
                     <!-- <div class="progress">
@@ -36,10 +39,10 @@
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="firstName" onblur="inputFirstName('firstName')" placeholder="First Name" />
+                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First Name" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="lastName" onblur="inputLastName('lastName')" placeholder="Last Name" />
+                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last Name" />
                                 </div>
                               </div>
                               <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
@@ -57,7 +60,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Secondary Phone Number </label>
-                                    <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23" />
+                                    <input type="text" class="form-control" id="phoneNumber2" onblur="phoneNumber('phoneNumber2')" placeholder="95xxxxxx23" />
                                 </div>
                             </div>
                             <small>
@@ -72,11 +75,11 @@
                                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Passwords should be 6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits">
                                         <i class="fa fa-exclamation-circle text-warning" aria-hidden="true"></i>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="Your Password" onblur="passwordLengthCheck()" id="password" />
+                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordLengthCheck()" id="password" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" placeholder="Your Confirm Password" onblur="passwordValidation()" id="confirmPassword" />
+                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordValidation()" id="confirmPassword" />
                                 </div>
                             </div>
                             <small><span class="text-danger" id="passwordErrorMsg"></span></small>
@@ -89,6 +92,12 @@
                         </div>
                         <div class="form-group">
                             <label for="gender"><i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> Gender <span class="text-danger">*</span></label>
+                            <!-- <select class="form-control" id="gender">
+                                <option value="select" id="select">--select--</option>
+                                <option value="male" id="male">Male</option>
+                                <option value="female" id="female">Female</option>
+                                <option value="other" id="other">Other</option>
+                            </select> -->
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender" id="male" value="male">
                                 <label class="form-check-label" for="male">Male</label>
@@ -122,10 +131,10 @@
                                     <!--country 1  -->
                                     <label for="country"><i class="fas fa-globe-americas"></i>Country<span class="text-danger">*</span></label>
                                     <select class="form-control" id="country">
-                                        <option value="">--select--</option>
-                                        <option value="mexico">Mexico</option>
-                                        <option value="USA">USA</option>
-                                        <option value="Other">Other</option>
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="mexico" id="mexico">Mexico</option>
+                                        <option value="USA" id="USA">USA</option>
+                                        <option value="Other" id="Other">Other</option>
                                     </select>
                                     <small><span class="text-danger" id="countryErrorMsg"></span></small>
                                </div>                                
@@ -133,11 +142,11 @@
                                     <!-- state 1 -->
                                     <label for="state"> <i class="fa fa-map" aria-hidden="true"></i> State <span class="text-danger">*</span> </label>
                                     <select class="form-control" id="state">
-                                        <option value="">--select--</option>
-                                        <option value="arizona">Arizona</option>
-                                        <option value="califonia">Califonia</option>
-                                        <option value="florida">Florida</option>
-                                        <option value="Other">Other</option>
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="arizona" id="arizona">Arizona</option>
+                                        <option value="califonia" id="califonia">Califonia</option>
+                                        <option value="florida" id="florida">Florida</option>
+                                        <option value="Other" id="Other">Other</option>
                                       </select> 
                                       <small><span class="text-danger" id="stateErrorMsg"></span></small>
                                 </div>
@@ -145,11 +154,11 @@
                                     <!-- City -->
                                     <label for="city"> <i class="fa fa-map-marker" aria-hidden="true"></i> City <span class="text-danger">*</span> </label>
                                     <select class="form-control" id="city">
-                                        <option value="">--select--</option>
-                                        <option value="bakersfield">Bakersfield</option>
-                                        <option value="losangeles">Los Angeles</option>
-                                        <option value="sanfranciso">San Franciso</option>
-                                        <option value="Other">Other</option>
+                                        <option value="select" id="select">--select--</option>
+                                        <option value="bakersfield" id="bakersfield">Bakersfield</option>
+                                        <option value="losangeles" id="losangeles">Los Angeles</option>
+                                        <option value="sanfranciso" id="sanfranciso">San Franciso</option>
+                                        <option value="Other" id="Other">Other</option>
                                       </select> 
                                       <small><span class="text-danger" id="cityErrorMsg"></span></small>                                      
                                 </div>
@@ -201,10 +210,5 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progressBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </footer> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
-    <script src="js/captcha.js" type ="text/javascript"></script>
-   <script src="js/formValidate.js" type ="text/javascript"></script>
 </body>
 </html>

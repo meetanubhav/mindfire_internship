@@ -1,0 +1,49 @@
+/*
+
+  Language : CSS-3
+  Developer : Anubhav Gupta
+  Included file in : index.html
+  Purpose : Stylesheet
+
+*/
+
+body{
+    overflow-x: hidden;
+}
+#submit{
+    display: none;
+}
+#captchaVerified,#captchaFailed{
+    display: none;
+}
+
+#captchaInput{
+    width: 30%;
+    background-color:#e9ecef;
+    border-color: rgba(0, 0, 0, 0.438);
+}
+#nameErrorMsg,#phoneErrorMsg1,#phoneErrorMsg2,#emailErrorMsg{
+    display: none;
+}
+#iconRobot{
+    animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+      color: #28a745;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    #sideFixed{
+        position: fixed;
+        width: 500px;
+    }
+    .img-fluid{
+        width: 100%;
+    }
+}
+

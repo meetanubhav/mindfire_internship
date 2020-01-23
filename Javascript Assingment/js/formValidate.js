@@ -7,91 +7,107 @@
 
 */
 
+// Declarations
+var dateOfbirth =document.getElementById("dateOfbirth").value; 
+var confirmPassword = document.getElementById("confirmPassword").value;
+var password = document.getElementById("password").value;
+var phoneNumberValue = document.getElementById("phoneNumber1").value;
+var address = document.getElementById("address").value;
+var firstName = document.getElementById("firstName").value;
+var lastName = document.getElementById("lastName").value;
+
+// error-message var declaration
+
+var dispNameError = document.getElementById("nameErrorMsg"); 
+var emailErrorMsg =  document.getElementById("emailErrorMsg");
+var dispPhoneError1 = document.getElementById("phoneErrorMsg1");
+var confirmPasswordErrorMsg = document.getElementById("confirmPasswordErrorMsg");
+var phoneErrorMsg2 = document.getElementById("phoneErrorMsg2");
+var cityErrorMsg = document.getElementById("cityErrorMsg");
+var stateErrorMsg = document.getElementById("stateErrorMsg");
+var countryErrorMsg = document.getElementById("countryErrorMsg");
+var addressErrorMsg1 = document.getElementById("addressErrorMsg1");
+var dobErrorMsg = document.getElementById("dobErrorMsg");
+
 
 function changeToUpper(mystr){
     mystr.value=mystr.value.toUpperCase();
     // formProgress(10)
 }
-function inputName(nameValue){
-    document.getElementById("nameErrorMsg").style.display = "None";
+function inputFirstName(nameValue){
+    dispNameError.style.display = "None";
     if(!/^[a-zA-Z]+$/.test(document.getElementById(nameValue).value))
     {
-        document.getElementById("nameErrorMsg").style.display = "Block";
-        document.getElementById(nameValue).value=""; 
-        document.getElementById(nameValue).focus();
-        // formProgress(-10)
+        dispNameError.style.display = "Block";
     }
     changeToUpper(document.getElementById(nameValue));
     
 }
-function phoneNumber(phoneNumberValue){
-    document.getElementById("phoneErrorMsg1").style.display = "None";
-    document.getElementById("phoneErrorMsg2").style.display = "None";
-    if(!/^[0-9]+$/.test(document.getElementById(phoneNumberValue).value))
+function inputLastName(nameValue){
+    dispNameError.style.display = "None";
+    if(!/^[a-zA-Z]+$/.test(document.getElementById(nameValue).value))
     {
-        document.getElementById("phoneErrorMsg1").style.display = "Block";
-        document.getElementById(phoneNumberValue).value=""; 
-        document.getElementById(phoneNumberValue).focus();  
-        // alert("Please enter only alphabets");
+        dispNameError.style.display = "Block";
     }
-    if(document.getElementById(phoneNumberValue).value.length!=10){
-        document.getElementById("phoneErrorMsg2").style.display = "Block";
-        document.getElementById(phoneNumberValue).value=""; 
-        document.getElementById(phoneNumberValue).focus();  
+    changeToUpper(document.getElementById(nameValue));
+    
+}
+function phoneNumber(){
+    var phoneNumberValue = document.getElementById("phoneNumber1").value;
+    dispPhoneError1.style.display = "None";
+    phoneErrorMsg2.style.display = "None";
+    if(!/^[0-9]+$/.test(phoneNumberValue))
+    {
+        dispPhoneError1.style.display = "Block";
     }
-    changeToUpper(document.getElementById(phoneNumberValue));
+    if(phoneNumberValue.length!=10){
+        phoneErrorMsg2.style.display = "Block";
+    }
 }
 function ValidateEmail(mail) 
 {
-    document.getElementById("emailErrorMsg").style.display = "None";
+   emailErrorMsg.style.display = "None";
  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById(mail).value))
   {
-    document.getElementById("emailErrorMsg").style.display = "Block";
-    document.getElementById(mail).value=""; 
-    document.getElementById(mail).focus();  
+   emailErrorMsg.style.display = "Block";
   }
   changeToUpper(document.getElementById(mail))
 
 }
 function passwordLengthCheck(){
-    if(!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/.test(document.getElementById("password").value)){
-        document.getElementById("confirmPasswordErrorMsg").textContent="6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits";
-        document.getElementById("password").value="";
-        document.getElementById("password").focus();
+    if(!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/.test(password)){
+        confirmPasswordErrorMsg.textContent="6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits";
 
     }
     else{
-        document.getElementById("confirmPasswordErrorMsg").textContent="";
+        confirmPasswordErrorMsg.textContent="";
     }
 }
 function passwordValidation(){
-    // document.getElementById("confirmPasswordErrorMsg").textContent="";
-    if(document.getElementById("password").value!=document.getElementById("confirmPassword").value){
-        document.getElementById("confirmPasswordErrorMsg").textContent="Password Mismatch";
-        // document.getElementById("PasswordErrorMsg").textContent="Password Mismatch";
-        // document.getElementById("password").value="";
-        document.getElementById("confirmPassword").value="";
-        document.getElementById("password").focus();
+    if(password!=confirmPassword || confirmPassword==""){
+        confirmPasswordErrorMsg.textContent="Password Mismatch";
     }   
     else{
-        document.getElementById("confirmPasswordErrorMsg").textContent="";
+        confirmPasswordErrorMsg.textContent="";
     }
 }
 function dateOfBirthValidation(){
-    document.getElementById("dobErrorMsg").style.display="None";
-    if(document.getElementById("dateOfbirth").value.length===0){
-        document.getElementById("dobErrorMsg").style.display="Block";
-        document.getElementById("dobErrorMsg").textContent="Fill up your Date of Birth";
-        document.getElementById("dateOfbirth").focus();
+    dobErrorMsg.style.display="None";
+    if(dateOfbirth.length===0){
+        dobErrorMsg.style.display="Block";
+        dobErrorMsg.textContent="Fill up your Date of Birth";
+        // counter+=1;
+        // return 0
     }
+    // counter=0;
+    // return 1
 }
 
 function addressValidation(){
-    document.getElementById("addressErrorMsg1").style.display="None";
-    if(document.getElementById("address").value.length===0){
-        document.getElementById("addressErrorMsg1").style.display="Block";
-        document.getElementById("addressErrorMsg1").textContent="Fill up your Address";
-        document.getElementById("address").focus();
+    addressErrorMsg1.style.display="None";
+    if(address.length===0){
+        addressErrorMsg1.style.display="Block";
+        addressErrorMsg1.textContent="Fill up your Address";
     }
 }
 
@@ -100,44 +116,43 @@ function validateForm(){
     var strFirstName ="";
     var changeconfirmPassword="";
     var passwordText="";
-    if(document.getElementById("firstName").value.length===0){
-        document.getElementById("nameErrorMsg").style.display="Block";
-        document.getElementById("nameErrorMsg").textContent="Fill up your Name";
+    if(firstName.length===0){
+        dispNameError.style.display="Block";
+        dispNameError.textContent="Fill up your Name";
         strFirstName = "First name & ";
-        document.getElementById("firstName").focus();
         counter+=1;
     }
-    if(document.getElementById("lastName").value.length==0){
-        document.getElementById("nameErrorMsg").style.display="Block";
-        document.getElementById("nameErrorMsg").textContent="Type "+strFirstName+"Last Name";
-        document.getElementById("lastName").focus();
+    if(lastName.length==0){
+        dispNameError.style.display="Block";
+        dispNameError.textContent="Type "+strFirstName+"Last Name";
         counter+=1;
     }
     if(document.getElementById("email").value.length===0){
-        document.getElementById("emailErrorMsg").style.display="Block";
-        document.getElementById("emailErrorMsg").textContent="Fill up your Email";
+       emailErrorMsg.style.display="Block";
+       emailErrorMsg.textContent="Fill up your Email";
         counter+=1;
-        document.getElementById("email").focus();
     }
-    if(document.getElementById("phoneNumber1").value.length===0){
-        document.getElementById("phoneErrorMsg1").style.display="Block";
-        document.getElementById("phoneErrorMsg1").textContent="Fill up your Primary Phone Number";
+    if(phoneNumber.length===0){
+        dispPhoneError1.style.display="Block";
+        dispPhoneError1.textContent="Fill up your Primary Phone Number";
         counter+=1;
-        document.getElementById("phoneNumber1").focus();
     }
-    if(document.getElementById("password").value.length===0){
+    if(password.length===0){
         passwordText = "Fill up your Password"
         counter+=1;
-        document.getElementById("password").focus();        
     }
-    if(document.getElementById("confirmPassword").value.length===0){
+    if(confirmPassword.length===0){
         changeconfirmPassword=" - Confirm Password"
         counter+=1;
     }   
-    document.getElementById("confirmPasswordErrorMsg").style.display="Block";
-    document.getElementById("confirmPasswordErrorMsg").textContent="Fill up your "+passwordText+changeconfirmPassword;
+    confirmPasswordErrorMsg.style.display="Block";
+    confirmPasswordErrorMsg.textContent="Fill up your "+passwordText+changeconfirmPassword;
     
-    dateOfBirthValidation();
+    if(dateOfbirth.length===0){
+        dobErrorMsg.style.display="Block";
+        dobErrorMsg.textContent="Fill up your Date of Birth";
+        counter+=1;
+    }
 
 
     if(document.querySelector('input[name="gender"]:checked')==null){
@@ -145,34 +160,28 @@ function validateForm(){
         document.getElementById("genderErrorMsg").textContent="Select Gender";
         counter+=1;
     }
-    addressValidation();
-    if(document.getElementById("city").value==="select"){
-        document.getElementById("cityErrorMsg").style.display="Block";
-        document.getElementById("cityErrorMsg").textContent="Select City";
+    if(address.length===0){
+        addressErrorMsg1.style.display="Block";
+        addressErrorMsg1.textContent="Fill up your Address";
+    }
+    if(document.querySelector('#city').value===""){
+        cityErrorMsg.style.display="Block";
+        cityErrorMsg.textContent="Select City";
         counter+=1;
-        document.getElementById("city").focus();
     }
-    if(document.getElementById("state").value==="select"){
-        document.getElementById("stateErrorMsg").style.display="Block";
-        document.getElementById("stateErrorMsg").textContent="Select State";
+    if(document.querySelector('#state').value===""){
+        stateErrorMsg.style.display="Block";
+        stateErrorMsg.textContent="Select State";
         counter+=1;
-        document.getElementById("state").focus();
     }
-    if(document.getElementById("country").value==="select"){
-        document.getElementById("countryErrorMsg").style.display="Block";
-        document.getElementById("countryErrorMsg").textContent="Select Country";
+    if(document.querySelector('#country').value===""){
+        countryErrorMsg.style.display="Block";
+        countryErrorMsg.textContent="Select Country";
         counter+=1;
-        document.getElementById("country").focus();
     }
-    if(counter==0){
-        return 1;
-        
-    }
-    if(counter>0){
-        return 0;
-    }
+    return !counter;
 }
 function submitOnSuccess(){
+    alert("THANKS FOR SUBMITTING THE FORM");
     location.replace("index.html");
-    alert("THANKS FOR SUBMITTING THE FORM")
 }

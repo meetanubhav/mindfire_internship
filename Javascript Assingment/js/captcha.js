@@ -10,7 +10,7 @@ var num1 =0;
 var num2=0;
 
 function getNumbers(){
-    num1 = Math.floor(Math.random() * 100)+1;
+    num1 = Math.floor(Math.random() * 100);
     num2 = Math.floor((Math.random() * 10) +1);
     if(num1 < num2)
         num1+=num2;
