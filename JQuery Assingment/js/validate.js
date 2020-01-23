@@ -1,18 +1,88 @@
 $(document).ready(function () {
-    console.log("loaded");
+
+    // Regex Declaration
+    var nameRegex = /^[a-zA-Z]+$/;
+    var phoneNumberregex = /^[0-9]+$/;
+    var passwordregex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+    var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    // checking name type
+    $("#firstName").blur(function(){
+        if(!nameRegex.test(this.value))
+        {
+            $('#firstNameErrorMsg').css({"display": "block"});
+        }
+        else{
+            $('#firstNameErrorMsg').css({"display": "none"});
+        }
+      });
+
+      $("#lastName").blur(function(){
+        if(!nameRegex.test(this.value))
+        {
+            $('#lastNameErrorMsg').css({"display": "block"});
+        }
+        else{
+            $('#lastNameErrorMsg').css({"display": "none"});
+        }
+      });
+
+    //   checking email
+    $("#email").blur(function(){
+        if(!emailRegex.test(this.value))
+        {
+            $('#emailErrorMsg').css({"display": "block"});
+        }
+        else{
+            $('#emailErrorMsg').css({"display": "none"});
+        }
+      });
+
+    //   checking Phone Number
+    $("#phoneNumber1").blur(function(){
+        if(!phoneNumberregex.test(this.value) || this.value.length < 10)
+        {
+            $('#phoneErrorMsg1').css({"display": "block"});
+        }
+        else{
+            $('#phoneErrorMsg1').css({"display": "none"});
+        }
+      });
+
+    //   checking Password
+    // $("#password").blur(function(){
+    //     if(!passwordregex.test(this.value))
+    //     {
+    //         $('#passwordErrorMsg').css({"display": "block"});
+    //         $('#passwordErrorMsg').text('Please enter a special character, number , alphabet and your password should be between 6-12')
+    //     }
+    //     else{
+    //         $('#passwordErrorMsg').css({"display": "none"});
+    //     }
+    // });
+
+    // check for confirm password and password
+    $("#confirmPassword").blur(function(){
+        if($("#password").val() != $("#confirmpassword").val())
+            {
+                $('#confirmPasswordErrorMsg').css({"display": "block"});
+                $('#confirmPasswordErrorMsg').text('Password mismatch');
+                // $('#confirmPasswordErrorMsg').css({"display": "none"});
+            }
+            // else{
+                
+            //     alert('success');
+            // }
+    });
+   
     
 
 $('#submit').click(function(){
     validateForm();   
 });
 
-function validateForm(){}
-    // Regex Declaration
-    var nameRegex = '/^[a-zA-Z]+$/';
-    var phoneNumberregex = '/^[0-9]+$/';
-    var passwordregex = '/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/';
-    var emailRegex = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
-
+function validateForm(){
+    
     // Declaration of values 
     var firstNameValue = $("#firstName").val();
     var lastNameValue = $("#lastName").val();

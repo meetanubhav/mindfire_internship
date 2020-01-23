@@ -22,7 +22,10 @@ body{
     background-color:#e9ecef;
     border-color: rgba(0, 0, 0, 0.438);
 }
-#firstNameErrorMsg,#lastNameErrorMsg,#phoneErrorMsg1,#phoneErrorMsg2,#emailErrorMsg{
+#firstNameErrorMsg,#lastNameErrorMsg{
+    display: none;
+}
+#phoneErrorMsg1,#phoneErrorMsg2,#emailErrorMsg{
     display: none;
 }
 #iconRobot{
