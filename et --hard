@@ -1,0 +1,245 @@
+[33mcommit 78852aa66ed1fa7c2db50d57b48a7bcc0a7e8495[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mgithub/master[m[33m)[m
+Merge: 2df74bf 1f5237e
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 23 12:15:32 2020 +0530
+
+    Merge branch 'master' of https://github.com/meetanubhav/mindfire_internship
+
+[33mcommit 2df74bfce72d96963cd4a656bd24a1c506f80b84[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 23 12:15:29 2020 +0530
+
+    switched to var declarations
+
+[33mcommit 1f5237ef9a6020dc7132837e926b5cb6417462fb[m
+Author: Anubhav Gupta <37771611+meetanubhav@users.noreply.github.com>
+Date:   Wed Jan 22 13:10:09 2020 +0530
+
+    Delete progress.js
+
+[33mcommit 2695945f51574e3612f8eebc278e5ef83a1cd608[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Tue Jan 21 15:58:04 2020 +0530
+
+    password tooltip addition
+
+[33mcommit c2377a57744f606b96b1a39112535a9f0fe35033[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Tue Jan 21 12:13:45 2020 +0530
+
+    changing variable name
+
+[33mcommit a7a58d1e91e2ef75546f0603ba6f041b8b2180b3[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Tue Jan 21 12:02:51 2020 +0530
+
+    secondary pone number length check
+
+[33mcommit caf18bc711fec8923d9fd4c843b628f35179b34b[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Tue Jan 21 11:08:01 2020 +0530
+
+    added regex for password
+
+[33mcommit c21363409837d95c87570c62b6c6b3384f102945[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Mon Jan 20 16:24:36 2020 +0530
+
+    phone number  type text
+
+[33mcommit d954ac94b0d10890a77d4f43cf7e528b1c63235f[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Mon Jan 20 16:04:21 2020 +0530
+
+    phone number type number
+
+[33mcommit 96fdc9e3215828abf023c66a094da2368edaad5e[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Mon Jan 20 15:24:40 2020 +0530
+
+    added signin option if available
+
+[33mcommit 4a140d8890d9525d8e0662e93f3c9ffc20bbf74e[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Mon Jan 20 11:44:34 2020 +0530
+
+    changing gender from select to radio
+
+[33mcommit 9bc79f59eb03054063e14ad80cc7d6c41b190b5c[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 19:26:54 2020 +0530
+
+    changed file directory and added new functions
+
+[33mcommit c89a31decdd1c5fd7ad59abba39a7ba20021048c[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 18:24:34 2020 +0530
+
+    adding red border color if cptcha fails
+    and added focus
+
+[33mcommit 2256fbb01c5d772f7a3e422e43b8079c3fe4c48f[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 18:18:49 2020 +0530
+
+    for label controls and mapped
+
+[33mcommit e317651d2b5f104bfbd3751160dc7ef73a72f70c[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 17:30:17 2020 +0530
+
+    added focus() to input fields via id
+
+[33mcommit c3e0a30b19792432d61ea0dddaf5ce21d283795e[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 17:19:02 2020 +0530
+
+    adress validation and addtion of onblur on address and other input fields
+
+[33mcommit c639a576190313b5c731e5d5e94fd55e05e9d609[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 15:50:18 2020 +0530
+
+    added to upper conversion on all input
+
+[33mcommit 35d714ffe3228c4a871f5ad0d095f81f53edadf7[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 14:39:42 2020 +0530
+
+    changed the comparison from == to ===
+
+[33mcommit 1a2166dd9d80aa99758b64e7d372ce35fa9d7b64[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 13:29:39 2020 +0530
+
+    adding alert text for type input division in captc
+
+[33mcommit 83dd0bbb724738c4f353026904f13e45e78cb840[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 12:57:34 2020 +0530
+
+    removed commented lines in css
+
+[33mcommit d249dd2e59fd0c9da4aa038c51cfdf6f684a3e2b[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 12:57:05 2020 +0530
+
+    adding animation to icons , changing div positions
+
+[33mcommit 73b1078dbe8410205ddac3de16244da5d4c4bc1d[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Fri Jan 17 11:42:15 2020 +0530
+
+    checking length for the input password and validting it
+
+[33mcommit 9dd863d96a246e122285aa29a97528e7001e13af[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 21:09:28 2020 +0530
+
+    closing of all input tag
+
+[33mcommit 97bcc893d55a1ae997699fe916e0015c623f2ac6[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 19:58:11 2020 +0530
+
+    removing unecessary blank css declarations
+
+[33mcommit 1467a413efa7d53f9b86ae715f2ceb61ff5e577c[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 18:12:25 2020 +0530
+
+    adding input close tag
+
+[33mcommit da5db8c610394e9295b4005524632a1234d0d8d1[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 18:09:04 2020 +0530
+
+    changes in stylesheet,tags of css assingment according to the reviews
+
+[33mcommit 0557c6a303689873b80849b3d52c8cbfe70745f5[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 18:03:36 2020 +0530
+
+    change to camelcase
+
+[33mcommit 21bc3947020f703bf1bb05865857dc71c7a7fb50[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 17:35:08 2020 +0530
+
+    on validation of form as well as captcha submit button shows , changing to camelcase
+
+[33mcommit 93bb663e9c282f98cf2ceb2effc08ec99d4a5e13[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 16:10:31 2020 +0530
+
+    change in for,additon of req attribute ,max len
+
+[33mcommit fab6a0a5bd71980fde2e45b8266e1c2b632cd877[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 14:39:32 2020 +0530
+
+    mapping for with id
+
+[33mcommit c7ebd75f574c8a1700a90305f039e9ff42415bd5[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 12:18:34 2020 +0530
+
+    added label for captch
+
+[33mcommit 8336d823f1ee878d3129fee8ad9f2ed8a830cf65[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Thu Jan 16 11:57:37 2020 +0530
+
+     changed 'label for' at some places, addition of states and country fields and validating them in javascript
+
+[33mcommit cfbac8cd5cc6af773fb7ee5ceca65bc9d034c29d[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 20:39:16 2020 +0530
+
+    change in phone number label
+
+[33mcommit a569fff2e662c496874b3e67e47aa1940fd9126f[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 18:22:43 2020 +0530
+
+     change in the formvalidate.js in the name of password to clear the imput o Confirm password after a password mismatch is there
+
+[33mcommit d0ca386f11236b453b59825fd1c2af5ac4c7cde6[m
+Merge: 382a8fa b7952ec
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 17:24:56 2020 +0530
+
+    Merge branch 'master' of https://github.com/meetanubhav/mindfire_internship
+
+[33mcommit 382a8faab364fc7b2d21591190f8a57ea15e317e[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 17:24:53 2020 +0530
+
+    commenting all console.log statements
+
+[33mcommit b7952ecc3f83789121cac1dc4e83e4a9d92915ff[m
+Author: Anubhav Gupta <37771611+meetanubhav@users.noreply.github.com>
+Date:   Wed Jan 15 16:07:18 2020 +0530
+
+    Update README.md
+    
+    added link to the assignments in readme file
+
+[33mcommit 4549ef0e8fac0aaf8aa1d88e69c81969f291dafe[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 15:54:03 2020 +0530
+
+    adding the javascript assingment href to table
+
+[33mcommit b81329dbcac8f547e1cdb697ee1d856b86ae9348[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 15:51:19 2020 +0530
+
+    navbar fixed top
+
+[33mcommit 608d774fce41248ee9542bf1a1a292ae9f6c9d97[m
+Author: meetanubhav <anubhavgupta.gupta28@gmail.com>
+Date:   Wed Jan 15 15:45:26 2020 +0530
+
+    validated all fields in the form , checked for pass = confirm password , used regex for type checking , dynamic captcha working
+
