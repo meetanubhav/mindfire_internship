@@ -7,28 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
-    <title>Candidate | Registration</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>    
+    <title>Starbucks | Registration</title>
 </head>
-<body onload="captcha_load()">
+<body>
     <nav class="navbar fixed-top navbar-light bg-danger">
-        <a class="navbar-brand text-white" href="index.html"> <i class="fas fa-magic pr-3"></i> </i>  Hogwarts School of Witchcraft</a>
+        <a class="navbar-brand text-white" href="index.html"> <i class="fa fa-fire" aria-hidden="true"></i>  Mindfire Solutions</a>
     </nav>
     <section>
         <div class="row">
             <!-- Image & logo area -->
             <div class="col-xs-0 col-sm-0 col-md-6 col-lg-6">
                 <div class="p-5 m-5" id="sideFixed">
-                    <img src="https://i.pinimg.com/originals/0a/41/0e/0a410e3a4f03610eed0dbbbcd2f0a3db.png" class="img-fluid" alt="logo">
+                    <img src="https://b4a9a5v6.stackpathcdn.com/wp-content/uploads/2018/04/1-1-1.jpg" class="img-fluid" alt="logo">
                     <h1 class="text-info text-center mt-5">Create an account</h1>
                     <p class="text-center">It's quick and easy.</p>
                     <!-- <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progressBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> -->
-                    <h6 class="text-center mt-5">Already having account? <a href="sign.aspx">Sign In</a></h6>
+                    <h6 class="text-center mt-5">Already having account? <a href="">Sign In</a></h6>
                 </div>
             </div>
             <!-- Form part -->
@@ -39,28 +36,28 @@
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="firstName" onblur="inputName('firstName')" placeholder="First Name" />
+                                  <input type="text" class="form-control" id="firstName" placeholder="First Name" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
-                                  <input type="text" class="form-control" id="lastName" onblur="inputName('lastName')" placeholder="Last Name" />
+                                  <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
                                 </div>
                               </div>
                               <small><span class="text-danger" id="nameErrorMsg">Please enter only Alphabets</span></small>
                         </div>
                         <div class="form-group"> 
                             <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" onblur="ValidateEmail('email')" placeholder="yourEmailId@domain.com" />
+                            <input type="email" class="form-control" id="email" placeholder="yourEmailId@domain.com" />
                             <small><span class="text-danger" id="emailErrorMsg">Invalid email type</span></small>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber1"><i class="fa fa-phone" aria-hidden="true"></i> Primary Phone Number<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" onblur="phoneNumber('phoneNumber1')" id="phoneNumber1" placeholder="95xxxxxx23" required/>
+                                    <input type="text" class="form-control" id="phoneNumber1" placeholder="95xxxxxx23" required/>
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="phoneNumber2"><i class="fa fa-phone" aria-hidden="true"></i> Secondary Phone Number </label>
-                                    <input type="text" class="form-control" id="phoneNumber2" onblur="phoneNumber('phoneNumber2')" placeholder="95xxxxxx23" />
+                                    <input type="text" class="form-control" id="phoneNumber2" placeholder="95xxxxxx23" />
                                 </div>
                             </div>
                             <small>
@@ -75,11 +72,11 @@
                                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Passwords should be 6 to 12 characters which contain at least one numeric digit and a special characterPassword should be greater than 6 digits">
                                         <i class="fa fa-exclamation-circle text-warning" aria-hidden="true"></i>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordLengthCheck()" id="password" />
+                                    <input type="password" class="form-control" placeholder="Your Password"  id="password" />
                                 </div>
                                 <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="confirmPassword">Confirm Pass<span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" placeholder="**********" onblur="passwordValidation()" id="confirmPassword" />
+                                    <input type="password" class="form-control" placeholder="Your Confirm Password" id="confirmPassword" />
                                 </div>
                             </div>
                             <small><span class="text-danger" id="passwordErrorMsg"></span></small>
@@ -87,7 +84,7 @@
                         </div>
                         <div class="form-group">
                             <label for="dateOfbirth"><i class="fa fa-calendar" aria-hidden="true"></i> Date Of Birth <span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" id="dateOfbirth" onblur="dateOfBirthValidation()"/>
+                            <input type="date" class="form-control" id="dateOfbirth"/>
                             <small><span class="text-danger" id="dobErrorMsg"></span></small>
                         </div>
                         <div class="form-group">
@@ -116,7 +113,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-12">
                                     <label for="address"><i class="fa fa-home" aria-hidden="true"></i> Address<span class="text-danger">*</span></label>
-                                  <textarea name="txtAddress" id="address" class="form-control" placeholder="Address" onblur=" addressValidation(),changeToUpper(document.getElementById('address'));"></textarea>
+                                  <textarea name="txtAddress" id="address" class="form-control" placeholder="Address"></textarea>
                                 </div>
                                 <!-- <div class="col-sm-6 col-md-6 col-lg-6">
                                     <label for="address2"><i class="fa fa-home" aria-hidden="true"></i> Address 2</label>
@@ -175,11 +172,11 @@
                             <i class="fa fa-exclamation-circle text-danger" aria-hidden="true" id="captchaFailed"></i>
                             <span id="captcha_msg"></span>
                         </p>
-                        <button type="button" class="btn btn-block btn-primary" onclick="submitOnSuccess()" id="submit">Submit</button>   
+                        <button type="button" class="btn btn-block btn-primary" id="submit">Submit</button>   
                         <!-- <button type="reset" class="btn btn-danger">Reset</button>                      -->
                     </form>
                     <!-- Captcha -->
-                    <div class="p-3 captcha" id="captchaDiv">
+                    <!-- <div class="p-3 captcha" id="captchaDiv">
                         <label for="captchaInput">Captcha Verification (Prove you are not ROBOT <i class="fas fa-robot text-primary" id="iconRobot"></i> )</small></label>
                         <div class="row">
                             
@@ -193,14 +190,13 @@
                                 <small class="text-primary" id="forErrorMsg"></small>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6">
-                                <!-- validate_captcha(), -->
-                                <button type="button" onclick="var ValidationCheck = validateForm();if(ValidationCheck==1){ validate_captcha()}if(ValidationCheck==0){reload_captcha(0);};" class="btn btn-sm btn-success">Validate!</button>
-                                <button type="button" onclick="reload_captcha(1)" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
+                                <button type="button" id="submit" class="btn btn-sm btn-success">Validate!</button>
+                                <button type="button" class="btn btn-sm btn-warning ml-2 pl-3"> <i class="fas fa-sync-alt"></i> <i class="fa fa-refresh" aria-hidden="true"></i> </button>        
                             </div>
                         </div>
                         
                        
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -210,5 +206,9 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progressBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </footer> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="js/validate.js"></script>
 </body>
 </html>
