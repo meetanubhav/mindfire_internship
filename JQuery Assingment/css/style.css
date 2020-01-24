@@ -10,13 +10,39 @@
 body{
     overflow-x: hidden;
 }
-#submit{
-    display: block;
+#submitForm{
+    display: none;
 }
 #captchaVerified,#captchaFailed{
     display: none;
 }
 
+#joinButton{
+    margin-left: 45%;
+}
+#moveImg{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    margin-left: 33%;
+    width: 35%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+#animateBefore{
+    margin-left: 25%;
+    width: 50%;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+#form-section{
+    background-color: #e9ecef;
+}
 #captchaInput{
     width: 30%;
     background-color:#e9ecef;

@@ -1,5 +1,13 @@
-$(document).ready(function () {
+/*
 
+  Language : JQuery , JavaScript
+  Developer : Anubhav Gupta
+  Included file in : index.html
+  Purpose : Scripting
+
+*/
+$(document).ready(function () {
+   
     // Regex Declaration
     var nameRegex = /^[a-zA-Z]+$/;
     var phoneNumberregex = /^[0-9]+$/;
@@ -10,20 +18,20 @@ $(document).ready(function () {
     $("#firstName").blur(function(){
         if(!nameRegex.test(this.value))
         {
-            $('#firstNameErrorMsg').css({"display": "block"});
+            $('#firstNameErrorMsg').show();
         }
         else{
-            $('#firstNameErrorMsg').css({"display": "none"});
+            $('#firstNameErrorMsg').hide();
         }
       });
 
       $("#lastName").blur(function(){
         if(!nameRegex.test(this.value))
         {
-            $('#lastNameErrorMsg').css({"display": "block"});
+            $('#lastNameErrorMsg').show();
         }
         else{
-            $('#lastNameErrorMsg').css({"display": "none"});
+            $('#lastNameErrorMsg').hide();
         }
       });
 
@@ -31,21 +39,23 @@ $(document).ready(function () {
     $("#email").blur(function(){
         if(!emailRegex.test(this.value))
         {
-            $('#emailErrorMsg').css({"display": "block"});
+            $('#emailErrorMsg').show();
         }
         else{
-            $('#emailErrorMsg').css({"display": "none"});
+            $('#emailErrorMsg').hide();
         }
       });
 
     //   checking Phone Number
     $("#phoneNumber1").blur(function(){
-        if(!phoneNumberregex.test(this.value) || this.value.length < 10)
+        if(!phoneNumberregex.test(this.value) || this.value.length != 10)
         {
-            $('#phoneErrorMsg1').css({"display": "block"});
+            $('#phoneErrorMsg1').show();
+            $('#phoneErrorMsg2').show();
         }
         else{
-            $('#phoneErrorMsg1').css({"display": "none"});
+            $('#phoneErrorMsg1').hide();
+            $('#phoneErrorMsg2').hide();
         }
       });
 
@@ -53,35 +63,57 @@ $(document).ready(function () {
     // $("#password").blur(function(){
     //     if(!passwordregex.test(this.value))
     //     {
-    //         $('#passwordErrorMsg').css({"display": "block"});
+    //         $('#passwordErrorMsg').show();
     //         $('#passwordErrorMsg').text('Please enter a special character, number , alphabet and your password should be between 6-12')
     //     }
     //     else{
-    //         $('#passwordErrorMsg').css({"display": "none"});
+    //         $('#passwordErrorMsg').hide();
     //     }
     // });
 
     // check for confirm password and password
     $("#confirmPassword").blur(function(){
-        if($("#password").val() != $("#confirmpassword").val())
+        if($("#password").val() != $("#confirmPassword").val())
             {
-                $('#confirmPasswordErrorMsg').css({"display": "block"});
+                $('#confirmPasswordErrorMsg').show();
                 $('#confirmPasswordErrorMsg').text('Password mismatch');
-                // $('#confirmPasswordErrorMsg').css({"display": "none"});
             }
-            // else{
-                
-            //     alert('success');
-            // }
+            else{
+                $('#confirmPasswordErrorMsg').hide();
+            }
     });
    
+    // check for date of birth
+    $("#dateOfbirth").blur(function(){
+        if($("#dateOfbirth").val() == "")
+            {
+                $('#dobErrorMsg').show();
+                $('#dobErrorMsg').text('Enter Date Of Birth');
+            }
+            else{
+                $('#dobErrorMsg').hide();
+            }
+    });
+
+    // check for address    
+    $("#address").blur(function(){
+        if($("#address").val() == "")
+            {
+                $('#addressErrorMsg1').show();
+                $('#addressErrorMsg1').text('Enter Address');
+            }
+            else{
+                $('#addressErrorMsg1').hide();
+            }
+    });
+    
     
 
-$('#submit').click(function(){
-    validateForm();   
-});
+// $('#submit').click(function(){
+//     validateForm();   
+// });
 
-function validateForm(){
+window.validateForm = function(){
     
     // Declaration of values 
     var firstNameValue = $("#firstName").val();
@@ -89,7 +121,7 @@ function validateForm(){
     var emailValue = $("#email").val();
     var phoneNumberValue = $("#firstName").val();
     var passwordValue = $("#password").val();
-    var confirmPasswordValue = $("#confirmpassword").val();
+    var confirmPasswordValue = $("#confirmPassword").val();
     var dateOfBirthValue = $("#dateOfbirth").val();
     var genderValue = $("#gender").val();
     var addressValue = $("#address").val();
@@ -97,26 +129,66 @@ function validateForm(){
     var stateValue = $("#state").val();
     var countryValue = $("#country").val();
 
-    var errorMessage = new Array("First Name", "Last Name", "Email", "Password", "Confirm Password","Primary Phone Number");
+    var counter = 0;
 
     if(firstNameValue == ""){
-        $('#firstName').after('<span class="text-danger"> Please enter your ' + errorMessage[0] + '</span>');
+        $('#firstNameErrorMsg').show();
+        counter = 1;
     } 
     if(lastNameValue == ""){
-        $('#lastName').after('<span class="text-danger"> Please enter your ' + errorMessage[1] + '</span>');
+        $('#lastNameErrorMsg').show();
+        counter = 1;
     } 
     if(emailValue == ""){
-        $('#email').after('<span class="text-danger"> Please enter your ' + errorMessage[2] + '</span>');
+        $('#emailErrorMsg').show();
+        counter = 1;
     } 
     if(passwordValue == ""){
-        $('#password').after('<span class="text-danger"> Please enter your ' + errorMessage[3] + '</span>');
+        $('#passwordErrorMsg').text("Enter Password");
+        counter = 1;
     } 
     if(confirmPasswordValue == ""){
-        $('#confirmPassword').after('<span class="text-danger"> Please enter your ' + errorMessage[4] + '</span>');
+        $('#confirmPasswordErrorMsg').text("Enter Confirm Password");
+        counter = 1;
     } 
     if(phoneNumberValue == ""){
-        $('#phoneNumber1').after('<span class="text-danger"> Please enter your ' + errorMessage[5] + '</span>');
+        $('#phoneErrorMsg1').show();
+        $('#phoneErrorMsg2').show();
+        counter = 1;
     } 
+    if($("input[name='gender']:checked").val()==this.undefined){
+        // $('#genderErrorMsg').show();
+        $('#genderErrorMsg').text('Enter Gender');
+        counter = 1;  
+    }
+    if(dateOfBirthValue==""){
+        $('#dobErrorMsg').text('Enter Date Of Birth');
+        counter = 1;  
+    }
+    if(addressValue==""){
+        $('#addressErrorMsg1').text('Enter Address');
+        counter = 1;  
+    } 
+    if(countryValue==""){
+        $('#countryErrorMsg').text('Select Country');
+        counter = 1;  
+    } 
+    if(stateValue==""){
+        $('#stateErrorMsg').text('Select Country');
+        counter = 1;  
+    } 
+    if(cityValue==""){
+        // $('#cityErrorMsg').show();
+        $('#cityErrorMsg').text('Select City');
+        counter = 1;  
+    }    
+
+    if(counter==0){
+        return 1
+    }
+    else{
+        return 0
+    }
 
 }
 
