@@ -21,6 +21,10 @@ $(document).ready(function(){
             reloadCaptcha(0);
         };
     });
+    $("#submitForm").click(function(){
+        $("#animatedAfter").hide();
+        $("#animateEnd").show();
+    });
 });
 
 
