@@ -24,10 +24,13 @@
             </div>
         </div>
         <div class="row mt-5" id="animateEnd">
-            <div class="container-fluid m-5">
-                <img src="https://gifimage.net/wp-content/uploads/2017/11/gif-preloader-9.gif" class="imgEnd img-rounded" alt="logo">
+            <div class="container-fluid text-center">
+                <img src="https://image.freepik.com/free-vector/creative-hand-lettering-quote-welcome_67074-358.jpg" class="img-thumbnail" alt="logo Welcome">
                 <div class="circleDraw"></div>
-                <p class="text-center">You are now a part of our Family!</p>
+                <p class="text-center">
+                    <span class="text-primary" id="dispName"></span>
+                    you are now a part of our Family!
+                </p>
                 <!-- <button class="btn btn-success" id="joinButton">Join</button> -->
             </div>
         </div>
@@ -38,13 +41,15 @@
                     <img src="https://b4a9a5v6.stackpathcdn.com/wp-content/uploads/2018/04/1-1-1.jpg" class="img-fluid" alt="logo">
                     <h1 class="text-info text-center mt-5">Create an account</h1>
                     <p class="text-center">It's quick and easy.</p>
-                    <h6 class="text-center mt-5">Already having account? <a href="">Sign In</a></h6>                    
+                    <!-- <h6 class="text-center mt-5">Already having account? <a href="">Sign In</a></h6>                     -->
                 </div>
             </div>
             <!-- Form part -->
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="form-section">
                 <div class="container-fluid jumbotron">
+                    <img src="https://i.pinimg.com/originals/78/e8/26/78e826ca1b9351214dfdd5e47f7e2024.gif" class="img-fluid" alt="logo" id="imgShow">
                     <form action="">
+                    <span id="hideSuccess">
                         <div class="form-group">
                             <label for="firstName"><i class="fa fa-user" aria-hidden="true"></i> Name <span class="text-danger">*</span></label>
                             <div class="row">
@@ -176,6 +181,7 @@
                                 <input type="checkbox" id="subscibe"/>  
                                 <i class="fa fa-rss" aria-hidden="true"></i> Subscribe to Newsletter</label>
                         </div>
+                    </span>
                         <!-- captcha message -->
                         <p class="text-center">
                             <i class="fa fa-check-circle text-success" aria-hidden="true" id="captchaVerified"></i>
@@ -190,7 +196,7 @@
                         <label for="captchaInput">Captcha Verification (Prove you are not ROBOT <i class="fas fa-robot text-primary" id="iconRobot"></i> )</small></label>
                         <div class="row">
                             
-                            <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="col-xs-12 col-sm-12 col-md-6 p-2">
                                 <span id="num1" class=""></span>
                                 <span id="operator" class="p-2"></span>
                                 <span id="num2" class="p-2"></span>

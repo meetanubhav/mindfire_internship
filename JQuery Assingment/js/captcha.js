@@ -1,6 +1,6 @@
 /*
 
-  Language : JavaScript
+  Language : JQuery,JavaScript
   Developer : Anubhav Gupta
   Included file in : index.html
   Purpose : To generate , validate and authenticate captcha.
@@ -24,20 +24,27 @@ $(document).ready(function(){
     $("#submitForm").click(function(){
         $("#animatedAfter").hide();
         $("#animateEnd").show();
+        $("#dispName").text($("#firstName").val());
+        $("nav").hide();
     });
 });
 
 
-    var num1 =Math.floor(Math.random() * 100);
-    var num2=Math.floor((Math.random() * 10) +1);
-    if(num1 < num2)
-            num1+=num2;
+    // var num1 =Math.floor(Math.random() * 100);
+    // var num2=Math.floor((Math.random() * 10) +1);
+    // if(num1 < num2)
+    //         num1+=num2;
 
     function getNumbers(){
         num1 = Math.floor(Math.random() * 100);
         num2 = Math.floor((Math.random() * 10) +1);
-        if(num1 < num2)
+        if(num1 < num2){
             num1+=num2;
+        }
+        // if(num1*num2>100 || num1+num2 > 100){
+        //     captcha_load();
+        // }
+
     }
 
     function reloadCaptcha(x){
@@ -76,47 +83,54 @@ function validate_captcha(){
         
     }
     if(val1===val2){
-    $("#submitForm").show();
-    $("#captchaDiv").hide();
-    $("#captchaVerified").show();
-    $("#captchaFailed").hide();
-    $("#confirmPasswordErrorMsg").text("");
-    $("#addressErrorMsg1").text("");
-    $("#cityErrorMsg").text("");
-    $("#stateErrorMsg").text("");
-    $("#countryErrorMsg").text("");
-    $("#genderErrorMsg").text("");
-    $("#dobErrorMsg").text("");
+        $("#hideSuccess").hide();
+        $("#submitForm").show();
+        $("#captchaDiv").hide();
+        $("#form-section").css("background","white");
+        $(".jumbotron").css("background","white");
+        $("#imgShow").show();
+        $("#captchaVerified").show();
+        $("#captchaFailed").hide();
+        $("#confirmPasswordErrorMsg").text("");
+        $("#addressErrorMsg1").text("");
+        $("#cityErrorMsg").text("");
+        $("#stateErrorMsg").text("");
+        $("#countryErrorMsg").text("");
+        $("#genderErrorMsg").text("");
+        $("#dobErrorMsg").text("");
     }
 
 }
-function print(){
+function printNumbers(){
     $('#forErrorMsg').text("");
     $('#num1').text(num1);
     $('#num2').text(num2);
+    if(num1*num2 > 100 || num1+num2 > 100){
+        captcha_load();
+    }
 }
 // operations
 function add(){
     // console.log("addition");
-    print();
+    printNumbers();
     $('#operator').text("+");
     val1= num1+num2;
 }
 function sub(){
     // console.log("substraction");
-    print();
+    printNumbers();
     $('#operator').text("-");
     val1=num1-num2;
 }
 function mul(){
     // console.log("multiplication");
-    print();
+    printNumbers();
     $('#operator').text("*");
     val1=num1*num2;
 }
 function div(){
     // console.log("division");
-    print();
+    printNumbers();
     $('#forErrorMsg').text("For division type result in interger format");
     $('#operator').text("/");
     val1=Math.floor(num1/num2);

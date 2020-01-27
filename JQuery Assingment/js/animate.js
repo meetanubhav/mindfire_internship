@@ -10,14 +10,17 @@ $(document).ready(function () {
     $('#animatedAfter').hide();
     $('#animateEnd').hide();
     $('nav').hide();
+    $("#imgEnd").hide();
     $('#joinButton').click(function(){
         // $('#testImg').fadeOut();
         $('nav').show();
         $('#animatedAfter').fadeIn(1000);  
         $('#animateBefore').hide()
     });
+
+    // test animations
     // $('#animateBefore').hide();
-    // $('#animatedAfter').hide();
-    $('.imgEnd').delay(5000).attr("src", "http://cise-egypt.com/wp-content/uploads/2019/09/WELCOME-ST-IVES.jpg");
+    // $('#animateEnd').hide();
+    // $('#animatedAfter').show();
     
 });

@@ -60,16 +60,16 @@ $(document).ready(function () {
       });
 
     //   checking Password
-    // $("#password").blur(function(){
-    //     if(!passwordregex.test(this.value))
-    //     {
-    //         $('#passwordErrorMsg').show();
-    //         $('#passwordErrorMsg').text('Please enter a special character, number , alphabet and your password should be between 6-12')
-    //     }
-    //     else{
-    //         $('#passwordErrorMsg').hide();
-    //     }
-    // });
+    $("#password").blur(function(){
+        if(!passwordregex.test(this.value))
+        {
+            $('#passwordErrorMsg').show();
+            $('#passwordErrorMsg').text('Please enter a special character, number , alphabet and your password should be between 6-12')
+        }
+        else{
+            $('#passwordErrorMsg').hide();
+        }
+    });
 
     // check for confirm password and password
     $("#confirmPassword").blur(function(){
@@ -129,6 +129,8 @@ window.validateForm = function(){
     var stateValue = $("#state").val();
     var countryValue = $("#country").val();
 
+    var passwordregex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+
     var counter = 0;
 
     if(firstNameValue == ""){
@@ -151,6 +153,18 @@ window.validateForm = function(){
         $('#confirmPasswordErrorMsg').text("Enter Confirm Password");
         counter = 1;
     } 
+    if($("#password").val() != $("#confirmPassword").val())
+    {
+        $('#confirmPasswordErrorMsg').show();
+        $('#confirmPasswordErrorMsg').text('Password mismatch');
+        counter+=1;
+    }
+    if(!passwordregex.test(passwordValue))
+    {
+        $('#passwordErrorMsg').show();
+        $('#passwordErrorMsg').text('Please enter a special character, number , alphabet and your password should be between 6-12');
+        counter+=1;
+    }
     if(phoneNumberValue == ""){
         $('#phoneErrorMsg1').show();
         $('#phoneErrorMsg2').show();
