@@ -119,7 +119,8 @@ window.validateForm = function(){
     var firstNameValue = $("#firstName").val();
     var lastNameValue = $("#lastName").val();
     var emailValue = $("#email").val();
-    var phoneNumberValue = $("#firstName").val();
+    var phoneNumberValue = $("#phoneNumber1").val();
+    secondaryphoneNumberValue = $("#phoneNumber2").val();
     var passwordValue = $("#password").val();
     var confirmPasswordValue = $("#confirmPassword").val();
     var dateOfBirthValue = $("#dateOfbirth").val();
@@ -170,6 +171,19 @@ window.validateForm = function(){
         $('#phoneErrorMsg2').show();
         counter = 1;
     } 
+    if($("#phoneNumber2").val()!=""){
+        if(!phoneNumberregex.test(secondaryphoneNumberValue) || secondaryphoneNumberValue.length != 10)
+        {
+            $('#phoneErrorMsg1').show();
+            $('#phoneErrorMsg2').show();
+            counter = 1; 
+        }
+        else{
+            $('#phoneErrorMsg1').hide();
+            $('#phoneErrorMsg2').hide();
+        }
+
+    }
     if($("input[name='gender']:checked").val()==this.undefined){
         // $('#genderErrorMsg').show();
         $('#genderErrorMsg').text('Enter Gender');
