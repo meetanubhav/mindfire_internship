@@ -102,7 +102,6 @@ function validate_captcha(){
 
 }
 function printNumbers(){
-    $('#forErrorMsg').text("");
     $('#num1').text(num1);
     $('#num2').text(num2);
     if(num1*num2 > 100 || num1+num2 > 100){
@@ -115,23 +114,26 @@ function add(){
     printNumbers();
     $('#operator').text("+");
     val1= num1+num2;
+    $('#forErrorMsg').hide();
 }
 function sub(){
     // console.log("substraction");
     printNumbers();
     $('#operator').text("-");
     val1=num1-num2;
+    $('#forErrorMsg').hide();
 }
 function mul(){
     // console.log("multiplication");
     printNumbers();
     $('#operator').text("*");
     val1=num1*num2;
+    $('#forErrorMsg').hide();
 }
 function div(){
     // console.log("division");
     printNumbers();
-    $('#forErrorMsg').text("For division type result in interger format");
+    $('#forErrorMsg').show();
     $('#operator').text("/");
     val1=Math.floor(num1/num2);
 }

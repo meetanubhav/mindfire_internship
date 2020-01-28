@@ -14,6 +14,9 @@ $(document).ready(function () {
     var passwordregex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
     var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+    $('.usaState').hide();
+    $('.indiaState').hide();
+
     // checking name type
     $("#firstName").blur(function(){
         if(!nameRegex.test(this.value))
@@ -105,6 +108,18 @@ $(document).ready(function () {
             else{
                 $('#addressErrorMsg1').hide();
             }
+    });
+
+    $("#country").change(function(){
+        var countrySelected = $('#country').val();
+        if(countrySelected=="INDIA"){
+            $('.usaState').hide();
+            $('.indiaState').show();
+        }
+        if(countrySelected=="USA"){
+            $('.indiaState').hide();
+            $('.usaState').show();
+        }
     });
     
     
@@ -207,7 +222,7 @@ window.validateForm = function(){
     } 
     if(cityValue==""){
         // $('#cityErrorMsg').show();
-        $('#cityErrorMsg').text('Select City');
+        $('#cityErrorMsg').text('Enter City');
         counter = 1;  
     }    
 
