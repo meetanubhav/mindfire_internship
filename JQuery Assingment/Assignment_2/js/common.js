@@ -32,5 +32,20 @@ $(document).ready(function () {
         $(this).attr('placeholder', '');
         $(this).css({'border':'1px solid teal'});
     });
+    $('#panInput').click(function(){
+        $('.panInput').show();
+        $(this).attr('placeholder', '');
+        $(this).css({'border':'1px solid teal'});
+    });
+    $('#aadharInput').click(function(){
+        $('.aadharInput').show();
+        $(this).attr('placeholder', '');
+        $(this).css({'border':'1px solid teal'});
+    });
+    $('#phoneNumber').click(function(){
+        $('.phoneNumber').show();
+        $(this).attr('placeholder', '');
+        $(this).css({'border':'1px solid teal'});
+    });
     
 });

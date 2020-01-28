@@ -11,7 +11,7 @@ body{
     position: fixed;
 }
 .container{
-    margin-left: 30%;
+    margin-left: 32%;
 }
 input{
     border: none;
@@ -46,10 +46,22 @@ label{
 .pl-3{
     padding-left: 3%;
 }
+.mt-3{
+    margin-top: 3%;
+}
 .ui-element{
     margin-top: 30%;
     /* margin-left: 30%; */
     text-align: center;
+}
+.add-button{
+    width: 10%;
+    background-color: teal;
+    border-radius: 10%;
+}
+.w-80{
+    width: 80%;
+    margin-right: 2%;
 }
 #moveImg{
     /* margin-top: 15%; */
