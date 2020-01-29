@@ -1,14 +1,21 @@
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0%;
+    
 }
 .flex-container{
     display: flex;
+    background-color: white;
 }
 .side-bar{
     width: 30%;
-    background-color: teal;
     height: 800px;
     position: fixed;
+    color: wheat;
+    background: #5f2c82;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #581845 , #C70039);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #581845 , #C70039); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .container{
     margin-left: 32%;
@@ -25,16 +32,31 @@ input{
 input:focus {
     outline: none;
 }
+.addressSelector{
+    margin-right: 5em;
+}
+#newAddressInputField,#newPhoneNumber{
+    margin-top: 10px;
+}
+#captchaQuestion{
+    margin-top: 2%;
+    /* border: 1px solid teal; */
+}
+#captchaBox{
+    /* border: 1px solid teal; */
+    margin-left: 30%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+#captchaInput{
+    width: 10%;
+    border: 1px solid teal;
+    margin-left: 2%;
+    /* background-color: teal; */
+    display: -webkit-inline-box;
+}
 label{
-    display: none;
     color: teal;
-    left: 5px;
-    top: 10px; 
-    position: relative;
-    background-color: white;
-    width: fit-content;
-    padding-left: 1%;
-    padding-right: 1%;
 }
 .input-group {
     /* position: relative; */
@@ -43,7 +65,7 @@ label{
 .input-long{
     width: 100%;
 }
-.pl-3{
+.paddingLeft3{
     padding-left: 3%;
 }
 .mt-3{
@@ -54,14 +76,61 @@ label{
     /* margin-left: 30%; */
     text-align: center;
 }
-.add-button{
+.text-danger{
+    color: red;
+}
+select{
+    border: 1px solid teal;
+    padding: 2%;
+    margin-top: 5%;
+}
+.profileImageField{
+    /* background-color: teal; */
+    border: none;
+    display: flex;
+    
+}
+#profileImage{
     width: 10%;
-    background-color: teal;
+    /* display: none; */
+}
+.add-button{
+    padding: 1%;
+    width: 5%;
+    background-color: #28a745;
     border-radius: 10%;
+    float: right;
+    border: none;
+    margin-top: -4%;
+    color: white;
+}
+.remove-button{
+    padding: 1%;
+    width: 5%;
+    background-color: #dc3545;
+    border-radius: 10%;
+    float: right;
+    border: none;
+    margin-top: -4%;
+    color: white;
 }
 .w-80{
     width: 80%;
     margin-right: 2%;
+}
+#reloadCaptcha{
+    background-color: #28a745;
+    padding: 2%;
+    margin-left: 20%;
+    /* width: 100%; */
+    background-color: #28a745;
+    border-radius: 5%;
+    color: white;
+    border: none;
+}
+#forErrorMsg{
+    color: teal;
+    display: block;
 }
 #moveImg{
     /* margin-top: 15%; */

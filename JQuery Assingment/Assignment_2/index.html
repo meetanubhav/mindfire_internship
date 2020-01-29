@@ -12,18 +12,26 @@
         <div class="side-bar">
             <div class="ui-element">
                 <img src="https://image.ibb.co/n7oTvU/logo_white.png" id="moveImg" alt="rocket"/>
-                <h1>Welcome</h1>
+                <h1>HELLO</h1>
                 <p>You are few steps away from joining our family!</p>
             </div>
         </div>
-        <div class="container pl-3">
+        <div class="container paddingLeft3">
             <form class="form-ele">
+                <!-- <div class="profileImageField">
+                    <input type='file' id="imgInp" />
+                    <img id="profileImage" src="#" alt="your profile image" />
+                </div> -->
+                <fieldset>
+                    <legend>Profile Picture</legend>
+                    <input type='file' id="imgInp" />
+                </fieldset>
                 <fieldset>
                     <legend>Personal Details</legend>
                     <div class="flex-container">
                         <div class="input-group">
-                            <label for="firstName" class="firstName">First Name</label>
-                            <input type="text" id="firstName" placeholder="First Name">
+                            <label for="firstNameInput" class="firstNameInput">First Name</label>
+                            <input type="text" id="firstNameInput" placeholder="First Name">
                         </div>
                         <div class="input-group">
                             <label for="lastName" class="lastName">Last Name</label>
@@ -58,19 +66,83 @@
 
                 <fieldset class="mt-3">
                     <legend>Contact Details</legend>
-                    <div class="input-group flex-container">
-                        <label for="phoneNumber" class="phoneNumber">Phone number</label>
-                        <input type="text" class="w-80" id="phoneNumber" placeholder="Phone Number">
-                        <button class="add-button"> + </button>
+                    <div class="phoneNumberInputArea">
+                        <div class="input-group" id="phoneNumberInputField">
+                            <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
+                            <input type="text" class="w-80" id="phoneNumberInput" placeholder="Phone Number">
+                            <button type="button" class="add-button" id="addPhoneNumber"> + </button>
+                        </div>
                     </div>
                 </fieldset>
 
                 <fieldset class="mt-3">
                     <legend>Address Details</legend>
-                    <div class="input-group flex-container mt-2">
-                        <label for="AddressInput" class="AddressInput">Address</label>
-                        <input type="text" class="w-80" id="AddressInput" placeholder="Address">
-                        <button class="add-button"> + </button>
+                    <div class="input-group" id="addressInputField">
+                        <label for="addressInput" class="addressInput">Address</label>
+                        <input type="text" class="w-80" id="addressInput" placeholder="Address">
+                        <button type="button" class="add-button" id="addAddress"> + </button>
+                        <div class="flex-container mt-3" id="addressExtras">
+                            <div class="addressSelector">
+                                <label for="selectCountry"> Country:</label><br>
+                                <select id="selectCountry">
+                                <option value="1">Select Country</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="China">China</option>
+                                </select><br>
+                                <p id="selectCountryError"></p>
+                            </div>
+                            <!-- country col ends here -->
+                            
+                            <div class="addressSelector">
+                                <label for="selectState"> State:</label><br>
+                                <select id="selectState" >
+                                    <option value="2">Select State</option>
+                                    <option value="Jharkhand" class="india">Jharkhand</option>
+                                    <option value="Odisha" class="india">Odisha</option>
+                                    <option value="California" class="usa">California</option>
+                                    <option value="Florida"class="usa">Florida</option>
+                                    <option value="Yunnan" class="china">Yunnan</option>
+                                    <option value="Bejeing" class="china">Bejeing</option>
+                                </select><br>
+                                <p id="selectStateError"></p>
+                            </div>
+                            
+                            <div class="addressSelector">
+                                <label for="selectCity">City:</label><br>
+                                <select id="selectCity" >
+                                    <option value="3">Select City</option>
+                                    <option value="Bhubhaneshwar" class="odisha" >Bhubhaneshwar</option>
+                                    <option value="Puri" class="odisha" >Puri</option>
+                                    <option value="Jamshedpur" class="jharkhand">Jamshedpur</option>
+                                    <option value="Ranchi" class="jharkhand">Ranchi</option>
+                                    <option value=" losAngeles" class="california">Los Angelees</option>
+                                    <option value="sanFransisco" class="california">San Fransisco</option>
+                                    <option value="Miami" class="florida">Miami</option>
+                                    <option value="Orlando" class="florida">Orlando</option>
+                                    <option value="shangai" class="yunnan">Shangai</option>
+                                    <option value="wuhan" class="yunnan">Wuhan</option>
+                                    <option value="harbin" class="bejeing">Harbin</option>
+                                    <option value="hongkong" class="bejeing">Hongkong</option>
+                                </select><br>
+                                <p id="selectCityError"></p>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Captcha Verification</legend>
+                    <div class="captcha" id="captchaDiv">
+                        <small>Prove you are not ROBOT</small>
+                        <div class="" id="captchaBox">
+                            <!-- <span id="num1" class="paddingLeft3"></span>
+                            <span id="operator" class="paddingLeft3">..</span>
+                            <span id="num2" class="paddingLeft3"></span> -->
+                            <span id="captchaQuestion"></span>
+                            <input type="text" class="bg-white" id="captchaInput"/>
+                            <button type="button" id="reloadCaptcha">REFRESH</button>  
+                            <small id="forErrorMsg">For division type result in interger format</small>                            
+                        </div>
                     </div>
                 </fieldset>
             </form>
@@ -78,6 +150,7 @@
         </div>
       </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/validate.js"></script>
 </body>
 </html>
