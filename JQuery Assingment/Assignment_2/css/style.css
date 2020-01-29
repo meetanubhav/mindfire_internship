@@ -1,150 +1,181 @@
-body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0%;
-    
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0%;
 }
-.flex-container{
-    display: flex;
-    background-color: white;
+.flex-container {
+  display: flex;
+  background-color: white;
 }
-.side-bar{
-    width: 30%;
-    height: 800px;
-    position: fixed;
-    color: wheat;
-    background: #5f2c82;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #581845 , #C70039);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #581845 , #C70039); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.side-bar {
+  width: 30%;
+  height: 800px;
+  position: fixed;
+  color: wheat;
+  background: #5f2c82; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #581845,
+    #c70039
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #581845,
+    #c70039
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.container{
-    margin-left: 32%;
+.container {
+  margin-left: 32%;
 }
-input{
-    border: none;
-    border-bottom: 2px solid teal;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    /* margin-right: 2em; */
+input {
+  border: none;
+  border-bottom: 2px solid teal;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  /* margin-right: 2em; */
 }
 input:focus {
-    outline: none;
+  outline: none;
 }
-.addressSelector{
-    margin-right: 5em;
+.addressSelector {
+  margin-right: 5em;
 }
-#newAddressInputField,#newPhoneNumber{
-    margin-top: 10px;
+#newAddressInputField,
+#newPhoneNumber {
+  margin-top: 10px;
 }
-#captchaQuestion{
-    margin-top: 2%;
-    /* border: 1px solid teal; */
+#captchaQuestion {
+  margin-top: 2%;
+  /* border: 1px solid teal; */
 }
-#captchaBox{
-    /* border: 1px solid teal; */
-    margin-left: 30%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+#captchaBox {
+  /* border: 1px solid teal; */
+  margin-left: 30%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
-#captchaInput{
-    width: 10%;
-    border: 1px solid teal;
-    margin-left: 2%;
-    /* background-color: teal; */
-    display: -webkit-inline-box;
+#captchaInput {
+  width: 10%;
+  border: 1px solid teal;
+  margin-left: 2%;
+  /* background-color: teal; */
+  display: -webkit-inline-box;
 }
-label{
-    color: teal;
+label {
+  color: teal;
 }
 .input-group {
-    /* position: relative; */
-    margin: 40px 10px 20px;
+  /* position: relative; */
+  margin: 40px 10px 20px;
 }
-.input-long{
-    width: 100%;
+.input-long {
+  width: 100%;
 }
-.paddingLeft3{
-    padding-left: 3%;
+.paddingLeft3 {
+  padding-left: 3%;
 }
-.mt-3{
-    margin-top: 3%;
+.mt-3 {
+  margin-top: 3%;
 }
-.ui-element{
-    margin-top: 30%;
-    /* margin-left: 30%; */
-    text-align: center;
+.ui-element {
+  margin-top: 30%;
+  /* margin-left: 30%; */
+  text-align: center;
 }
-.text-danger{
+.text-danger {
+  color: red;
+}
+#firstNameErrorMsg{
+    display: none;
     color: red;
 }
-select{
-    border: 1px solid teal;
-    padding: 2%;
-    margin-top: 5%;
+select {
+  border: 1px solid teal;
+  padding: 2%;
+  margin-top: 5%;
 }
-.profileImageField{
-    /* background-color: teal; */
-    border: none;
-    display: flex;
-    
+.profileImageField {
+  /* background-color: teal; */
+  border: none;
+  display: flex;
 }
-#profileImage{
-    width: 10%;
-    /* display: none; */
+#profileImage {
+  width: 10%;
+  margin-left: 40%;
+  /* display: none; */
 }
-.add-button{
-    padding: 1%;
-    width: 5%;
-    background-color: #28a745;
-    border-radius: 10%;
-    float: right;
-    border: none;
-    margin-top: -4%;
-    color: white;
+.add-button {
+  padding: 1%;
+  width: 5%;
+  background-color: #28a745;
+  border-radius: 10%;
+  float: right;
+  border: none;
+  margin-top: -4%;
+  color: white;
 }
-.remove-button{
-    padding: 1%;
-    width: 5%;
-    background-color: #dc3545;
-    border-radius: 10%;
-    float: right;
-    border: none;
-    margin-top: -4%;
-    color: white;
+.remove-button {
+  padding: 1%;
+  width: 5%;
+  background-color: #dc3545;
+  border-radius: 10%;
+  float: right;
+  border: none;
+  margin-top: -4%;
+  color: white;
 }
-.w-80{
-    width: 80%;
-    margin-right: 2%;
+.w-80 {
+  width: 80%;
+  margin-right: 2%;
 }
-#reloadCaptcha{
-    background-color: #28a745;
-    padding: 2%;
-    margin-left: 20%;
-    /* width: 100%; */
-    background-color: #28a745;
-    border-radius: 5%;
-    color: white;
-    border: none;
+#reloadCaptcha {
+  background-color: #28a745;
+  padding: 2%;
+  margin-left: 20%;
+  /* width: 100%; */
+  background-color: #28a745;
+  border-radius: 5%;
+  color: white;
+  border: none;
 }
-#forErrorMsg{
-    color: teal;
-    display: block;
+#forErrorMsg {
+  color: teal;
+  display: block;
 }
-#moveImg{
-    /* margin-top: 15%; */
-    margin-bottom: 5%;
-    /* margin-left: 1%; */
-    width: 35%;
-    -webkit-animation: mover 2s infinite  alternate;
-    animation: mover 1s infinite  alternate;
+#submitForm {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5%;
+  border: none;
+  padding: 2%;
+  margin-top: 2%;
+  margin-left: 35%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#moveImg {
+  /* margin-top: 15%; */
+  margin-bottom: 5%;
+  /* margin-left: 1%; */
+  width: 35%;
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 1s infinite alternate;
 }
 @-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 @keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }

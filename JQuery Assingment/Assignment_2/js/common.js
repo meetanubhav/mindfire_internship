@@ -18,7 +18,7 @@ $(document).ready(function () {
       $("#imgInp").change(function() {
         readUrl(this);
       });
-     // appending and removing contact field
+     // appending and removing phone field
 
      $("#addPhoneNumber").click(function(){
         phoneCounter+=1;
