@@ -1,13 +1,12 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0%;
 }
-.flex-container {
+.flexContainer {
   display: flex;
   background-color: white;
 }
-.side-bar {
+.sideBar {
   width: 30%;
   height: 800px;
   position: fixed;
@@ -66,30 +65,36 @@ input:focus {
 label {
   color: teal;
 }
-.input-group {
+.inputGroup {
   /* position: relative; */
   margin: 40px 10px 20px;
 }
-.input-long {
+.inputLongWidth {
   width: 100%;
 }
 .paddingLeft3 {
   padding-left: 3%;
 }
-.mt-3 {
+.marginTop3Percent {
   margin-top: 3%;
 }
-.ui-element {
+.sideBarElement {
   margin-top: 30%;
   /* margin-left: 30%; */
   text-align: center;
 }
-.text-danger {
-  color: red;
+.textDanger {
+  color: #dc3545;
 }
-#firstNameErrorMsg{
+.errorMsg,.addressError,.selectCountryError,.selectCityError,.selectStateError,.phoneNumberError{
     display: none;
-    color: red;
+    color: #dc3545;
+}
+.regexErrorMessage,.regexErrorMessageLastName{
+  display: none;
+  /* margin-top: 112px;
+  margin-left: -653px; */
+  color: #dc3545;
 }
 select {
   border: 1px solid teal;
@@ -106,7 +111,7 @@ select {
   margin-left: 40%;
   /* display: none; */
 }
-.add-button {
+.addButton {
   padding: 1%;
   width: 5%;
   background-color: #28a745;
@@ -116,7 +121,10 @@ select {
   margin-top: -4%;
   color: white;
 }
-.remove-button {
+#addAddress,#removeAddress{
+  margin-top: -100px;
+}
+.removeButton {
   padding: 1%;
   width: 5%;
   background-color: #dc3545;
@@ -126,7 +134,7 @@ select {
   margin-top: -4%;
   color: white;
 }
-.w-80 {
+.width80Percent {
   width: 80%;
   margin-right: 2%;
 }
@@ -155,6 +163,21 @@ select {
   padding-left: 10%;
   padding-right: 10%;
 }
+.addLine{
+  border-top: 1px solid teal;
+  margin-top: 2%;
+}
+.importantFieldMark{
+  color: #dc3545;
+}
+#placeInportantMark{
+  margin-left: 9%;
+  position: absolute;
+}
+#addressplaceInportantMark{
+  margin-left: 5%;
+  position: absolute;
+}
 #moveImg {
   /* margin-top: 15%; */
   margin-bottom: 5%;
@@ -163,6 +186,7 @@ select {
   -webkit-animation: mover 2s infinite alternate;
   animation: mover 1s infinite alternate;
 }
+
 @-webkit-keyframes mover {
   0% {
     transform: translateY(0);

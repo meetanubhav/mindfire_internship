@@ -1,203 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
     <title>BreadCrums</title>
-  </head>
-  <body>
-    <div class="flex-container">
-      <div class="side-bar">
-        <div class="ui-element">
-          <img
-            src="https://image.ibb.co/n7oTvU/logo_white.png"
-            id="moveImg"
-            alt="rocket"
-          />
-          <h1>HELLO</h1>
-          <p>You are few steps away from joining our family!</p>
+</head>
+
+<body>
+    <div class="flexContainer">
+        <div class="sideBar">
+            <div class="sideBarElement">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" id="moveImg" alt="rocket" />
+                <h1>HELLO</h1>
+                <p>You are few steps away from joining our family!</p>
+            </div>
         </div>
-      </div>
-      <div class="container paddingLeft3">
-        <form class="form-ele">
-          <!-- <div class="profileImageField">
+        <div class="container paddingLeft3">
+            <form class="form-ele">
+                <!-- <div class="profileImageField">
                     <input type='file' id="imgInp" />
                     <img id="profileImage" src="#" alt="your profile image" />
                 </div> -->
-          <fieldset>
-            <legend>Profile Picture</legend>
-            <img
-              id="profileImage"
-              src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg"
-              alt="your profile image"
-            />
-            <input type="file" id="imgInp" />
-          </fieldset>
-          <fieldset>
-            <legend>Personal Details</legend>
-            <div class="flex-container">
-              <div class="input-group">
-                <label for="firstNameInput" class="firstNameInput">First Name</label>
-                <input
-                  type="text"
-                  id="firstNameInput"
-                  placeholder="First Name"
-                />
-                <small id="firstNameErrorMsg">Enter</small>
-              </div>
-              <div class="input-group">
-                <label for="lastName" class="lastName">Last Name</label>
-                <input type="text" id="lastName" placeholder="Last Name" />
-              </div>
-            </div>
-            <div class="input-group">
-              <label for="emailInput" class="emailInput">Email</label>
-              <input
-                type="email"
-                class="input-long"
-                id="emailInput"
-                placeholder="Email"
-              />
-            </div>
-            <div class="flex-container">
-              <div class="input-group">
-                <label for="passwordInput" class="passwordInput"
-                  >Password</label
-                >
-                <input
-                  type="password"
-                  id="passwordInput"
-                  placeholder="Password"
-                />
-              </div>
-              <div class="input-group">
-                <label for="confirmPasswordInput" class="confirmPasswordInput"
-                  >Confirm</label
-                >
-                <input
-                  type="password"
-                  id="confirmPasswordInput"
-                  placeholder="Confirm Password"
-                />
-              </div>
-            </div>
-            <div class="flex-container">
-              <div class="input-group">
-                <label for="panInput" class="panInput">PAN Number</label>
-                <input type="text" id="panInput" placeholder="PAN Number" />
-              </div>
-              <div class="input-group">
-                <label for="aadharInput" class="aadharInput"
-                  >Aadhar Number</label
-                >
-                <input
-                  type="text"
-                  id="aadharInput"
-                  placeholder="Aadhar Number"
-                />
-              </div>
-            </div>
-          </fieldset>
+                <fieldset>
+                    <legend>Profile Picture</legend>
+                    <img id="profileImage" src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg" alt="your profile image" />
+                    <input type="file" id="imgInp" />
+                </fieldset>
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <div class="flexContainer">
+                        <div class="inputGroup">
+                            <label for="firstNameInput" class="firstNameInput">First Name</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="text" id="firstNameInput" placeholder="First Name" />
+                            <small class="errorMsg" id="firstNameErrorMsg">Enter First Name</small>
+                            <small class="regexErrorMessage">Only Alphabetical values allowed</small>
+                        </div>
+                        <div class="inputGroup">
+                            <label for="lastNameInput" class="lastNameInput">Last Name</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="text" id="lastNameInput" placeholder="Last Name" />
+                            <small class="errorMsg" id="lastNameErrorMsg">Enter Last Name</small>
+                            <small class="regexErrorMessageLastName">Only Alphabetical values allowed</small>
+                        </div>
+                    </div>
+                    <div class="inputGroup">
+                        <label for="emailInput" class="emailInput">Email</label>
+                        <span class="importantFieldMark"> * </span>
+                        <input type="email" class="inputLongWidth" id="emailInput" placeholder="Email" />
+                        <small class="errorMsg" id="emailErrorMsg">Enter Email Address</small>
+                    </div>
+                    <div class="flexContainer">
+                        <div class="inputGroup">
+                            <label for="passwordInput" class="passwordInput">Password</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="password" id="passwordInput" placeholder="Password" />
+                            <small class="errorMsg" id="passwordErrorMsg">Enter Password</small>
+                        </div>
+                        <div class="inputGroup">
+                            <label for="confirmPasswordInput" class="confirmPasswordInput">Confirm Password</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" />
+                            <small class="errorMsg" id="confirmPasswordErrorMsg">Enter Confirm Password</small>
+                        </div>
+                    </div>
+                    <div class="flexContainer">
+                        <div class="inputGroup">
+                            <label for="panInput" class="panInput">PAN Number</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="text" id="panInput" placeholder="PAN Number" />
+                            <small class="errorMsg" id="panErrorMsg">Enter PAN Number</small>
+                        </div>
+                        <div class="inputGroup">
+                            <label for="aadharInput" class="aadharInput">Aadhar Number</label>
+                            <span class="importantFieldMark"> * </span>
+                            <input type="text" id="aadharInput" placeholder="Aadhar Number" />
+                            <small class="errorMsg" id="aadharErrorMsg">Enter Aadhar Number</small>
+                        </div>
+                    </div>
+                </fieldset>
 
-          <fieldset class="mt-3">
-            <legend>Contact Details</legend>
-            <div class="phoneNumberInputArea">
-              <div class="input-group" id="phoneNumberInputField">
-                <label for="phoneNumberInput" class="phoneNumberInput"
-                  >Phone number</label
-                >
-                <input
-                  type="text"
-                  class="w-80"
-                  id="phoneNumberInput"
-                  placeholder="Phone Number"
-                />
-                <button type="button" class="add-button" id="addPhoneNumber">
-                  +
-                </button>
-              </div>
-            </div>
-          </fieldset>
+                <fieldset class="marginTop3Percent">
+                    <legend>Contact Details</legend>
+                    <div class="phoneNumberInputArea">
+                        <div class="inputGroup" id="phoneNumberInputField"><span class="importantFieldMark" id="placeInportantMark"> * </span>
+                          <div class="phoneFieldAppend">
+                            <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
+                            <input type="text" class="width80Percent" id="phoneNumberInput" data-id="0" placeholder="Phone Number" />
+                            <small class="phoneNumberError">Enter Phone Number</small>
+                          </div>
+                            <button type="button" class="addButton" id="addPhoneNumber">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
 
-          <fieldset class="mt-3">
-            <legend>Address Details</legend>
-            <div class="input-group" id="addressInputField">
-              <label for="addressInput" class="addressInput">Address</label>
-              <input
-                type="text"
-                class="w-80"
-                id="addressInput"
-                placeholder="Address"
-              />
-              <button type="button" class="add-button" id="addAddress">
-                +
-              </button>
-              <div class="flex-container mt-3" id="addressExtras">
-                <div class="addressSelector">
-                  <label for="selectCountry"> Country:</label><br />
-                  <select id="selectCountry">
-                    <option value="">Select Country</option>
-                    <option value="India">India</option>
-                    <option value="USA">USA</option>
-                    <option value="China">China</option> </select
-                  ><br />
-                  <p id="selectCountryError"></p>
-                </div>
-                <!-- country col ends here -->
+                <fieldset class="marginTop3Percent">
+                    <legend>Address Details</legend>
+                    <div class="inputGroup" id="addressInputField">
+                      <span class="importantFieldMark" id="addressplaceInportantMark"> * </span>
+                      <div class="addressFieldAppend">
+                        <label for="addressInput" class="addressInput">Address</label>
+                        <input type="text" class="addressInputState" id="addressInput" data-id="0" placeholder="Address" />
+                        <small class="addressError">Enter Address</small>
+                        <!-- <button type="button" class="addButton" id="addAddress">
+                            +
+                        </button> -->
+                        <div class="flexContainer marginTop3Percent" id="addressExtras">
+                            <div class="addressSelector">
+                                <label for="selectCountry"> Country:</label>
+                                <br>
+                                <select id="selectCountry">
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                    <option value="USA">USA</option>
+                                    <option value="China">China</option>
+                                </select>
+                                <br>
+                                <small class="selectCountryError">Select Country</small>
+                            </div>
+                            <!-- country col ends here -->
 
-                <div class="addressSelector">
-                  <label for="selectState"> State:</label><br />
-                  <select id="selectState">
-                    <option value="">Select State</option>
-                    <option value="Jharkhand" class="indiaState">Jharkhand</option>
-                    <option value="Odisha" class="indiaState">Odisha</option>
-                    <option value="California" class="usaState">California</option>
-                    <option value="Florida" class="usaState">Florida</option>
-                    <option value="Yunnan" class="chinaState">Yunnan</option>
-                    <option value="Bejeing" class="chinaState">Beijing</option>
-                </select>
-                  <p id="selectStateError"></p>
-                </div>
+                            <div class="addressSelector">
+                                <label for="selectState"> State:</label>
+                                <br>
+                                <select id="selectState">
+                                    <option value="">Select State</option>
+                                    <option value="Jharkhand" class="indiaState">Jharkhand</option>
+                                    <option value="Odisha" class="indiaState">Odisha</option>
+                                    <option value="California" class="usaState">California</option>
+                                    <option value="Florida" class="usaState">Florida</option>
+                                    <option value="Yunnan" class="chinaState">Yunnan</option>
+                                    <option value="Bejeing" class="chinaState">Beijing</option>
+                                </select>
+                                <br>
+                                <small class="selectStateError">Select State</small>
+                            </div>
 
-                <div class="addressSelector">
-                  <label for="selectCity">City:</label>
-                  <br>
-                  <select id="selectCity">
-                    <option value="3">Select City</option>
-                    <option value="Bhubhaneshwar" class="odishaCity">Bhubhaneshwar</option>
-                    <option value="Puri" class="odishaCity">Puri</option>
-                    <option value="Jamshedpur" class="jharkhandCity">Jamshedpur</option>
-                    <option value="Ranchi" class="jharkhandCity">Ranchi</option>
-                    <option value=" losAngeles" class="californiaCity">Los Angelees</option>
-                    <option value="sanFransisco" class="californiaCity">San Fransisco</option>
-                    <option value="Miami" class="floridaCity">Miami</option>
-                    <option value="Orlando" class="floridaCity">Orlando</option>
-                    <option value="shangai" class="yunnanCity">Shangai</option>
-                    <option value="wuhan" class="yunnanCity">Wuhan</option>
-                    <option value="harbin" class="beijingCity">Harbin</option>
-                    <option value="hongkong" class="beijingCity">Hongkong</option>
-                </select>
-                  <p id="selectCityError"></p>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Captcha Verification</legend>
-            <div class="captcha" id="captchaDiv">
-              <small>Prove you are not ROBOT</small>
-              <div class="" id="captchaBox">
-                <!-- <span id="num1" class="paddingLeft3"></span>
+                            <div class="addressSelector">
+                                <label for="selectCity">City:</label>
+                                <br>
+                                <select id="selectCity">
+                                    <option value="3">Select City</option>
+                                    <option value="Bhubhaneshwar" class="odishaCity">Bhubhaneshwar</option>
+                                    <option value="Puri" class="odishaCity">Puri</option>
+                                    <option value="Jamshedpur" class="jharkhandCity">Jamshedpur</option>
+                                    <option value="Ranchi" class="jharkhandCity">Ranchi</option>
+                                    <option value=" losAngeles" class="californiaCity">Los Angelees</option>
+                                    <option value="sanFransisco" class="californiaCity">San Fransisco</option>
+                                    <option value="Miami" class="floridaCity">Miami</option>
+                                    <option value="Orlando" class="floridaCity">Orlando</option>
+                                    <option value="shangai" class="yunnanCity">Shangai</option>
+                                    <option value="wuhan" class="yunnanCity">Wuhan</option>
+                                    <option value="harbin" class="beijingCity">Harbin</option>
+                                    <option value="hongkong" class="beijingCity">Hongkong</option>
+                                </select>
+                                <br>
+                                <small class="selectCityError">Select City</small>
+                            </div>
+                        </div>
+                      </div>
+                        <button type="button" class="addButton" id="addAddress">+</button>
+                  </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Captcha Verification</legend>
+                    <div class="captcha" id="captchaDiv">
+                        <small>Prove you are not ROBOT</small>
+                        <div class="" id="captchaBox">
+                            <!-- <span id="num1" class="paddingLeft3"></span>
                             <span id="operator" class="paddingLeft3">..</span>
                             <span id="num2" class="paddingLeft3"></span> -->
-                <span id="captchaQuestion"></span>
-                <input type="text" class="bg-white" id="captchaInput" placeholder="?"/>
-                <button type="button" id="reloadCaptcha">REFRESH</button>
-                <small id="forErrorMsg"
-                  >For division type result in interger format</small
-                >
+                            <span id="captchaQuestion"></span>
+                            <input type="text" class="bg-white" id="captchaInput" placeholder="?" />
+                            <button type="button" id="reloadCaptcha">REFRESH</button>
+                            <small id="forErrorMsg">For division type result in interger format</small>
               </div>
             </div>
           </fieldset>
@@ -209,6 +190,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/dynamicAddressBinder.js"></script>
     <script src="js/validate.js"></script>
     <script src="js/captcha.js"></script>
   </body>
