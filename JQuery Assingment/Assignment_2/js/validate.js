@@ -1,4 +1,6 @@
 $(document).ready( function () {
+    // $('#formInputField').hide();
+    $('#showProfile').hide();
     captchaLoad();
     addFields();
     dynamicAdress();
@@ -24,7 +26,22 @@ $(document).ready( function () {
         isNull($('#phoneNumberInput'),'.phoneNumberError');
         isNull($('#captchaInput'),'.captchaErrorMsg');
         isNull($('#imageInput'),'.imageErrormsg');
-        isNull($('#pincodeInput'),('.pincodeInputError'))
+        isNull($('#pincodeInput'),('.pincodeInputError'));
+        // isNull($('.phoneNumberInputDynamic'),'.phoneNumberError')
+        // console.log("pcf"+phoneFieldCounter);
+        // console.log("adf"+addressFieldCounter)
+        for(i=1;i<=phoneFieldCounter;i++){
+            isNull($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i);
+            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberRegexError'+i,2);
+        }
+        for(i=1;i<=addressFieldCounter;i++){
+            isNull($("#addressInput"+i),'#addressError'+i);
+            isNull($('#selectCountry'+i),'#selectCountryError'+i);
+            isNull($('#selectState'+i),'#selectStateError'+i);
+            isNull($('#cityInput'+i),'#cityInputError'+i);
+            isNull($('#pincodeInput'+i),('#pincodeInputError'+i));
+            regexChecker($('#pincodeInput'+i),'#regexPincodeErrorMsg'+i,5);
+        }
 
         // check for regex
         regexChecker($('#firstNameInput'),'.regexErrorMessage',1);
@@ -45,12 +62,15 @@ $(document).ready( function () {
         }
         if(counter===0 && $('#captchaInput').val().trim()==calculatedoutput){
             // captchaLoad();
-            alert("validated");
-            var url = "resume.html?name=" + encodeURIComponent("Anubhav") + "&technology=" + encodeURIComponent("js");
-            // if ($("#newbox").is(':checked')) {                       
-            //     url = url + "&newbox=" + encodeURIComponent($("#newbox").val());
-            // }
-            window.location.href = url;
+            // alert("validated");
+            // var url = "resume.html?name=" + encodeURIComponent("Anubhav") + "&technology=" + encodeURIComponent("js");
+            // // if ($("#newbox").is(':checked')) {                       
+            // //     url = url + "&newbox=" + encodeURIComponent($("#newbox").val());
+            // // }
+            // window.location.href = url;
+            $('#formInputField').hide();
+            $('#showProfile').show();
+            displayDetails();
 
         }
         
@@ -141,4 +161,35 @@ function isNull(checkNullValue,errorMessage){
         // $(checkNullValue).css({'border':'none'});
         // $(checkNullValue).css({'border-bottom':'2px solid teal'});
     }
+}
+function displayDetails(){
+    $('#getImage').show();
+    $('.getFirstName').text($('#firstNameInput').val());
+    $('.getLastName').text($('#lastNameInput').val());
+    $('.getEmailId').text($('#emailInput').val());
+    $('.getPhoneNumber').text($('#phoneNumberInput').val());
+    $('.getAddress').text($("#addressInput").val());
+    $('.getCountry').text($('#selectCountry').val());
+    $('.getState').text($('#selectState').val());
+    $('.getCity').text($('#cityInput').val());
+    $('.getPincode').text($('#pincodeInput').val());
+    $('.getPanNumber').text($('#panInput').val());
+    $('.getAadharNumber').text($('#aadharInput').val());
+
+    for(i=1;i<=addressFieldCounter;i++){
+        $(".getDynamicAddress").append(`<h3 class="getAddress`+i+`">address</h3>
+                                        <div class="flexContainer">
+                                            <h3 class="getCountry`+i+`">country</h3>
+                                            <h3 class="getState`+i+`">state</h3>
+                                            <h3 class="getCity`+i+`">city</h3>
+                                        </div>
+                                        <h3 class="getPincode`+i+`">pincode</h3>`);
+        $('.getAddress'+i).text($("#addressInput"+i).val());
+        $('.getCountry'+i).text($('#selectCountry'+i).val());
+        $('.getState'+i).text($('#selectState'+i).val());
+        $('.getCity'+i).text($('#cityInput'+i).val());
+        $('.getPincode'+i).text($('#pincodeInput'+i).val());
+    }
+
+
 }

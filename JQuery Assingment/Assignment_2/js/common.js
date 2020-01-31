@@ -1,16 +1,18 @@
 function addFields(){
-  var phoneFieldCounter = 0;
+  window.phoneFieldCounter = 0;
   // appending and removing phone field
 
   $("#addPhoneNumber").click(function() {
     phoneFieldCounter+=1;
     $("#phoneNumberInputField").append(`<div class="addLine"><div class="phoneFieldAppend">
     <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
-    <input type="text" class="width80Percent" id="phoneNumberInput`+phoneFieldCounter+`" data-id="`+phoneFieldCounter+`" placeholder="Phone Number" />
-  </div><button type="button" class="removeButton remove" id="removePhoneNumber"> x </button></div>`);
+    <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput`+phoneFieldCounter+`" data-id="`+phoneFieldCounter+`" placeholder="Phone Number" />
+    <small class="dynamicPhoneNumberError" id="dynamicPhoneNumberError`+phoneFieldCounter+`">Enter Phone Number.</small>
+    <small class="dynamicPhoneNumberRegexError" id="dynamicPhoneNumberRegexError`+phoneFieldCounter+`"></small>
+    </div><button type="button" class="removePhoneNumber"> x </button></div>`);
   // $("#phoneNumberInput").attr('data-id', phoneFieldCounter);
   });
-  $(document).on("click","#removePhoneNumber",function(){
+  $(document).on("click",".removePhoneNumber",function(){
     phoneFieldCounter -=1;
     $(this).parents(".addLine").remove();
     return false;
@@ -46,7 +48,7 @@ function readURL(input) {
 
       $('.fileUploadImage').attr('src', e.target.result);
       $('.fileUploadSection-content').show();
-
+      $('#getImage').attr('src', e.target.result);
       $('.image-title').html(input.files[0].name);
     };
 

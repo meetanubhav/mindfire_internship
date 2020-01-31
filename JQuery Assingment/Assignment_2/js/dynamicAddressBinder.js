@@ -1,14 +1,12 @@
 function dynamicAdress(){
-    var addressFieldCounter = 0;
+    window.addressFieldCounter = 0;
     $("#addAddress").click(function() {
           addressFieldCounter += 1;        
           $("#addressInputField").append(`<div class="addLine"><div class="addressFieldAppend">
           <label for="addressInput" class="addressInput">Address</label>
           <br>
           <textarea type="text" class="addressInputFieldClass" id="addressInput`+addressFieldCounter+`" data-id="`+addressFieldCounter+`" rows="2" cols="50" placeholder="Address"></textarea>
-          <!-- <button type="button" class="addButton" id="addAddress">
-              +
-          </button> -->
+          <small class="addressDynamic" id="addressError`+addressFieldCounter+`">Enter Address</small>
           <div class="flexContainer marginTop3Percent" id="addressExtras">
               <div class="addressSelector">
                   <label for="selectCountry`+addressFieldCounter+`"> Country:</label>
@@ -20,6 +18,7 @@ function dynamicAdress(){
                       <option value="CHINA">China</option>
                   </select>
                   <br>
+                  <small class="addressDynamic" id="selectCountryError`+addressFieldCounter+`">Select Country</small>
               </div>
               <!-- country col ends here -->
 
@@ -29,6 +28,8 @@ function dynamicAdress(){
                   <select id="selectState`+addressFieldCounter+`" class="selectStateAppendDiv">
                       <option value="">Select State</option>
                   </select>
+                  <br>
+                  <small class="addressDynamic" id="selectStateError`+addressFieldCounter+`">Select State</small>
               </div>
 
               <div class="addressSelector" id="cityField">
@@ -36,17 +37,20 @@ function dynamicAdress(){
                     <br>
                     <input type="text" id="cityInput`+addressFieldCounter+`" placeholder=""/>
                     <br>
+                    <small class="addressDynamic" id="cityInputError`+addressFieldCounter+`">Enter City</small>
               </div>
               <div class="addressSelector" id="pincodeField"> 
               <label for="pincodeInput`+addressFieldCounter+`">Pincode</label>
               <input type="text" id="pincodeInput`+addressFieldCounter+`" placeholder="Enter Pincode"/>
+              <small class="addressDynamic" id="pincodeInputError`+addressFieldCounter+`">Enter Pincode</small>
+              <small class="regexPincodeErrorMsgDynamic" id="regexPincodeErrorMsg`+addressFieldCounter+`"></small>
           </div>
           </div>
-        </div><button type="button" class="removeButton remove" id="removeAddress"> x </button></div>`);
+        </div><button type="button" class="removeAddress"> x </button></div>`);
          
         });
         // $("#removeAddress").click(function() {
-          $(document).on("click","#removeAddress",function(){
+          $(document).on("click",".removeAddress",function(){
             addressFieldCounter -=1;
             $(this).parents(".addLine").remove();
             return false;

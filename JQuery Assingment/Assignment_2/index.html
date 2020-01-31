@@ -94,7 +94,7 @@
                         <div class="inputGroup" id="phoneNumberInputField"><span class="importantFieldMark" id="placeInportantMark"> * </span>
                           <div class="phoneFieldAppend">
                             <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
-                            <input type="text" class="width80Percent" id="phoneNumberInput" data-id="0" placeholder="Phone Number" />
+                            <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput" data-id="0" placeholder="Phone Number" />
                             <small class="phoneNumberError">Enter Phone Number.</small>
                             <small class="phoneNumberRegexError"></small>
                           </div>
@@ -176,6 +176,52 @@
             <button type="reset" id="resetForm">RESET</button>
           </div>
         </form><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      </div>
+      <div class="container" id="showProfile">
+            <div class="">
+            <div class="showProfileImage">
+                <img src="" id="getImage" alt="profile Image">
+            </div>
+            <div class="showUserName">
+                <h3>
+                    <span class="getFirstName">firstName</span>
+                    <span class="getLastName">lastName</span>
+                </h3>
+            </div>
+            </div>
+          <fieldset>
+              <legend>Contact Information</legend>
+              <div class="showEmail flexContainer">
+                  <span>Email :</span>
+                  <h3 class="getEmailId">email</h3>
+              </div>
+              <div class="showPhone">
+                <span>Phone Number :</span>
+                  <h3 class="getPhoneNumber">phone</h3>
+              </div>
+          </fieldset>
+          <fieldset>
+              <legend>Address</legend>
+              <h3 class="getAddress">address</h3>
+              <div class="flexContainer">
+                <h3 class="getCountry">country</h3>
+                <h3 class="getState">state</h3>
+                <h3 class="getCity">city</h3>
+            </div>
+            <h3 class="getPincode">pincode</h3>
+            <div class="getDynamicAddress"></div>
+          </fieldset>
+          <fieldset>
+              <legend>Personal Identification</legend>
+              <div class="panShow">
+                  <span>PAN Number</span>
+                  <h3 class="getPanNumber">panNumber</h3>
+              </div>
+              <div class="aadharShow">
+                  <span>AADHAR Number</span>
+                  <h3 class="getAadharNumber">aadharNumber</h3>
+              </div>
+          </fieldset>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
