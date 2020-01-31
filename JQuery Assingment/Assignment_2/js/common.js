@@ -1,25 +1,5 @@
 function addFields(){
-  // var phoneField = $(".phoneFieldAppend").html();
-  var addressField = $(".addressFieldAppend").html()
   var phoneFieldCounter = 0;
-  // var addressFieldCounter = 0;
-
-  // function readUrl(input) {
-  //   if (input.files && input.files[0]) {
-  //     var reader = new FileReader();
-
-  //     reader.onload = function(e) {
-  //       $("#profileImage").show();
-  //       $("#profileImage").attr("src", e.target.result);
-  //     };
-
-  //     reader.readAsDataURL(input.files[0]);
-  //   }
-  // }
-
-  // $("#imgInp").change(function() {
-  //   readUrl(this);
-  // });
   // appending and removing phone field
 
   $("#addPhoneNumber").click(function() {
@@ -27,7 +7,7 @@ function addFields(){
     $("#phoneNumberInputField").append(`<div class="addLine"><div class="phoneFieldAppend">
     <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
     <input type="text" class="width80Percent" id="phoneNumberInput`+phoneFieldCounter+`" data-id="`+phoneFieldCounter+`" placeholder="Phone Number" />
-  </div><button type="button" class="removeButton remove" id="removePhoneNumber"> - </button></div>`);
+  </div><button type="button" class="removeButton remove" id="removePhoneNumber"> x </button></div>`);
   // $("#phoneNumberInput").attr('data-id', phoneFieldCounter);
   });
   $(document).on("click","#removePhoneNumber",function(){
@@ -55,3 +35,36 @@ function addFields(){
   //     return false;
   // });
 }
+// image upload
+function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.imageUploadWrapper').hide();
+
+      $('.fileUploadImage').attr('src', e.target.result);
+      $('.fileUploadSection-content').show();
+
+      $('.image-title').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+
+function removeUpload() {
+  $('.fileUploadInput').replaceWith($('.fileUploadInput').clone());
+  $('.fileUploadSection-content').hide();
+  $('.imageUploadWrapper').show();
+}
+$('.imageUploadWrapper').bind('dragover', function () {
+        $('.imageUploadWrapper').addClass('imageDrop');
+    });
+    $('.imageUploadWrapper').bind('dragleave', function () {
+        $('.imageUploadWrapper').removeClass('imageDrop');
+});

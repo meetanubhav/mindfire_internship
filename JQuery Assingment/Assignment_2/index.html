@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
     <link rel="stylesheet" href="css/style.css" />
     <title>BreadCrums</title>
 </head>
@@ -15,19 +16,34 @@
             <div class="sideBarElement">
                 <img src="https://image.ibb.co/n7oTvU/logo_white.png" id="moveImg" alt="rocket" />
                 <h1>HELLO</h1>
-                <p>You are few steps away from joining our family!</p>
+                <p>Build Your Public Profile in Few Step!</p>
             </div>
         </div>
-        <div class="container paddingLeft3">
-            <form class="form-ele">
+        <div class="container" id="formInputField">
+            <form class="formBox">
                 <!-- <div class="profileImageField">
-                    <input type='file' id="imgInp" />
+                    <input type='file' id="imageInput" />
                     <img id="profileImage" src="#" alt="your profile image" />
                 </div> -->
                 <fieldset>
                     <legend>Profile Picture</legend>
-                    <img id="profileImage" src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg" alt="your profile image" />
-                    <input type="file" id="imgInp" />
+                    <div class="fileUploadSection">
+                        <div class="imageUploadWrapper">
+                          <input class="fileUploadInput" type='file' onchange="readURL(this);" id="imageInput" accept="image/*" />
+                          <div class="dragtext">
+                            <h3>Drag and drop a file or select add Image</h3>
+                          </div>
+                        </div>
+                        <div class="fileUploadSection-content">
+                          <img class="fileUploadImage" src="#" alt="your image" />
+                          <div class="imageTitle">
+                            <button type="button" onclick="removeUpload()" class="removeImage">Remove <span class="image-title">Uploaded Image</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <img id="profileImage" src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg" alt="your profile image" /> -->
+                    <!-- <input type="file" id="imageInput" /> -->
+                    <small class="imageErrormsg">Upload your profile image</small>
                 </fieldset>
                 <fieldset>
                     <legend>Personal Details</legend>
@@ -52,20 +68,7 @@
                         <span class="importantFieldMark"> * </span>
                         <input type="email" class="inputLongWidth" id="emailInput" placeholder="Email" />
                         <small class="errorMsg" id="emailErrorMsg">Enter Email Address</small>
-                    </div>
-                    <div class="flexContainer">
-                        <div class="inputGroup">
-                            <label for="passwordInput" class="passwordInput">Password</label>
-                            <span class="importantFieldMark"> * </span>
-                            <input type="password" id="passwordInput" placeholder="Password" />
-                            <small class="errorMsg" id="passwordErrorMsg">Enter Password</small>
-                        </div>
-                        <div class="inputGroup">
-                            <label for="confirmPasswordInput" class="confirmPasswordInput">Confirm Password</label>
-                            <span class="importantFieldMark"> * </span>
-                            <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" />
-                            <small class="errorMsg" id="confirmPasswordErrorMsg">Enter Confirm Password</small>
-                        </div>
+                        <small class="regexEmailErrorMsg"></small>
                     </div>
                     <div class="flexContainer">
                         <div class="inputGroup">
@@ -73,12 +76,14 @@
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="panInput" placeholder="PAN Number" />
                             <small class="errorMsg" id="panErrorMsg">Enter PAN Number</small>
+                            <small class="regexPanErrorMsg"></small>
                         </div>
                         <div class="inputGroup">
                             <label for="aadharInput" class="aadharInput">Aadhar Number</label>
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="aadharInput" placeholder="Aadhar Number" />
                             <small class="errorMsg" id="aadharErrorMsg">Enter Aadhar Number</small>
+                            <small class="regexAadharErrorMsg"></small>
                         </div>
                     </div>
                 </fieldset>
@@ -90,7 +95,8 @@
                           <div class="phoneFieldAppend">
                             <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
                             <input type="text" class="width80Percent" id="phoneNumberInput" data-id="0" placeholder="Phone Number" />
-                            <small class="phoneNumberError">Enter Phone Number</small>
+                            <small class="phoneNumberError">Enter Phone Number.</small>
+                            <small class="phoneNumberRegexError"></small>
                           </div>
                             <button type="button" class="addButton" id="addPhoneNumber">
                                 +
@@ -105,20 +111,18 @@
                       <span class="importantFieldMark" id="addressplaceInportantMark"> * </span>
                       <div class="addressFieldAppend">
                         <label for="addressInput" class="addressInput">Address</label>
-                        <input type="text" class="addressInputState" id="addressInput" data-id="0" placeholder="Address" />
+                        <br>
+                        <textarea type="text" class="addressInputFieldClass" id="addressInput" data-id="0" rows="2" cols="50" placeholder="Address"></textarea>
                         <small class="addressError">Enter Address</small>
-                        <!-- <button type="button" class="addButton" id="addAddress">
-                            +
-                        </button> -->
                         <div class="flexContainer marginTop3Percent" id="addressExtras">
                             <div class="addressSelector">
                                 <label for="selectCountry"> Country:</label>
                                 <br>
-                                <select id="selectCountry">
+                                <select id="selectCountry" class="selectCountry">
                                     <option value="">Select Country</option>
-                                    <option value="India">India</option>
+                                    <option value="INDIA">India</option>
                                     <option value="USA">USA</option>
-                                    <option value="China">China</option>
+                                    <option value="CHINA">China</option>
                                 </select>
                                 <br>
                                 <small class="selectCountryError">Select Country</small>
@@ -128,39 +132,22 @@
                             <div class="addressSelector">
                                 <label for="selectState"> State:</label>
                                 <br>
-                                <select id="selectState">
+                                <select id="selectState" class="selectState">
                                     <option value="">Select State</option>
-                                    <option value="Jharkhand" class="indiaState">Jharkhand</option>
-                                    <option value="Odisha" class="indiaState">Odisha</option>
-                                    <option value="California" class="usaState">California</option>
-                                    <option value="Florida" class="usaState">Florida</option>
-                                    <option value="Yunnan" class="chinaState">Yunnan</option>
-                                    <option value="Bejeing" class="chinaState">Beijing</option>
                                 </select>
                                 <br>
                                 <small class="selectStateError">Select State</small>
                             </div>
-
-                            <div class="addressSelector">
-                                <label for="selectCity">City:</label>
-                                <br>
-                                <select id="selectCity">
-                                    <option value="3">Select City</option>
-                                    <option value="Bhubhaneshwar" class="odishaCity">Bhubhaneshwar</option>
-                                    <option value="Puri" class="odishaCity">Puri</option>
-                                    <option value="Jamshedpur" class="jharkhandCity">Jamshedpur</option>
-                                    <option value="Ranchi" class="jharkhandCity">Ranchi</option>
-                                    <option value=" losAngeles" class="californiaCity">Los Angelees</option>
-                                    <option value="sanFransisco" class="californiaCity">San Fransisco</option>
-                                    <option value="Miami" class="floridaCity">Miami</option>
-                                    <option value="Orlando" class="floridaCity">Orlando</option>
-                                    <option value="shangai" class="yunnanCity">Shangai</option>
-                                    <option value="wuhan" class="yunnanCity">Wuhan</option>
-                                    <option value="harbin" class="beijingCity">Harbin</option>
-                                    <option value="hongkong" class="beijingCity">Hongkong</option>
-                                </select>
-                                <br>
-                                <small class="selectCityError">Select City</small>
+                            <div class="addressSelector" id="cityField">
+                                <label for="cityInput">City:</label>
+                                <input type="text" id="cityInput" placeholder="Enter City"/>
+                                <small class="cityInputError">Enter City</small>
+                            </div>
+                            <div class="addressSelector" id="pincodeField"> 
+                                <label for="pincodeInput">Pincode</label>
+                                <input type="text" id="pincodeInput" placeholder="Enter Pincode"/>
+                                <small class="pincodeInputError">Enter Pincode</small>
+                                <small class="regexPincodeErrorMsg"></small>
                             </div>
                         </div>
                       </div>
@@ -179,13 +166,16 @@
                             <input type="text" class="bg-white" id="captchaInput" placeholder="?" />
                             <button type="button" id="reloadCaptcha">REFRESH</button>
                             <small id="forErrorMsg">For division type result in interger format</small>
+                            <br>
+                            <small class="captchaErrorMsg">Enter Captcha</small>
               </div>
             </div>
           </fieldset>
           <div>
             <button type="button" id="submitForm">SUBMIT</button>
+            <button type="reset" id="resetForm">RESET</button>
           </div>
-        </form>
+        </form><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -193,5 +183,6 @@
     <script src="js/dynamicAddressBinder.js"></script>
     <script src="js/validate.js"></script>
     <script src="js/captcha.js"></script>
+    
   </body>
 </html>
