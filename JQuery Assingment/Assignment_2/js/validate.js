@@ -1,6 +1,6 @@
 $(document).ready( function () {
-    // $('#formInputField').hide();
-    $('#showProfile').hide();
+    // $('.flexContainer').hide();
+    $('.showProfile').hide();
     captchaLoad();
     addFields();
     dynamicAdress();
@@ -60,7 +60,12 @@ $(document).ready( function () {
             captchaLoad();
             // console.log(calculatedoutput);
         }
-        if(counter===0 && $('#captchaInput').val().trim()==calculatedoutput){
+        if(parseInt($('#captchaInput').val().trim())!==calculatedoutput){
+            captchaLoad();
+            $('.captchaErrorMsg').show();
+            $('#captchaInput').val("");
+        }
+        if(counter===0 && parseInt($('#captchaInput').val().trim())===calculatedoutput){
             // captchaLoad();
             // alert("validated");
             // var url = "resume.html?name=" + encodeURIComponent("Anubhav") + "&technology=" + encodeURIComponent("js");
@@ -68,8 +73,8 @@ $(document).ready( function () {
             // //     url = url + "&newbox=" + encodeURIComponent($("#newbox").val());
             // // }
             // window.location.href = url;
-            $('#formInputField').hide();
-            $('#showProfile').show();
+            $('.flexContainer').hide();
+            $('.showProfile').show();
             displayDetails();
 
         }
@@ -110,8 +115,8 @@ function regexChecker(valueToCheck,errorMessageDisplay,typeValue){
     }
     // For Adhar Number
     if(typeValue===4){
-        if(!/^[1-9]\d{15}$/.test(valueToCheck.val())){
-            $(errorMessageDisplay).text("Only Numeric Type ( 16 digits )");
+        if(!/^[1-9]\d{11}$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Only Numeric Type ( 12 digits )");
             counter=1;
         }
         else{
@@ -177,18 +182,25 @@ function displayDetails(){
     $('.getAadharNumber').text($('#aadharInput').val());
 
     for(i=1;i<=addressFieldCounter;i++){
-        $(".getDynamicAddress").append(`<h3 class="getAddress`+i+`">address</h3>
-                                        <div class="flexContainer">
-                                            <h3 class="getCountry`+i+`">country</h3>
-                                            <h3 class="getState`+i+`">state</h3>
-                                            <h3 class="getCity`+i+`">city</h3>
-                                        </div>
-                                        <h3 class="getPincode`+i+`">pincode</h3>`);
+        $(".dynamicAddress").append(`<div class="addLine"></div><p class="getAddress`+i+`">address goes here</p>
+        <p>
+            <span class="getCity`+i+`">City</span>
+            <span> , </span>
+            <span class="getState`+i+`">State</span>
+            <span> , </span>
+            <span class="getCountry`+i+`">Country</span>
+            <span> - </span>
+            <span class="getPincode`+i+`">Pincode</span>
+        </p>`);
         $('.getAddress'+i).text($("#addressInput"+i).val());
         $('.getCountry'+i).text($('#selectCountry'+i).val());
         $('.getState'+i).text($('#selectState'+i).val());
         $('.getCity'+i).text($('#cityInput'+i).val());
         $('.getPincode'+i).text($('#pincodeInput'+i).val());
+    }
+    for(i=1;i<=phoneFieldCounter;i++){
+        $(".dynamicPhoneNumber").append(`<span class="getPhoneNumber`+i+`">span Phone number</span><br>`);
+        $('.getPhoneNumber'+i).text($('#phoneNumberInput'+i).val());
     }
 
 

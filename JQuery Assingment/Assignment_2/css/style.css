@@ -197,11 +197,10 @@ select {
 }
 #showProfile{
   margin-top: 5%;
-  /* margin-right: 15%; */
-}
-#getImage{
-  width: 10%;
-  display: none;
+  margin-left: 40%;
+  /* padding-right: 80%; */
+  width: 50%;
+  position: absolute;
 }
 #moveImg {
   /* margin-top: 15%; */

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" href="https://img.pngio.com/png-icon-164327-free-icons-library-png-icon-1200_1238.jpg" >
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/resume.css">
     <title>BreadCrums</title>
 </head>
 
@@ -177,58 +178,58 @@
           </div>
         </form><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       </div>
-      <div class="container" id="showProfile">
-            <div class="">
-            <div class="showProfileImage">
-                <img src="" id="getImage" alt="profile Image">
-            </div>
-            <div class="showUserName">
-                <h3>
-                    <span class="getFirstName">firstName</span>
-                    <span class="getLastName">lastName</span>
-                </h3>
-            </div>
-            </div>
-          <fieldset>
-              <legend>Contact Information</legend>
-              <div class="showEmail flexContainer">
-                  <span>Email :</span>
-                  <h3 class="getEmailId">email</h3>
-              </div>
-              <div class="showPhone">
-                <span>Phone Number :</span>
-                  <h3 class="getPhoneNumber">phone</h3>
-              </div>
-          </fieldset>
-          <fieldset>
-              <legend>Address</legend>
-              <h3 class="getAddress">address</h3>
-              <div class="flexContainer">
-                <h3 class="getCountry">country</h3>
-                <h3 class="getState">state</h3>
-                <h3 class="getCity">city</h3>
-            </div>
-            <h3 class="getPincode">pincode</h3>
-            <div class="getDynamicAddress"></div>
-          </fieldset>
-          <fieldset>
-              <legend>Personal Identification</legend>
-              <div class="panShow">
-                  <span>PAN Number</span>
-                  <h3 class="getPanNumber">panNumber</h3>
-              </div>
-              <div class="aadharShow">
-                  <span>AADHAR Number</span>
-                  <h3 class="getAadharNumber">aadharNumber</h3>
-              </div>
-          </fieldset>
-      </div>
+      
     </div>
+    <div class="showProfile">
+        <h2 style="text-align:center">Personal Profile Card</h2>
+            <div class="card">
+                <img src="" id="getImage" alt="profile Image">
+                <h1 class="showName">
+                    <span class="getFirstName">firstName</span>
+                    <span class="addSpace"></span>
+                    <span class="getLastName">lastNAme</span>
+                </h1>
+                <div class="addLine"></div>
+                <div class="showAddressDiv">
+                    <!-- <p>Address :</p> -->
+                    <p class="getAddress">address goes here</p>
+                    <p>
+                        <span class="getCity">City</span>
+                        <span> , </span>
+                        <span class="getState">State</span>
+                        <span> , </span>
+                        <span class="getCountry">Country</span>
+                        <span> - </span>
+                        <span class="getPincode">Pincode</span>
+                    </p>
+                    <span class="dynamicAddress"></span>
+                </div>
+            <div class="addLine"></div>
+            <div class="personalId">
+                <p class="showPanNumber">Pan : 
+                    <span class="getPanNumber">pan here</span>
+                </p>
+                <p class="showAadharNumber">Aadhar :
+                    <span class="getAadharNumber">aadhar here</span>
+                </p>
+            </div>
+            <div class="showContact">
+                Contact
+                <br>
+                <span class="getEmailId">email</span>
+                <br>
+                <span class="getPhoneNumber">spanhone number</span>
+                <br>
+                <span class="dynamicPhoneNumber"></span>
+            </div>
+        
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/dynamicAddressBinder.js"></script>
     <script src="js/validate.js"></script>
     <script src="js/captcha.js"></script>
-    
-  </body>
+</body>
 </html>
