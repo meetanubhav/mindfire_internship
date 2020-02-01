@@ -1,10 +1,12 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     max-width: 500px;
     margin: auto;
     margin-top: 3%;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    border-radius: 2%;
   }
   
   .showContact > span{
@@ -27,20 +29,36 @@
     font-size: 18px;
   }
   #getImage{
-      margin-top: 1%;
-      width: 40%;
-      border-radius: 10%;
+      /* margin-top: 2%; */
+      width: 100%;
+      /* border-radius: 2%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); */
   }
   .showName{
       display: flex;
-      margin-left: 27%;
+      margin-left: 2%;
       text-transform: uppercase;
+      margin-top: -69px;
+      text-shadow:  1px 2px 8px white;
   }
   .showAddressDiv{
     text-transform: uppercase;
   }
   .getPanNumber{
     text-transform: uppercase;
+  }
+  .showProfile{
+    /* background: url("https://img.freepik.com/free-vector/abstract-background-with-liquid-shapes_1393-53.jpg?size=626&ext=jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -21px;
+  }
+  .firstHeading{
+    text-align:center;
+    /* color: white; */
+    font-size: 30px;
+    /* margin-top: 5%; */
+    padding-top: 2%;
   }
   /* .afterDiv {
     text-decoration: none;
