@@ -1,12 +1,8 @@
 $(document).ready( function () {
-    // $('.flexContainer').hide();
     $('.showProfile').hide();
     captchaLoad();
     addFields();
     dynamicAdress();
-    // $('#selectCountry').click(function() {
-    //     stateList();
-    // });
     $("#reloadCaptcha").click(function(){
         captchaLoad();
     });
@@ -28,8 +24,6 @@ $(document).ready( function () {
         isNull($('#imageInput'),'.imageErrormsg');
         isNull($('#pincodeInput'),('.pincodeInputError'));
         // isNull($('.phoneNumberInputDynamic'),'.phoneNumberError')
-        // console.log("pcf"+phoneFieldCounter);
-        // console.log("adf"+addressFieldCounter)
         for(i=1;i<=phoneFieldCounter;i++){
             isNull($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i);
             regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberRegexError'+i,2);
@@ -58,7 +52,6 @@ $(document).ready( function () {
         console.log(counter);
         if(counter===1){
             captchaLoad();
-            // console.log(calculatedoutput);
         }
         if(parseInt($('#captchaInput').val().trim())!==calculatedoutput){
             captchaLoad();
@@ -66,13 +59,6 @@ $(document).ready( function () {
             $('#captchaInput').val("");
         }
         if(counter===0 && parseInt($('#captchaInput').val().trim())===calculatedoutput){
-            // captchaLoad();
-            // alert("validated");
-            // var url = "resume.html?name=" + encodeURIComponent("Anubhav") + "&technology=" + encodeURIComponent("js");
-            // // if ($("#newbox").is(':checked')) {                       
-            // //     url = url + "&newbox=" + encodeURIComponent($("#newbox").val());
-            // // }
-            // window.location.href = url;
             $('.flexContainer').hide();
             $('.showProfile').show();
             displayDetails();
@@ -146,13 +132,6 @@ function regexChecker(valueToCheck,errorMessageDisplay,typeValue){
     }
 }
 
-
-// function checkAddress(){
-//     var addressInputs = $(".addressInputFieldClass");
-//     for(var i = 0; i < addressInputs.length; i++){
-//         alert($(addressInputs[i]).val());
-//     }
-// }
 
 function isNull(checkNullValue,errorMessage){
     if(checkNullValue.val().trim()===""){

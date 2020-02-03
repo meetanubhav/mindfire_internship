@@ -10,7 +10,6 @@ function addFields(){
     <small class="dynamicPhoneNumberError" id="dynamicPhoneNumberError`+phoneFieldCounter+`">Enter Phone Number.</small>
     <small class="dynamicPhoneNumberRegexError" id="dynamicPhoneNumberRegexError`+phoneFieldCounter+`"></small>
     </div><button type="button" class="removePhoneNumber"> x </button></div>`);
-  // $("#phoneNumberInput").attr('data-id', phoneFieldCounter);
   });
   $(document).on("click",".removePhoneNumber",function(){
     phoneFieldCounter -=1;
@@ -18,24 +17,6 @@ function addFields(){
     return false;
   });
 
-  // appending and removing address field
-
-  // $("#addAddress").click(function() {
-  //   addressFieldCounter += 1;
-  //   $("#addressInputField").append('<div class="addLine">'+addressField+'<button type="button" class="removeButton remove" id="removeAddress"> - </button></div>');
-  //   $("#addressInput").attr('id', 'addressInput'+addressFieldCounter);
-  //   $("#selectCountry").attr('id', 'selectCountry'+addressFieldCounter);
-  //   $("#selectState").attr('id', 'selectState'+addressFieldCounter);
-  //   $("#selectCity").attr('id', 'selectCity'+addressFieldCounter);
-  //   $("#addressInput").attr('data-id', addressFieldCounter);
-  //   // console.log($(this).attr("data-id"));
-  // });
-  // // $("#removeAddress").click(function() {
-  //   $(document).on("click","#removeAddress",function(){
-  //     addressFieldCounter -=1;
-  //     $(this).parents(".addLine").remove();
-  //     return false;
-  // });
 }
 // image upload
 function readURL(input) {
