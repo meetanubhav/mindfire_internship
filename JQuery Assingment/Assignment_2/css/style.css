@@ -252,7 +252,8 @@ select {
 }
 
 .fileUploadSection-btn:hover {
-  background: #1AA059;
+  /* background: #1AA059; */
+  background: yellow;
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
