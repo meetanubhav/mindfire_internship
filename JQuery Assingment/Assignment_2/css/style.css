@@ -341,3 +341,27 @@ select {
   border: 0;
   transition: all .2s ease;
 }
+@media only screen and (max-width: 1000px) {
+  .sideBar{
+    display: none;
+  }
+  .flexContainer{
+    width: 0;
+  }
+  .addButton{
+    margin-top: 2%;
+  }
+  input{
+    margin-top: 10%;
+  }
+  fieldset{
+    padding-right: 10%;
+  }
+  #selectCountry {
+    margin-right: 75%;
+    margin-left: 50%;
+  }
+  .countryLabel{
+    margin-left: 48%;
+  }
+}
