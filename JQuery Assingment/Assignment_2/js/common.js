@@ -48,8 +48,9 @@ function readURL(input) {
 
       $('.fileUploadImage').attr('src', e.target.result);
       $('.fileUploadSection-content').show();
-      $('#getImage').attr('src', e.target.result);
+      // $('#getImage').attr('src', e.target.result);
       $('.image-title').html(input.files[0].name);
+      window.imagePath = e.target.result;
     };
 
     reader.readAsDataURL(input.files[0]);

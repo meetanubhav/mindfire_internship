@@ -168,7 +168,7 @@ function isNull(checkNullValue,errorMessage){
     }
 }
 function displayDetails(){
-    $('#getImage').show();
+    $('#getImage').attr('src', imagePath);
     $('.getFirstName').text($('#firstNameInput').val());
     $('.getLastName').text($('#lastNameInput').val());
     $('.getEmailId').text($('#emailInput').val());
