@@ -40,7 +40,7 @@ function readURL(input) {
     removeUpload();
   }
 }
-
+// remove image
 function removeUpload() {
   $('.fileUploadInput').replaceWith($('.fileUploadInput').clone());
   $('.fileUploadSection-content').hide();

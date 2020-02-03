@@ -1,15 +1,6 @@
-// captchaLoad();
-//     $("#reloadCaptcha").click(function(){
-//         captchaLoad();
-//     });
-
-// });
 function printNumbers(x){
     var operatorSymbol = ["+", "-", "*", "/"];
     $('#captchaQuestion').text(generatedNumber1+'     '+operatorSymbol[x]+'     '+generatedNumber2+'  =  ');
-    // if(generatedNumber1*generatedNumber2 > 100 || generatedNumber1+generatedNumber2 > 100){
-    //     captchaLoad();
-    // }
 }
 function getNumbers(){
     generatedNumber1 = Math.floor(Math.random() * 10)+10;

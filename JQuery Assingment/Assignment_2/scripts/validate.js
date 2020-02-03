@@ -7,6 +7,7 @@ $(document).ready( function () {
         captchaLoad();
     });
 
+    // checking values after submission
     $("#submitForm").click(function(){
         // check for null values
         window.counter = 0;
@@ -146,6 +147,7 @@ function isNull(checkNullValue,errorMessage){
         // $(checkNullValue).css({'border-bottom':'2px solid teal'});
     }
 }
+// after succesfull validation displaying result
 function displayDetails(){
     $('#getImage').attr('src', imagePath);
     $('.getFirstName').text($('#firstNameInput').val());

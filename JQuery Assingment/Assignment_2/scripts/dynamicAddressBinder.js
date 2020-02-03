@@ -56,6 +56,7 @@ function dynamicAdress(){
             return false;
         });
 }   
+// changing the country-state list of static address fields
 $(document).on("change",".selectCountry",function(){
         var countrySelected = $("#selectCountry").val();
         if (countrySelected === "INDIA") {
@@ -76,6 +77,8 @@ $(document).on("change",".selectCountry",function(){
         }
         $("#selectState").html(string);
 });
+
+// changing the country-state list of dynamic address fields
 $(document).on("change",".selectCountryAppendDiv",function(){
     var ctrlId = $(this).attr('ctrlid');
     var countrySelected = $('#selectCountry'+ctrlId).val();
