@@ -46,9 +46,9 @@ function removeUpload() {
   $('.fileUploadSection-content').hide();
   $('.imageUploadWrapper').show();
 }
-$('.imageUploadWrapper').on('dragover', function () {
+$('.imageUploadWrapper').bind('dragover', function () {
         $('.imageUploadWrapper').addClass('imageDrop');
-});
-$('.imageUploadWrapper').on('dragleave', function () {
-    $('.imageUploadWrapper').removeClass('imageDrop');
+    });
+    $('.imageUploadWrapper').bind('dragleave', function () {
+        $('.imageUploadWrapper').removeClass('imageDrop');
 });

@@ -52,33 +52,38 @@
                             <label for="firstNameInput" class="firstNameInput">First Name</label>
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="firstNameInput" placeholder="First Name" />
-                            <small class="errorMsg" id="firstNameErrorMsg">Incorrect! Only Alphabetical values</small>
+                            <small class="errorMsg" id="firstNameErrorMsg">Enter First Name</small>
+                            <small class="regexErrorMessage">Only Alphabetical values allowed</small>
                         </div>
                         <div class="inputGroup">
                             <label for="lastNameInput" class="lastNameInput">Last Name</label>
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="lastNameInput" placeholder="Last Name" />
-                            <small class="errorMsg" id="lastNameErrorMsg">Incorrect! Only Alphabetical values</small>
+                            <small class="errorMsg" id="lastNameErrorMsg">Enter Last Name</small>
+                            <small class="regexErrorMessageLastName">Only Alphabetical values allowed</small>
                         </div>
                     </div>
                     <div class="inputGroup">
                         <label for="emailInput" class="emailInput">Email</label>
                         <span class="importantFieldMark"> * </span>
                         <input type="email" class="inputLongWidth" id="emailInput" placeholder="Email" />
-                        <small class="errorMsg" id="emailErrorMsg">Incorrect!</small>
+                        <small class="errorMsg" id="emailErrorMsg">Enter Email Address</small>
+                        <small class="regexEmailErrorMsg"></small>
                     </div>
                     <div class="flexContainer">
                         <div class="inputGroup">
                             <label for="panInput" class="panInput">PAN Number</label>
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="panInput" placeholder="PAN Number" />
-                            <small class="errorMsg" id="panErrorMsg">Incorrect! Enter 12 digits ( ex: BVCVG2002Q )</small>
+                            <small class="errorMsg" id="panErrorMsg">Enter PAN Number</small>
+                            <small class="regexPanErrorMsg"></small>
                         </div>
                         <div class="inputGroup">
                             <label for="aadharInput" class="aadharInput">Aadhar Number</label>
                             <span class="importantFieldMark"> * </span>
                             <input type="text" id="aadharInput" placeholder="Aadhar Number" />
-                            <small class="errorMsg" id="aadharErrorMsg">Incorrect! Enter 12 digit number</small>
+                            <small class="errorMsg" id="aadharErrorMsg">Enter Aadhar Number</small>
+                            <small class="regexAadharErrorMsg"></small>
                         </div>
                     </div>
                 </fieldset>
@@ -113,7 +118,7 @@
                             <div class="addressSelector">
                                 <label for="selectCountry" class="countryLabel"> Country:</label>
                                 <br>
-                                <select id="selectCountry" ctrlid="0" class="selectCountry">
+                                <select id="selectCountry" class="selectCountry">
                                     <option value="">Select Country</option>
                                     <option value="INDIA">India</option>
                                     <option value="USA">USA</option>
@@ -136,12 +141,14 @@
                             <div class="addressSelector" id="cityField">
                                 <label for="cityInput">City:</label>
                                 <input type="text" id="cityInput" placeholder="Enter City"/>
-                                <small class="cityInputError">Incorrect! Only Alphabets</small>
+                                <small class="cityInputError">Enter City</small>
+                                <small class="cityRegexError">Only Alphabetical values allowed</small>
                             </div>
                             <div class="addressSelector" id="pincodeField"> 
                                 <label for="pincodeInput">Pincode</label>
                                 <input type="text" id="pincodeInput" placeholder="Enter Pincode"/>
-                                <small class="pincodeInputError">Incorrect! Enter 6 digit number</small>
+                                <small class="pincodeInputError">Enter Pincode</small>
+                                <small class="regexPincodeErrorMsg"></small>
                             </div>
                         </div>
                       </div>

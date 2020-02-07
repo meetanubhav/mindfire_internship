@@ -27,7 +27,7 @@ $(document).ready( function () {
         // isNull($('.phoneNumberInputDynamic'),'.phoneNumberError')
         for(i=1;i<=phoneFieldCounter;i++){
             isNull($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i);
-            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberRegexError'+i,/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
+            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberRegexError'+i,2);
         }
         for(i=1;i<=addressFieldCounter;i++){
             isNull($("#addressInput"+i),'#addressError'+i);
@@ -35,23 +35,24 @@ $(document).ready( function () {
             isNull($('#selectState'+i),'#selectStateError'+i);
             isNull($('#cityInput'+i),'#cityInputError'+i);
             isNull($('#pincodeInput'+i),('#pincodeInputError'+i));
-            regexChecker($('#pincodeInput'+i),'.pincodeInputError'+i,/^[1-9]\d{5}$/);
-            regexChecker($('#cityInput'+i),'.cityInputError'+i,/^[a-zA-Z]+$/);
+            regexChecker($('#pincodeInput'+i),'#regexPincodeErrorMsg'+i,5);
+            regexChecker($('#cityInput'+i),'.cityRegexErrorDynamic'+i,1);
         }
 
         // check for regex
-        regexChecker($('#firstNameInput'),'#firstNameErrorMsg',/^[a-zA-Z]+$/);
-        regexChecker($('#cityInput'),'.cityInputError',/^[a-zA-Z]+$/);
-        regexChecker($('#lastNameInput'),'#lastNameErrorMsg',/^[a-zA-Z]+$/);
-        regexChecker($('#phoneNumberInput'),'.phoneNumberRegexError',/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
-        regexChecker($('#emailInput'),'#emailErrorMsg',/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-        regexChecker($('#aadharInput'),'#aadharErrorMsg',/^[1-9]\d{11}$/);
-        regexChecker($('#pincodeInput'),'.pincodeInputError',/^[1-9]\d{5}$/);
-        regexChecker($('#panInput'),'#panErrorMsg',/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/);
+        regexChecker($('#firstNameInput'),'.regexErrorMessage',1);
+        regexChecker($('#cityInput'),'.cityRegexError',1);
+        regexChecker($('#lastNameInput'),'.regexErrorMessageLastName',1);
+        regexChecker($('#phoneNumberInput'),'.phoneNumberRegexError',2);
+        regexChecker($('#emailInput'),'.regexEmailErrorMsg',3);
+        regexChecker($('#aadharInput'),'.regexAadharErrorMsg',4);
+        regexChecker($('#pincodeInput'),'.regexPincodeErrorMsg',5);
+        regexChecker($('#panInput'),'.regexPanErrorMsg',6);
 
 
         // Address validation
         // checkAddress()
+        console.log(counter);
         if(counter===1){
             captchaLoad();
         }
@@ -70,16 +71,71 @@ $(document).ready( function () {
     });
 
 });
-function regexChecker(valueToCheck,errorMessageDisplay,typeRegex){
+function regexChecker(valueToCheck,errorMessageDisplay,typeValue){
     // For alpha values
-    if(!typeRegex.test(valueToCheck.val())){
-        $(errorMessageDisplay).show();
-        counter=1;
+    if(typeValue===1){
+        if(!/^[a-zA-Z]+$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).show();
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).hide();
+        }
     }
-    else{
-        $(errorMessageDisplay).hide();
+    // For phone Number
+    if(typeValue===2){
+        if(!/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Only Numeric Type ( 10 - 12 digits )");
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).text("");
+        }
+    }
+    // For Email type
+    if(typeValue===3){
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Invalid Email Type");
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).text("");
+        }
+    }
+    // For Adhar Number
+    if(typeValue===4){
+        if(!/^[1-9]\d{11}$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Only Numeric Type ( 12 digits )");
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).text("");
+        }
+    }
+
+    // For Pincode
+    if(typeValue===5){
+        if(!/^[1-9]\d{5}$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Only Numeric Type ( 6 digits )");
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).text("");
+        }
+    }
+     // For Pan Number
+     if(typeValue===6){
+        if(!/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/.test(valueToCheck.val())){
+            $(errorMessageDisplay).text("Only Alpha Numeric Type ( 10 digits )");
+            counter=1;
+        }
+        else{
+            $(errorMessageDisplay).text("");
+        }
     }
 }
+
+
 function isNull(checkNullValue,errorMessage){
     if(checkNullValue.val().trim()===""){
         $(errorMessage).show();
