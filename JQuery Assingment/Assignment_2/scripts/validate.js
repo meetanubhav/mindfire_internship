@@ -6,6 +6,8 @@ $(document).ready( function () {
     $("#reloadCaptcha").click(function(){
         captchaLoad();
     });
+    // $('.showProfile').show();
+    // $('.flexContainer').hide();
 
     // checking values after submission
     $("#submitForm").click(function(){
@@ -36,12 +38,12 @@ $(document).ready( function () {
             isNull($('#cityInput'+i),'#cityInputError'+i);
             isNull($('#pincodeInput'+i),('#pincodeInputError'+i));
             regexChecker($('#pincodeInput'+i),'.pincodeInputError'+i,/^[1-9]\d{5}$/);
-            regexChecker($('#cityInput'+i),'#cityInputError'+i,/^[a-zA-Z]+$/);
+            regexChecker($('#cityInput'+i),'#cityInputError'+i,/^[a-zA-Z][a-zA-Z\s-]+[a-zA-Z]$/);
         }
 
         // check for regex
         regexChecker($('#firstNameInput'),'#firstNameErrorMsg',/^[a-zA-Z]+$/);
-        regexChecker($('#cityInput'),'.cityInputError',/^[a-zA-Z]+$/);
+        regexChecker($('#cityInput'),'.cityInputError',/^[a-zA-Z][a-zA-Z\s-]+[a-zA-Z]$/);
         regexChecker($('#lastNameInput'),'#lastNameErrorMsg',/^[a-zA-Z]+$/);
         regexChecker($('#phoneNumberInput'),'.phoneNumberError',/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
         regexChecker($('#emailInput'),'#emailErrorMsg',/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
@@ -50,19 +52,17 @@ $(document).ready( function () {
         regexChecker($('#panInput'),'#panErrorMsg',/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/);
 
         // check image type
-        var fileName, fileExtension;
-        fileName = $('#imageInput').val();
-        fileExtension = fileName.replace(/^.*\./, '');
-        console.log (fileExtension);
+        var fileExtension;
+        fileExtension = $('#imageInput').val().replace(/^.*\./, '');
         if(fileExtension=="jpg" || fileExtension == "png" || fileExtension == "jpeg"){
             counter=0;
-            $('.imageErrormsg').show();
+            $('.imageErrormsg').hide();
         }
         else{
             counter=1;
             $('#imageInput').val("");
             removeUpload();
-            $('.imageErrormsg').hide();
+            $('.imageErrormsg').show();
 
         }
 
@@ -88,8 +88,7 @@ $(document).ready( function () {
 
 });
 function regexChecker(valueToCheck,errorMessageDisplay,typeRegex){
-    // For alpha values
-    if(!typeRegex.test(valueToCheck.val())){
+    if(!typeRegex.test(valueToCheck.val().trim())){
         $(errorMessageDisplay).show();
         counter=1;
     }

@@ -37,7 +37,7 @@
                         <div class="fileUploadSection-content">
                           <img class="fileUploadImage" src="#" alt="your image" />
                           <div class="imageTitle">
-                            <button type="button" onclick="removeUpload()" class="removeImage">Remove <span class="image-title">Uploaded Image</span></button>
+                            <button type="button" onclick="removeUpload()" class="removeImage">Remove <span class="imageTitle">Uploaded Image</span></button>
                           </div>
                         </div>
                       </div>
@@ -171,17 +171,30 @@
       
     </div>
     <div class="showProfile">
-        <!-- <h2 class="firstHeading">Personal Profile Card</h2> -->
-            <div class="card">
-                <img src="" id="getImage" alt="profile Image">
+        <div class="card">
+            <div class="profileNameDiv">
                 <h1 class="showName">
                     <span class="getFirstName">firstName</span>
                     <span class="addSpace"></span>
                     <span class="getLastName">lastNAme</span>
                 </h1>
-                <div class="addLine"></div>
+                <img src="https://gpluseurope.com/wp-content/uploads/Mauro-profile-picture.jpg" id="getImage" alt="profile Image">
+            </div>
+            <div class="personalDetailsDiv">
+                <!-- contact show -->
+                <fieldset>
+                    <legend class="legendBold">Contact Details</legend>
+                    <div class="showContact">
+                        <span class="getEmailId">email</span>
+                        <span class="getPhoneNumber">spanhone number</span>
+                        <br>
+                        <span class="dynamicPhoneNumber"></span>
+                    </div> 
+                </fieldset>
+                <!-- address show -->
+               <fieldset>
+                <legend class="legendBold">Address Details</legend>
                 <div class="showAddressDiv">
-                    <!-- <p>Address :</p> -->
                     <p class="getAddress">address goes here</p>
                     <p>
                         <span class="getCity">City</span>
@@ -194,25 +207,20 @@
                     </p>
                     <span class="dynamicAddress"></span>
                 </div>
-            <div class="addLine"></div>
-            <div class="personalId">
-                <p class="showPanNumber">Pan : 
-                    <span class="getPanNumber">pan here</span>
-                </p>
-                <p class="showAadharNumber">Aadhar :
-                    <span class="getAadharNumber">aadhar here</span>
-                </p>
-            </div>
-            <div class="showContact">
-                Contact
-                <br>
-                <span class="getEmailId">email</span>
-                <br>
-                <span class="getPhoneNumber">spanhone number</span>
-                <br>
-                <span class="dynamicPhoneNumber"></span>
-            </div>
-        
+               </fieldset>  
+                <!-- personal identification -->
+                <fieldset>
+                    <legend class="legendBold">Personal Identification</legend>
+                    <div class="personalId">
+                        <p class="showPanNumber">Pan : 
+                            <span class="getPanNumber">pan here</span>
+                        </p>
+                        <p class="showAadharNumber">Aadhar :
+                            <span class="getAadharNumber">aadhar here</span>
+                        </p>
+                    </div>
+                </fieldset>
+            </div> 
         </div>
     </div>
 

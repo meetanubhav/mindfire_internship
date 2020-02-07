@@ -29,7 +29,7 @@ function readURL(input) {
       $('.fileUploadImage').attr('src', e.target.result);
       $('.fileUploadSection-content').show();
       // $('#getImage').attr('src', e.target.result);
-      $('.image-title').html(input.files[0].name);
+      $('.imageTitle').html(input.files[0].name);
       window.imagePath = e.target.result;
     };
 
