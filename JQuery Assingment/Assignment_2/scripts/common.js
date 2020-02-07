@@ -6,9 +6,8 @@ function addFields(){
     phoneFieldCounter+=1;
     $("#phoneNumberInputField").append(`<div class="addLine"><div class="phoneFieldAppend">
     <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
-    <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput`+phoneFieldCounter+`" data-id="`+phoneFieldCounter+`" placeholder="Phone Number" />
-    <small class="dynamicPhoneNumberError" id="dynamicPhoneNumberError`+phoneFieldCounter+`">Enter Phone Number.</small>
-    <small class="dynamicPhoneNumberRegexError" id="dynamicPhoneNumberRegexError`+phoneFieldCounter+`"></small>
+    <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput`+phoneFieldCounter+`" data-id="`+phoneFieldCounter+`" placeholder="Phone Number" maxlength="12" />
+    <small class="dynamicPhoneNumberError" id="dynamicPhoneNumberError`+phoneFieldCounter+`">Incorrect! Enter 10-12 digits number</small>
     </div><button type="button" class="removePhoneNumber"> x </button></div>`);
   });
   $(document).on("click",".removePhoneNumber",function(){

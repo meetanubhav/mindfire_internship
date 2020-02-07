@@ -18,7 +18,7 @@ function dynamicAdress(){
                       <option value="CHINA">China</option>
                   </select>
                   <br>
-                  <small class="addressDynamic" id="selectCountryError`+addressFieldCounter+`">Select Country</small>
+                  <small class="addressDynamic" id="selectCountryError`+addressFieldCounter+`">Incorrect! Select Country</small>
               </div>
               <!-- country col ends here -->
 
@@ -29,7 +29,7 @@ function dynamicAdress(){
                       <option value="">Select State</option>
                   </select>
                   <br>
-                  <small class="addressDynamic" id="selectStateError`+addressFieldCounter+`">Select State</small>
+                  <small class="addressDynamic" id="selectStateError`+addressFieldCounter+`">Incorrect! Select State</small>
               </div>
 
               <div class="addressSelector" id="cityField">
@@ -37,12 +37,11 @@ function dynamicAdress(){
                     <br>
                     <input type="text" id="cityInput`+addressFieldCounter+`" placeholder=""/>
                     <br>
-                    <small class="addressDynamic" id="cityInputError`+addressFieldCounter+`">Enter City</small>
-                    <small class="cityRegexErrorDynamic`+addressFieldCounter+` regexError">Only Alphabetical values allowed</small>
+                    <small class="addressDynamic" id="cityInputError`+addressFieldCounter+`">Incorrect! Only Alphabets</small>
               </div>
               <div class="addressSelector" id="pincodeField"> 
               <label for="pincodeInput`+addressFieldCounter+`">Pincode</label>
-              <input type="text" id="pincodeInput`+addressFieldCounter+`" placeholder="Enter Pincode"/>
+              <input type="text" id="pincodeInput`+addressFieldCounter+`" placeholder="Enter Pincode" maxlength="6" />
               <small class="addressDynamic" id="pincodeInputError`+addressFieldCounter+`">Incorrect! Enter 6 digit number</small>
           </div>
           </div>

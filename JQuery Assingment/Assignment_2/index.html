@@ -65,19 +65,19 @@
                         <label for="emailInput" class="emailInput">Email</label>
                         <span class="importantFieldMark"> * </span>
                         <input type="email" class="inputLongWidth" id="emailInput" placeholder="Email" />
-                        <small class="errorMsg" id="emailErrorMsg">Incorrect!</small>
+                        <small class="errorMsg" id="emailErrorMsg">Incorrect! Enter email</small>
                     </div>
                     <div class="flexContainer">
                         <div class="inputGroup">
                             <label for="panInput" class="panInput">PAN Number</label>
                             <span class="importantFieldMark"> * </span>
-                            <input type="text" id="panInput" placeholder="PAN Number" />
+                            <input type="text" id="panInput" placeholder="PAN Number" maxlength="10"/>
                             <small class="errorMsg" id="panErrorMsg">Incorrect! Enter 12 digits ( ex: BVCVG2002Q )</small>
                         </div>
                         <div class="inputGroup">
                             <label for="aadharInput" class="aadharInput">Aadhar Number</label>
                             <span class="importantFieldMark"> * </span>
-                            <input type="text" id="aadharInput" placeholder="Aadhar Number" />
+                            <input type="text" id="aadharInput" placeholder="Aadhar Number" maxlength="12" />
                             <small class="errorMsg" id="aadharErrorMsg">Incorrect! Enter 12 digit number</small>
                         </div>
                     </div>
@@ -89,8 +89,8 @@
                         <div class="inputGroup" id="phoneNumberInputField"><span class="importantFieldMark" id="placeInportantMark"> * </span>
                           <div class="phoneFieldAppend">
                             <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
-                            <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput" data-id="0" placeholder="Phone Number" />
-                            <small class="phoneNumberError">Enter Phone Number.</small>
+                            <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput" data-id="0" placeholder="Phone Number" maxlength="12"/>
+                            <small class="phoneNumberError">Incorrect! Enter 10 - 12 digits phone number</small>
                             <small class="phoneNumberRegexError"></small>
                           </div>
                             <button type="button" class="addButton" id="addPhoneNumber">
@@ -108,7 +108,7 @@
                         <label for="addressInput" class="addressInput">Address</label>
                         <br>
                         <textarea type="text" class="addressInputFieldClass" id="addressInput" data-id="0" rows="2" cols="50" placeholder="Address"></textarea>
-                        <small class="addressError">Enter Address</small>
+                        <small class="addressError">Incorrect! Enter Address</small>
                         <div class="flexContainer marginTop3Percent" id="addressExtras">
                             <div class="addressSelector">
                                 <label for="selectCountry" class="countryLabel"> Country:</label>
@@ -120,7 +120,7 @@
                                     <option value="CHINA">China</option>
                                 </select>
                                 <br>
-                                <small class="selectCountryError">Select Country</small>
+                                <small class="selectCountryError">Incorrect! Select Country</small>
                             </div>
                             <!-- country col ends here -->
 
@@ -131,7 +131,7 @@
                                     <option value="">Select State</option>
                                 </select>
                                 <br>
-                                <small class="selectStateError">Select State</small>
+                                <small class="selectStateError">Incorrect! Select State</small>
                             </div>
                             <div class="addressSelector" id="cityField">
                                 <label for="cityInput">City:</label>
@@ -140,7 +140,7 @@
                             </div>
                             <div class="addressSelector" id="pincodeField"> 
                                 <label for="pincodeInput">Pincode</label>
-                                <input type="text" id="pincodeInput" placeholder="Enter Pincode"/>
+                                <input type="text" id="pincodeInput" placeholder="Enter Pincode" maxlength="6" />
                                 <small class="pincodeInputError">Incorrect! Enter 6 digit number</small>
                             </div>
                         </div>
@@ -154,11 +154,11 @@
                         <small>Prove you are not ROBOT</small>
                         <div class="" id="captchaBox">
                             <span id="captchaQuestion"></span>
-                            <input type="text" class="bg-white" id="captchaInput" placeholder="?" />
+                            <input type="text" class="bg-white" id="captchaInput" placeholder="?" maxlength="3"/>
                             <button type="button" id="reloadCaptcha">REFRESH</button>
                             <small id="forErrorMsg">For division type result in interger format</small>
                             <br>
-                            <small class="captchaErrorMsg">Enter Captcha</small>
+                            <small class="captchaErrorMsg">Incorrect! Enter Captcha</small>
               </div>
             </div>
           </fieldset>

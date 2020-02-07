@@ -27,7 +27,7 @@ $(document).ready( function () {
         // isNull($('.phoneNumberInputDynamic'),'.phoneNumberError')
         for(i=1;i<=phoneFieldCounter;i++){
             isNull($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i);
-            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberRegexError'+i,/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
+            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i,/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
         }
         for(i=1;i<=addressFieldCounter;i++){
             isNull($("#addressInput"+i),'#addressError'+i);
@@ -36,18 +36,35 @@ $(document).ready( function () {
             isNull($('#cityInput'+i),'#cityInputError'+i);
             isNull($('#pincodeInput'+i),('#pincodeInputError'+i));
             regexChecker($('#pincodeInput'+i),'.pincodeInputError'+i,/^[1-9]\d{5}$/);
-            regexChecker($('#cityInput'+i),'.cityInputError'+i,/^[a-zA-Z]+$/);
+            regexChecker($('#cityInput'+i),'#cityInputError'+i,/^[a-zA-Z]+$/);
         }
 
         // check for regex
         regexChecker($('#firstNameInput'),'#firstNameErrorMsg',/^[a-zA-Z]+$/);
         regexChecker($('#cityInput'),'.cityInputError',/^[a-zA-Z]+$/);
         regexChecker($('#lastNameInput'),'#lastNameErrorMsg',/^[a-zA-Z]+$/);
-        regexChecker($('#phoneNumberInput'),'.phoneNumberRegexError',/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
+        regexChecker($('#phoneNumberInput'),'.phoneNumberError',/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
         regexChecker($('#emailInput'),'#emailErrorMsg',/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
         regexChecker($('#aadharInput'),'#aadharErrorMsg',/^[1-9]\d{11}$/);
         regexChecker($('#pincodeInput'),'.pincodeInputError',/^[1-9]\d{5}$/);
         regexChecker($('#panInput'),'#panErrorMsg',/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/);
+
+        // check image type
+        var fileName, fileExtension;
+        fileName = $('#imageInput').val();
+        fileExtension = fileName.replace(/^.*\./, '');
+        console.log (fileExtension);
+        if(fileExtension=="jpg" || fileExtension == "png" || fileExtension == "jpeg"){
+            counter=0;
+            $('.imageErrormsg').show();
+        }
+        else{
+            counter=1;
+            $('#imageInput').val("");
+            removeUpload();
+            $('.imageErrormsg').hide();
+
+        }
 
 
         // Address validation
