@@ -5,13 +5,13 @@ function dynamicAdress(){
           $("#addressInputField").append(`<div class="addLine"><div class="addressFieldAppend">
           <label for="addressInput" class="addressInput">Address</label>
           <br>
-          <textarea type="text" class="addressInputFieldClass" id="addressInput`+addressFieldCounter+`" data-id="`+addressFieldCounter+`" rows="2" cols="50" placeholder="Address"></textarea>
+          <textarea class="addressInputFieldClass" id="addressInput`+addressFieldCounter+`" data-id="`+addressFieldCounter+`" rows="2" cols="50" placeholder="Address"></textarea>
           <small class="addressDynamic" id="addressError`+addressFieldCounter+`">Enter Address</small>
           <div class="flexContainer marginTop3Percent" id="addressExtras">
               <div class="addressSelector">
                   <label for="selectCountry`+addressFieldCounter+`"> Country:</label>
                   <br>
-                  <select id="selectCountry`+addressFieldCounter+`" ctrlid="`+addressFieldCounter+`" class="selectCountry">
+                  <select id="selectCountry`+addressFieldCounter+`" ctrlid="`+addressFieldCounter+`" class="countrySelect">
                       <option value="">Select Country</option>
                       <option value="INDIA">India</option>
                       <option value="USA">USA</option>
@@ -48,7 +48,6 @@ function dynamicAdress(){
         </div><button type="button" class="removeAddress"> x </button></div>`);
          
         });
-        // $("#removeAddress").click(function() {
           $(document).on("click",".removeAddress",function(){
             addressFieldCounter -=1;
             $(this).parents(".addLine").remove();
@@ -56,7 +55,7 @@ function dynamicAdress(){
         });
 }   
 // changing the country-state list of static address fields
-$(document).on("change",".selectCountry",function(){
+$(document).on("change",".countrySelect",function(){
     var ctrlId = $(this).attr('ctrlid');
     if(ctrlId==="0"){
         ctrlId="";

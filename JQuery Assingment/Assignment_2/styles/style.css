@@ -96,7 +96,7 @@ label {
 .textDanger,.regexPincodeErrorMsgDynamic,.dynamicPhoneNumberRegexError ,.phoneNumberRegexError,.regexAadharErrorMsg,.regexEmailErrorMsg,.regexPincodeErrorMsg,.regexPanErrorMsg{
   color: #dc3545;
 }
-.errorMsg,.pincodeInputError,.addressDynamic,.addressError,.dynamicPhoneNumberError,.selectCountryError,.cityInputError,.cityRegexError,.cityRegexErrorDynamic,.regexError,.captchaErrorMsg,.selectStateError,.phoneNumberError,.imageErrormsg,.regexErrorMessage,.regexErrorMessageLastName{
+.errorMsg,.pincodeInputError,.duplicateErrorMsg,.duplicatePhoneErrorMsg,.addressDynamic,.addressError,.dynamicPhoneNumberError,.selectCountryError,.cityInputError,.cityRegexError,.cityRegexErrorDynamic,.regexError,.captchaErrorMsg,.selectStateError,.phoneNumberError,.imageErrormsg,.regexErrorMessage,.regexErrorMessageLastName{
     display: none;
     color: #dc3545;
 }
@@ -125,8 +125,10 @@ select {
   border-radius: 10%;
   float: right;
   border: none;
-  margin-top: -4%;
+  margin-top: -3%;
   color: white;
+  font-weight: bold;
+  font-size: 15px;
 }
 #addAddress,#removeAddress{
   margin-top: -100px;
@@ -140,6 +142,8 @@ select {
   border: none;
   margin-top: -4%;
   color: white;
+  font-weight: bold;
+  font-size: 15px;
 }
 .width80Percent,.phoneNumberInputDynamic{
   width: 80%;
@@ -187,11 +191,11 @@ select {
 .importantFieldMark{
   color: #dc3545;
 }
-#placeInportantMark{
+#placeImportantMark{
   margin-left: 9%;
   position: absolute;
 }
-#addressplaceInportantMark{
+#addressplaceImportantMark{
   margin-left: 5%;
   position: absolute;
 }

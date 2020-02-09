@@ -16,23 +16,17 @@ function add(){
 }
 function sub(){
     printNumbers(1);
-    // var operatorSymbol = "-";
-    // $('#operator').text("-");
     calculatedoutput=generatedNumber1-generatedNumber2;
     $('#forErrorMsg').hide();
 }
 function mul(){
     printNumbers(2);
-    // $('#operator').text("*");
-    // var operatorSymbol = "*";
     calculatedoutput=generatedNumber1*generatedNumber2;
     $('#forErrorMsg').hide();
 }
 function div(){
     printNumbers(3);
     $('#forErrorMsg').show();
-    // $('#operator').text("/");
-    // var operatorSymbol = "/";
     calculatedoutput=Math.floor(generatedNumber1/generatedNumber2);
 }
 function captchaLoad(){

@@ -29,21 +29,21 @@
                     <legend>Profile Picture</legend>
                     <div class="fileUploadSection">
                         <div class="imageUploadWrapper">
-                          <input class="fileUploadInput" type='file' onchange="readURL(this);" id="imageInput" accept="image/*" />
+                          <input class="fileUploadInput" type='file' id="imageInput" accept="image/*" />
                           <div class="dragtext">
                             <h3>Drag and drop a file or select add Image</h3>
                           </div>
                         </div>
                         <div class="fileUploadSection-content">
                           <img class="fileUploadImage" src="#" alt="your image" />
-                          <div class="imageTitle">
-                            <button type="button" onclick="removeUpload()" class="removeImage">Remove <span class="imageTitle">Uploaded Image</span></button>
+                          <div class="">
+                            <button type="button" class="removeImage">Remove</button>
                           </div>
                         </div>
                       </div>
                     <!-- <img id="profileImage" src="https://cdn4.vectorstock.com/i/1000x1000/06/18/male-avatar-profile-picture-vector-10210618.jpg" alt="your profile image" /> -->
                     <!-- <input type="file" id="imageInput" /> -->
-                    <small class="imageErrormsg">Upload your profile image</small>
+                    <small class="imageErrormsg">Upload your profile image (only .jpg .png .jpeg )</small>
                 </fieldset>
                 <fieldset>
                     <legend>Personal Details</legend>
@@ -85,8 +85,9 @@
 
                 <fieldset class="marginTop3Percent">
                     <legend>Contact Details</legend>
+                    <!-- <small class="duplicatePhoneErrorMsg">Dupplicate field exists. Please delete duplicates.</small> -->
                     <div class="phoneNumberInputArea">
-                        <div class="inputGroup" id="phoneNumberInputField"><span class="importantFieldMark" id="placeInportantMark"> * </span>
+                        <div class="inputGroup" id="phoneNumberInputField"><span class="importantFieldMark" id="placeImportantMark"> * </span>
                           <div class="phoneFieldAppend">
                             <label for="phoneNumberInput" class="phoneNumberInput">Phone number</label>
                             <input type="text" class="phoneNumberInputDynamic" id="phoneNumberInput" data-id="0" placeholder="Phone Number" maxlength="12"/>
@@ -102,18 +103,19 @@
 
                 <fieldset class="marginTop3Percent">
                     <legend>Address Details</legend>
+                    <small class="duplicateErrorMsg">Dupplicate field exists</small>
                     <div class="inputGroup" id="addressInputField">
-                      <span class="importantFieldMark" id="addressplaceInportantMark"> * </span>
+                      <span class="importantFieldMark" id="addressplaceImportantMark"> * </span>
                       <div class="addressFieldAppend">
                         <label for="addressInput" class="addressInput">Address</label>
                         <br>
-                        <textarea type="text" class="addressInputFieldClass" id="addressInput" data-id="0" rows="2" cols="50" placeholder="Address"></textarea>
+                        <textarea class="addressInputFieldClass" id="addressInput" data-id="0" rows="2" cols="50" placeholder="Address"></textarea>
                         <small class="addressError">Incorrect! Enter Address</small>
                         <div class="flexContainer marginTop3Percent" id="addressExtras">
                             <div class="addressSelector">
                                 <label for="selectCountry" class="countryLabel"> Country:</label>
                                 <br>
-                                <select id="selectCountry" ctrlid="0" class="selectCountry">
+                                <select id="selectCountry" ctrlid="0" class="countrySelect">
                                     <option value="">Select Country</option>
                                     <option value="INDIA">India</option>
                                     <option value="USA">USA</option>
@@ -186,7 +188,7 @@
                     <legend class="legendBold">Contact Details</legend>
                     <div class="showContact">
                         <span class="getEmailId">email</span>
-                        <span class="getPhoneNumber">spanhone number</span>
+                        <!-- <span class="getPhoneNumber">spanhone number</span> -->
                         <br>
                         <span class="dynamicPhoneNumber"></span>
                     </div> 

@@ -6,11 +6,28 @@ $(document).ready( function () {
     $("#reloadCaptcha").click(function(){
         captchaLoad();
     });
-    // $('.showProfile').show();
-    // $('.flexContainer').hide();
 
+    // reset form
+    $("#resetForm").click(function(){
+        $("small").hide();
+        removeUpload();
+    });
+
+    // $( "input" ).keypress(function() {
+    //     console.log($(this).val());
+        
+    // });
+    $(".removeImage").click(function(){
+        removeUpload();
+    });
+    $(document).on("change","#imageInput",function(){
+        readURL(this);
+    });
     // checking values after submission
     $("#submitForm").click(function(){
+        var addressArray = [];
+        window.phoneNumberArray = [];
+
         // check for null values
         window.counter = 0;
         isNull($('#firstNameInput'),'#firstNameErrorMsg');
@@ -26,21 +43,34 @@ $(document).ready( function () {
         isNull($('#captchaInput'),'.captchaErrorMsg');
         isNull($('#imageInput'),'.imageErrormsg');
         isNull($('#pincodeInput'),('.pincodeInputError'));
-        // isNull($('.phoneNumberInputDynamic'),'.phoneNumberError')
-        for(i=1;i<=phoneFieldCounter;i++){
-            isNull($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i);
-            regexChecker($('#phoneNumberInput'+i),'#dynamicPhoneNumberError'+i,/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/);
-        }
+        phoneNumberArray.push($('#phoneNumberInput').val());
+        // addressArray.push($("#addressInput").val());
+        // dynamicPhoneNumberError
+        $('.phoneNumberInputDynamic').each(function() {
+           if(regexChecker($(this),$(this).nextAll('small').first(),/^[0][1-9]\d{9}$|^[1-9]\d{9,11}$/)===true){
+           }
+           if((jQuery.inArray( $(this).val(), phoneNumberArray ))>=0){
+            $(this).parents(".addLine").remove();
+            }
+            else{
+                phoneNumberArray.push($(this).val());
+            }
+        });
         for(i=1;i<=addressFieldCounter;i++){
             isNull($("#addressInput"+i),'#addressError'+i);
             isNull($('#selectCountry'+i),'#selectCountryError'+i);
             isNull($('#selectState'+i),'#selectStateError'+i);
             isNull($('#cityInput'+i),'#cityInputError'+i);
             isNull($('#pincodeInput'+i),('#pincodeInputError'+i));
-            regexChecker($('#pincodeInput'+i),'.pincodeInputError'+i,/^[1-9]\d{5}$/);
+            regexChecker($('#pincodeInput'+i),'#pincodeInputError'+i,/^[1-9]\d{5}$/);
             regexChecker($('#cityInput'+i),'#cityInputError'+i,/^[a-zA-Z][a-zA-Z\s-]+[a-zA-Z]$/);
+            if((jQuery.inArray( $("#addressInput"+i).val(), addressArray ))>=0){
+                $("#addressInput"+i).parents(".addLine").hide();
+            }
+            else{
+                phoneNumberArray.push($("#addressInput"+i).val());
+            }
         }
-
         // check for regex
         regexChecker($('#firstNameInput'),'#firstNameErrorMsg',/^[a-zA-Z]+$/);
         regexChecker($('#cityInput'),'.cityInputError',/^[a-zA-Z][a-zA-Z\s-]+[a-zA-Z]$/);
@@ -54,7 +84,7 @@ $(document).ready( function () {
         // check image type
         var fileExtension;
         fileExtension = $('#imageInput').val().replace(/^.*\./, '');
-        if(fileExtension=="jpg" || fileExtension == "png" || fileExtension == "jpeg"){
+        if(fileExtension==="jpg" || fileExtension === "png" || fileExtension === "jpeg"){
             counter=0;
             $('.imageErrormsg').hide();
         }
@@ -66,9 +96,7 @@ $(document).ready( function () {
 
         }
 
-
         // Address validation
-        // checkAddress()
         if(counter===1){
             captchaLoad();
         }
@@ -87,6 +115,7 @@ $(document).ready( function () {
     });
 
 });
+
 function regexChecker(valueToCheck,errorMessageDisplay,typeRegex){
     if(!typeRegex.test(valueToCheck.val().trim())){
         $(errorMessageDisplay).show();
@@ -99,14 +128,10 @@ function regexChecker(valueToCheck,errorMessageDisplay,typeRegex){
 function isNull(checkNullValue,errorMessage){
     if(checkNullValue.val().trim()===""){
         $(errorMessage).show();
-        // $(checkNullValue).css({'border':'1px solid red'});
         counter=1;
-        // window.scrollTo(0, 0); 
     }
     else{
         $(errorMessage).hide();
-        // $(checkNullValue).css({'border':'none'});
-        // $(checkNullValue).css({'border-bottom':'2px solid teal'});
     }
 }
 // after succesfull validation displaying result
@@ -122,7 +147,8 @@ function displayDetails(){
     $('.getCity').text($('#cityInput').val());
     $('.getPincode').text($('#pincodeInput').val());
     $('.getPanNumber').text($('#panInput').val());
-    $('.getAadharNumber').text($('#aadharInput').val());
+    var getAadharNum = $('#aadharInput').val();
+    $('.getAadharNumber').text(getAadharNum.slice(0,4)+"-"+getAadharNum.slice(4,8)+"-"+getAadharNum.slice(8,12));
 
     for(i=1;i<=addressFieldCounter;i++){
         $(".dynamicAddress").append(`<div class="addLine"></div><p class="getAddress`+i+`">address goes here</p>
@@ -141,10 +167,7 @@ function displayDetails(){
         $('.getCity'+i).text($('#cityInput'+i).val());
         $('.getPincode'+i).text($('#pincodeInput'+i).val());
     }
-    for(i=1;i<=phoneFieldCounter;i++){
-        $(".dynamicPhoneNumber").append(`<span class="getPhoneNumber`+i+`">span Phone number</span><br>`);
-        $('.getPhoneNumber'+i).text($('#phoneNumberInput'+i).val());
-    }
-
-
+    $('.phoneNumberInputDynamic').each(function() {
+        $(".dynamicPhoneNumber").append(`<span class="getPhoneNumber">`+$(this).val()+`</span><br>`);
+        });
 }
