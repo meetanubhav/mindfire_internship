@@ -129,36 +129,36 @@ function isNull(checkNullValue,errorMessage){
 }
 // after succesfull validation displaying result
 function displayDetails(){
-    $('#getImage').attr('src', imagePath);
-    $('.getFirstName').text($('#firstNameInput').val());
-    $('.getLastName').text($('#lastNameInput').val());
-    $('.getEmailId').text($('#emailInput').val());
+    $('#displayImage').attr('src', imagePath);
+    $('.displayFirstName').text($('#firstNameInput').val());
+    $('.displayLastName').text($('#lastNameInput').val());
+    $('.displayEmailId').text($('#emailInput').val());
     $('.getPhoneNumber').text($('#phoneNumberInput').val());
-    $('.getAddress').text($("#addressInput").val());
-    $('.getCountry').text($('#selectCountry').val());
-    $('.getState').text($('#selectState').val());
-    $('.getCity').text($('#cityInput').val());
-    $('.getPincode').text($('#pincodeInput').val());
-    $('.getPanNumber').text($('#panInput').val());
+    $('.displayAddress').text($("#addressInput").val());
+    $('.displayCountry').text($('#selectCountry').val());
+    $('.displayState').text($('#selectState').val());
+    $('.displayCity').text($('#cityInput').val());
+    $('.displayPincode').text($('#pincodeInput').val());
+    $('.displayPanId').text($('#panInput').val());
     var getAadharNum = $('#aadharInput').val();
-    $('.getAadharNumber').text(getAadharNum.slice(0,4)+"-"+getAadharNum.slice(4,8)+"-"+getAadharNum.slice(8,12));
+    $('.displayAadharId').text(getAadharNum.slice(0,4)+"-"+getAadharNum.slice(4,8)+"-"+getAadharNum.slice(8,12));
 
     for(i=1;i<=addressFieldCounter;i++){
-        $(".dynamicAddress").append(`<div class="addLine"></div><p class="getAddress`+i+`">address goes here</p>
+        $(".dynamicAddress").append(`<div class="addLine"></div><p class="displayAddress`+i+`">address goes here</p>
         <p>
-            <span class="getCity`+i+`">City</span>
+            <span class="displayCity`+i+`">City</span>
             <span> , </span>
-            <span class="getState`+i+`">State</span>
+            <span class="displayState`+i+`">State</span>
             <span> , </span>
-            <span class="getCountry`+i+`">Country</span>
+            <span class="displayCountry`+i+`">Country</span>
             <span> - </span>
-            <span class="getPincode`+i+`">Pincode</span>
+            <span class="displayPincode`+i+`">Pincode</span>
         </p>`);
-        $('.getAddress'+i).text($("#addressInput"+i).val());
-        $('.getCountry'+i).text($('#selectCountry'+i).val());
-        $('.getState'+i).text($('#selectState'+i).val());
-        $('.getCity'+i).text($('#cityInput'+i).val());
-        $('.getPincode'+i).text($('#pincodeInput'+i).val());
+        $('.displayAddress'+i).text($("#addressInput"+i).val());
+        $('.displayCountry'+i).text($('#selectCountry'+i).val());
+        $('.displayState'+i).text($('#selectState'+i).val());
+        $('.displayCity'+i).text($('#cityInput'+i).val());
+        $('.displayPincode'+i).text($('#pincodeInput'+i).val());
     }
     $('.phoneNumberInputDynamic').each(function() {
         $(".dynamicPhoneNumber").append(`<span class="getPhoneNumber">`+$(this).val()+`</span><br>`);

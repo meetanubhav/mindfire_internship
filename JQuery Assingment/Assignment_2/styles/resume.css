@@ -35,7 +35,7 @@
   width: 30%;
   margin-top: -20px;
 }
-#getImage{
+#displayImage{
   margin-top: 4em;
   border: 2px solid white;
   border-radius: 2%;
@@ -52,7 +52,7 @@
   text-align: left;
   padding: 2%;
 }
-/* img#getImage{
+/* img#displayImage{
    margin-top: 4em; 
 } */
 .showName{
