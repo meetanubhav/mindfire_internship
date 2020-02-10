@@ -6,17 +6,11 @@ $(document).ready( function () {
     $("#reloadCaptcha").click(function(){
         captchaLoad();
     });
-
     // reset form
     $("#resetForm").click(function(){
         $("small").hide();
         removeUpload();
     });
-
-    // $( "input" ).keypress(function() {
-    //     console.log($(this).val());
-        
-    // });
     $(".removeImage").click(function(){
         removeUpload();
     });
@@ -30,19 +24,19 @@ $(document).ready( function () {
 
         // check for null values
         window.counter = 0;
-        isNull($('#firstNameInput'),'#firstNameErrorMsg');
-        isNull($('#lastNameInput'),'#lastNameErrorMsg');
-        isNull($('#emailInput'),'#emailErrorMsg');
-        isNull($('#panInput'),'#panErrorMsg');
-        isNull($('#aadharInput'),'#aadharErrorMsg');
+        // isNull($('#firstNameInput'),'#firstNameErrorMsg');
+        // isNull($('#lastNameInput'),'#lastNameErrorMsg');
+        // isNull($('#emailInput'),'#emailErrorMsg');
+        // isNull($('#panInput'),'#panErrorMsg');
+        // isNull($('#aadharInput'),'#aadharErrorMsg');
         isNull($("#addressInput"),'.addressError');
         isNull($('#selectCountry'),'.selectCountryError');
         isNull($('#selectState'),'.selectStateError');
-        isNull($('#cityInput'),'.cityInputError');
-        isNull($('#phoneNumberInput'),'.phoneNumberError');
+        // isNull($('#cityInput'),'.cityInputError');
+        // isNull($('#phoneNumberInput'),'.phoneNumberError');
         isNull($('#captchaInput'),'.captchaErrorMsg');
         isNull($('#imageInput'),'.imageErrormsg');
-        isNull($('#pincodeInput'),('.pincodeInputError'));
+        // isNull($('#pincodeInput'),('.pincodeInputError'));
         phoneNumberArray.push($('#phoneNumberInput').val());
         // addressArray.push($("#addressInput").val());
         // dynamicPhoneNumberError
@@ -56,7 +50,7 @@ $(document).ready( function () {
                 phoneNumberArray.push($(this).val());
             }
         });
-        for(i=1;i<=addressFieldCounter;i++){
+        for(var i=1;i<=addressFieldCounter;i++){
             isNull($("#addressInput"+i),'#addressError'+i);
             isNull($('#selectCountry'+i),'#selectCountryError'+i);
             isNull($('#selectState'+i),'#selectStateError'+i);
@@ -85,7 +79,6 @@ $(document).ready( function () {
         var fileExtension;
         fileExtension = $('#imageInput').val().replace(/^.*\./, '');
         if(fileExtension==="jpg" || fileExtension === "png" || fileExtension === "jpeg"){
-            counter=0;
             $('.imageErrormsg').hide();
         }
         else{
