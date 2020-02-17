@@ -27,7 +27,8 @@ namespace TaxCalculator.UI
             }
 
             var callLogic = new LogicCalculation();
-            callLogic.TaxBusinessLogic(salary,investement);
+            var getTax = callLogic.TaxBusinessLogic(salary,investement);
+            DisplayTax(getTax);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("\n\n------------ \t PRESS ANY KEY TO EXIT \t------------");
@@ -56,6 +57,33 @@ namespace TaxCalculator.UI
                 InputCheck();
             }
             return userInput;
+        }
+
+        //Displaying Tax
+        public static void DisplayTax(double[] taxes)
+        {
+            if (taxes.Sum() == 0)
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("You pay no taxes!!");
+            }
+            else
+            {
+                string[] slabDescription = { "0 to 2,50,000", "2,50,000 to 5,00,000", "5,00,000 to 10,00,000", "10,00,000 and above" };
+                int counter = 0;
+                foreach (var item in taxes)
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("Tax for the Slab according to {0} is \t", slabDescription[counter]);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(item);
+                    counter += 1;
+                }
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("\n\nThe total calculated tax based on Old Rengmie is {0}", taxes.Sum());
+            }
         }
     }
 }
