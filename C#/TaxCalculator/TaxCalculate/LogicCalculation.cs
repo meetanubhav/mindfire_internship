@@ -14,6 +14,7 @@ namespace TaxCalculate.Logic
         {
             double[] taxes = { 0, 0, 0, 0 };
             double salaryAmount = amount;
+            double checkAmount;
             amount = (investement >= 150000) ? amount - 150000 : amount - investement;
             if (amount > 250000)
             {
@@ -24,12 +25,14 @@ namespace TaxCalculate.Logic
                 }
                 if (amount > 0)
                 {
-                    taxes[1] = Math.Round(CalculateTaxSlab(amount,0.05f),2);
+                    checkAmount = Math.Round(CalculateTaxSlab(amount, 0.05f), 2);
+                    taxes[1] = ( checkAmount > 12500  ? 12500 : checkAmount);
                     amount -= 250000;
                 }
                 if (amount > 0)
                 {
-                    taxes[2] = Math.Round(CalculateTaxSlab(amount, 0.2f),2);
+                    checkAmount = Math.Round(CalculateTaxSlab(amount, 0.2f), 2);
+                    taxes[2] = ( checkAmount > 100000  ? 100000 : checkAmount);
                     amount -= 500000;
                 }
                 if (amount > 0)

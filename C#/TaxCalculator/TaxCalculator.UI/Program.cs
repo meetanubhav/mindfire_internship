@@ -75,14 +75,14 @@ namespace TaxCalculator.UI
                 foreach (var item in taxes)
                 {
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write("Tax for the Slab according to {0} is \t", slabDescription[counter]);
+                    Console.Write("Tax for the Slab according to {0} is \t Rs. ", slabDescription[counter]);
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(item);
                     counter += 1;
                 }
                 Console.BackgroundColor = ConsoleColor.Yellow;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("\n\nThe total calculated tax based on Old Rengmie is {0}", taxes.Sum());
+                Console.WriteLine("\n\nThe total calculated tax based on Old Rengmie is  Rs. {0} ", taxes.Sum());
             }
         }
     }
