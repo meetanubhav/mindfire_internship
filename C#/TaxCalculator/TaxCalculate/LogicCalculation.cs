@@ -22,28 +22,20 @@ namespace TaxCalculate.Logic
                     taxes[0] = 0;
                     amount -= 250000;
                 }
-                if (amount > 250000)
+                if (amount > 0)
                 {
-                    taxes[1] = 12500;
+                    taxes[1] = Math.Round(CalculateTaxSlab(amount,0.05f),2);
                     amount -= 250000;
                 }
-                if (amount > 500000)
+                if (amount > 0)
                 {
-                    taxes[2] = 100000;
+                    taxes[2] = Math.Round(CalculateTaxSlab(amount, 0.2f),2);
                     amount -= 500000;
                 }
                 if (amount > 0)
                 {
-                    if (salaryAmount > 1000000)
-                    {
-                        taxes[3] = CalculateTaxSlab(amount, 0.3f);
-                    }
-                    else
-                    {
-                        taxes[0] = CalculateTaxSlab(amount, 0.3f);
-                    }
+                       taxes[3] = Math.Round(CalculateTaxSlab(amount, 0.3f),2);
                 }
-                //DisplayTax(taxes);
                 return taxes;
             }
             else
