@@ -13,6 +13,7 @@ namespace TaxCalculate.Logic
         public double[] TaxBusinessLogic(long amount, long investement)
         {
             double[] taxes = { 0, 0, 0, 0 };
+            double salaryAmount = amount;
             amount = (investement >= 150000) ? amount - 150000 : amount - investement;
             if (amount > 250000)
             {
@@ -33,7 +34,14 @@ namespace TaxCalculate.Logic
                 }
                 if (amount > 0)
                 {
-                    taxes[3] = CalculateTaxSlab(amount, 0.3f);
+                    if (salaryAmount > 1000000)
+                    {
+                        taxes[3] = CalculateTaxSlab(amount, 0.3f);
+                    }
+                    else
+                    {
+                        taxes[0] = CalculateTaxSlab(amount, 0.3f);
+                    }
                 }
                 //DisplayTax(taxes);
                 return taxes;
