@@ -78,7 +78,7 @@ $(document).ready( function () {
         // check image type
         var fileExtension;
         fileExtension = $('#imageInput').val().replace(/^.*\./, '');
-        if(fileExtension==="jpg" || fileExtension === "png" || fileExtension === "jpeg"){
+        if(fileExtension==="jpg" || fileExtension === "png" || fileExtension === "jpeg" || fileExtension === "PNG" ||  fileExtension === "JPG" ||  fileExtension === "JPEG"){
             $('.imageErrormsg').hide();
         }
         else{
