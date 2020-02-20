@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVCFirstApp.Controllers
+namespace BlogApplication.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,9 +13,5 @@ namespace MVCFirstApp.Controllers
         {
             return View();
         }
-        //public string Index()
-        //{
-        //    return "Hello World, This is my first MVC Application";
-        //}
     }
 }
