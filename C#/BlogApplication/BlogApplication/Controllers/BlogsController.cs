@@ -35,6 +35,9 @@ namespace BlogApplication.Controllers
                 var blog = blogList.Single(m => m.ID == id);
                 if (TryUpdateModel(blog))
                 {
+                    blog.BlogName = Request.Form["BlogName"];
+                    blog.BlogText = Request.Form["BlogText"];
+                    blog.PostDate = DateTime.Now;
                     return RedirectToAction("Index");
                 }
                 return View(blog);
