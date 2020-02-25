@@ -1,0 +1,41 @@
+﻿@model  IEnumerable<BlogApplication.Models.Blogs>
+@{
+    ViewBag.Title = "Blogs";
+}
+<h2>Trending Blogs</h2>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlogText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </th>
+        <th>
+            Details
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogText)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PostDate)
+            </td>
+            <td>
+                @Html.ActionLink("Go To " + item.ID.ToString(), "Details", new {id=item.ID })
+            </td>
+        </tr>
+    }
+</table>
+
