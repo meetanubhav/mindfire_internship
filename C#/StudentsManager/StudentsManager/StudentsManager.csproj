@@ -120,9 +120,15 @@
     <Compile Include="Migrations\202002210626480_AddsStudent_migration_After_making_fields_required.designer.cs">
       <DependentUpon>202002210626480_AddsStudent_migration_After_making_fields_required.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002261028161_Adds_Department.cs" />
+    <Compile Include="Migrations\202002261028161_Adds_Department.designer.cs">
+      <DependentUpon>202002261028161_Adds_Department.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentDbContext.cs" />
+    <Compile Include="Models\StudentDepartment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002210626480_AddsStudent_migration_After_making_fields_required.resx">
       <DependentUpon>202002210626480_AddsStudent_migration_After_making_fields_required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261028161_Adds_Department.resx">
+      <DependentUpon>202002261028161_Adds_Department.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

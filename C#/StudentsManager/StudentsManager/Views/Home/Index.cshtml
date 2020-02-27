@@ -1,4 +1,4 @@
-﻿@model IEnumerable<StudentsManager.Models.Student>
+﻿@model IEnumerable<StudentsManager.Models.StudentDepartment>
 @{
     ViewBag.Title = "HomePage";
 }
@@ -13,6 +13,8 @@
         <th>Email</th>
         <th>Age</th>
         <th>Gender</th>
+        <th>Department Name</th>
+        <th>Department Location</th>
         <th>Actions</th>
     </tr>
     @foreach (var students in Model)
@@ -34,7 +36,13 @@
                 @Html.DisplayFor(item => students.Age)
             </td>
             <td>
-                @Html.DisplayFor(item => students.gender)
+                @Html.DisplayFor(item => students.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(item => students.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(item => students.DepartmentLocation)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = students.StudentId }) |
