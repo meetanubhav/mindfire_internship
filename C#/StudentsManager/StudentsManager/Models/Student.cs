@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -29,10 +28,5 @@ namespace StudentsManager.Models
         [MaxLength(10)]
         [Required]
         public string gender { get; set; }
-
-        public int? DepartmentId { get; set; }
-
-        [ForeignKey("DepartmentId")]
-        public virtual Department Department { get; set; }
     }
 }

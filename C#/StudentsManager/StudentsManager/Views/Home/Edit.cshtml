@@ -1,4 +1,4 @@
-﻿@model StudentsManager.Models.StudentDepartment
+﻿@model StudentsManager.Models.Student
 @{
     ViewBag.Title = "Edit";
 }
@@ -32,21 +32,16 @@
             @Html.ValidationMessageFor(x => x.Age, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(x => x.Gender, "Gender")
+            @Html.LabelFor(x => x.gender, "Gender")
             <br />
-            @Html.LabelFor(x => x.Gender, "Male")
-            @Html.RadioButtonFor(x => x.Gender, "Male")
-            @Html.LabelFor(x => x.Gender, "Female")
-            @Html.RadioButtonFor(x => x.Gender, "Female")
-            @Html.LabelFor(x => x.Gender, "Other")
-            @Html.RadioButtonFor(x => x.Gender, "Other")
+            @Html.LabelFor(x => x.gender, "Male")
+            @Html.RadioButtonFor(x => x.gender, "Male")
+            @Html.LabelFor(x => x.gender, "Female")
+            @Html.RadioButtonFor(x => x.gender, "Female")
+            @Html.LabelFor(x => x.gender, "Other")
+            @Html.RadioButtonFor(x => x.gender, "Other")
             <br />
-            @Html.ValidationMessageFor(x => x.Gender, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group">
-            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(ViewBag.DepartmentName, "DepartmentID", "DepartmentName"), "Select Department")
-            @Html.ValidationMessageFor(x => x.DepartmentId, "", new { @class = "text-danger" })        
-    @*@Html.DropDownList("DepartmentName", "-- Select --")*@
+            @Html.ValidationMessageFor(x => x.gender, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">
             <input type="submit" value="Update Student" class="btn btn-primary" />

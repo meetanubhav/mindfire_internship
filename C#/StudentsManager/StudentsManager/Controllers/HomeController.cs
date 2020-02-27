@@ -14,24 +14,11 @@ namespace StudentsManager.Controllers
 
         public ActionResult Index()
         {
-            //var users = db.Students.Include("Department").ToList();
-            var data = (from user in db.Students.Include("Department").ToList()
-                        select new StudentDepartment
-                        {
-                            StudentId = user.StudentId,
-                            FirstName = user.FirstName,
-                            LastName = user.LastName,
-                            EmailAddress = user.EmailAddress,
-                            Age = user.Age,
-                            Gender = user.gender,
-                            DepartmentName = (user.Department != null) ? user.Department.DepartmentName : "N/A",
-                            DepartmentLocation = (user.Department != null) ? user.Department.DepartmentLocation : "N/A"
-                        }).ToList();
-            return View(data);
+            var users = db.Students.ToList();
+            return View(users);
         }
         public ActionResult AddStudent()
         {
-            ViewBag.DepartmentName = db.Department.Select(m => new { m.DepartmentName, m.DepartmentId }).ToList();
             return View();
         }
         [HttpPost]
@@ -49,53 +36,19 @@ namespace StudentsManager.Controllers
                 return View(studentForm);
             }
         }
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return RedirectToAction("Index");
-            }
-            try
-            {
-                var getRow = (from user in db.Students.Include("Department").ToList()
-                              select new StudentDepartment
-                              {
-                                  StudentId = user.StudentId,
-                                  FirstName = user.FirstName,
-                                  LastName = user.LastName,
-                                  EmailAddress = user.EmailAddress,
-                                  Age = user.Age,
-                                  Gender = user.gender,
-                                  DepartmentId = (user.Department != null) ? user.Department.DepartmentId : 0,
-                                  DepartmentName = (user.Department != null) ? user.Department.DepartmentName : "N/A",
-                                  DepartmentLocation = (user.Department != null) ? user.Department.DepartmentLocation : "N/A"
-                              }).Single(m => m.StudentId == id);
-                ViewBag.DepartmentName = db.Department.Select(m => new { m.DepartmentName, m.DepartmentId }).ToList();
-                //ViewBag.DepartmentName = db.Department;
-                return View(getRow);
-            }
-            catch
-            {
-                return RedirectToAction("Index");
-            }
+            var getRow = db.Students.Single(m => m.StudentId == id);
+            return View(getRow);
         }
         [HttpPost]
-        public ActionResult Edit(int id, StudentDepartment studentUpdate)
+        public ActionResult Edit(int id, Student studentUpdate)
         {
-
-
-            if (ModelState.IsValid)
-            {
-                var studentFromDB = db.Students.FirstOrDefault(x => x.StudentId == id);
-                studentFromDB.FirstName = studentUpdate.FirstName;
-                studentFromDB.LastName = studentUpdate.LastName;
-                studentFromDB.EmailAddress = studentUpdate.EmailAddress;
-                studentFromDB.gender = studentUpdate.Gender;
-                studentFromDB.Age = studentUpdate.Age;
-                studentFromDB.DepartmentId = studentUpdate.DepartmentId;
-                db.Entry(studentFromDB).State = System.Data.Entity.EntityState.Modified;
+            var updateValue = db.Students.Single(m => m.StudentId == id);
+            if (ModelState.IsValid && TryUpdateModel(updateValue))
+            {  
+                //db.Students.Add(studentUpdate);
                 db.SaveChanges();
-
                 return RedirectToAction("Index");
             }
             else
@@ -103,22 +56,11 @@ namespace StudentsManager.Controllers
                 return View();
             }
         }
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return RedirectToAction("Index");
-            }
-            try
-            {
-                db.Students.Remove(db.Students.Single(m => m.StudentId == id));
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return RedirectToAction("Index");
-            }
+            db.Students.Remove(db.Students.Single(m => m.StudentId == id));
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

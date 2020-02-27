@@ -14,6 +14,5 @@ namespace StudentsManager.Models
         }
 
         public DbSet<Student> Students { get; set; }
-        public DbSet<Department> Department { get; set; } 
     }
 }
