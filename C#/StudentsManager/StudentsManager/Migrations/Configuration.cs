@@ -19,6 +19,21 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
 
+            if (!context.Department.Any())
+            {
+                context.Department.Add(new Models.Department
+                {
+                    DepartmentName = "Computer Science",
+                    DepartmentLocation = "Califonia"
+                });
+                context.Department.Add(new Models.Department
+                {
+                    DepartmentName = "Data Science",
+                    DepartmentLocation = "San Francisco"
+                });
+                context.SaveChanges();
+            }
+
             
         }
     }
