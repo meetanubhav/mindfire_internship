@@ -49,6 +49,31 @@ namespace StudentsManager.Controllers
                 return View(studentForm);
             }
         }
+        public ActionResult AddDepartment()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddDepartment(Department departmentForm)
+        {
+            if (ModelState.IsValid)
+            {
+                //Logic to send data
+                db.Department.Add(departmentForm);
+                db.SaveChanges();
+                //return RedirectToAction("Index");
+                return RedirectToAction("ViewDepartment");
+            }
+            else
+            {
+                return View(departmentForm);
+            }
+        }
+        public ActionResult ViewDepartment()
+        {
+            var user = db.Department.ToList();
+            return View(user);
+        }
         public ActionResult Edit(int? id)
         {
             if (id == null)

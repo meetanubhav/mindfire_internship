@@ -1,0 +1,26 @@
+﻿@model StudentsManager.Models.Department
+@{
+    ViewBag.Title = "AddDepartment";
+}
+
+<h2>Add New Department</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(x => x.DepartmentName)
+            @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.DepartmentLocation)
+            @Html.TextBoxFor(x => x.DepartmentLocation, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.DepartmentLocation, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add Department" class="btn btn-primary" />
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+}
+@Html.ActionLink("Back to List","Index","Home")
