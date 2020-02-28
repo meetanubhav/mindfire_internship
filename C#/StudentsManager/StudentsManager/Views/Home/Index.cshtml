@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<StudentsManager.Models.StudentDepartment>
 @{
     ViewBag.Title = "HomePage";
+    //Layout = null;
 }
 
 <h2>Welcome To Student's Manager</h2>
@@ -46,7 +47,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = students.StudentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = students.StudentId }, new { @class = "text-danger" })
+                @*@Html.ActionLink("Delete", "Delete", new { id = students.StudentId }, new { @class = "text-danger" })*@
+               <button data-student-id="@students.StudentId" class="text-danger js-delete"> Delete </button>
             </td>
         </tr>
     }
@@ -55,4 +57,21 @@
 
 </table>
 
-@Html.ActionLink("Add New Student", "AddStudent", "Home") | @Html.ActionLink("Add New Department","AddDepartment","Home") | @Html.ActionLink("View Departments","ViewDepartment","Home")
+@Html.ActionLink("Add New Student", "AddStudent", "Home") | @Html.ActionLink("Add New Department", "AddDepartment", "Home") | @Html.ActionLink("View Departments", "ViewDepartment", "Home")
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".js-delete").on("click", function () {
+                var button = $(this);
+                    $.ajax({
+                        url: "/Home/Delete/"+$(this).attr("data-student-id"),
+                        contentType: 'application/json',
+                        method: "DELETE",
+                        success: function () {
+                            button.parents("tr").remove();
+                        }
+                    })
+            });
+        });
+    </script>
+}

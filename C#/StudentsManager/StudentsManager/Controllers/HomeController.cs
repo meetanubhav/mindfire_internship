@@ -15,7 +15,7 @@ namespace StudentsManager.Controllers
         public ActionResult Index()
         {
             //var users = db.Students.Include("Department").ToList();
-            var data = (from user in db.Students.Include("Department").ToList()
+            var data = (from user in db.Students.Include("Department").ToList().OrderBy(x=>x.FirstName)
                         select new StudentDepartment
                         {
                             StudentId = user.StudentId,
@@ -128,17 +128,18 @@ namespace StudentsManager.Controllers
                 return View();
             }
         }
+        [HttpDelete]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return HttpNotFound("404 not found. Better luck Next time");
             }
             try
             {
                 db.Students.Remove(db.Students.Single(m => m.StudentId == id));
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Content("Success");
             }
             catch
             {
