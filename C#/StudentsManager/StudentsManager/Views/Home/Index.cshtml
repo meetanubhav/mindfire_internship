@@ -7,7 +7,7 @@
 <h2>Welcome To Student's Manager</h2>
 
 <table class="table table-bordered table-striped table-hover">
-    <tr>
+    <tr class="thead-dark">
         <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
@@ -48,7 +48,7 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = students.StudentId }) |
                 @*@Html.ActionLink("Delete", "Delete", new { id = students.StudentId }, new { @class = "text-danger" })*@
-               <button data-student-id="@students.StudentId" class="text-danger js-delete"> Delete </button>
+                <button data-student-id="@students.StudentId" class="btn btn-sm btn-danger js-delete"> X </button>
             </td>
         </tr>
     }
@@ -63,14 +63,14 @@
         $(document).ready(function () {
             $(".js-delete").on("click", function () {
                 var button = $(this);
-                    $.ajax({
-                        url: "/Home/Delete/"+$(this).attr("data-student-id"),
-                        contentType: 'application/json',
-                        method: "DELETE",
-                        success: function () {
-                            button.parents("tr").remove();
-                        }
-                    })
+                $.ajax({
+                    url: "/Home/Delete/" + $(this).attr("data-student-id"),
+                    contentType: 'application/json',
+                    method: "DELETE",
+                    success: function () {
+                        button.parents("tr").remove();
+                    }
+                })
             });
         });
     </script>
