@@ -4,10 +4,12 @@
     //Layout = null;
 }
 
-<h2>Welcome To Student's Manager</h2>
-
-<table class="table table-bordered table-striped table-hover" id="table_id">
-    <thead class="thead-dark">
+<h2>
+    Welcome To Student's Manager
+    <button class="btn btn-sm btn-primary"><i class="fas fa-plus"></i></button>
+</h2>
+<table class="table table-bordered table-striped table-hover" id="dataTableId">
+    <thead class="bg-primary text-white">
         <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -61,23 +63,4 @@
 
 </table>
 
-@Html.ActionLink("Add New Student", "AddStudent", "Home") | @Html.ActionLink("Add New Department", "AddDepartment", "Home") | @Html.ActionLink("View Departments", "ViewDepartment", "Home")
-@section scripts{
-    <script>
-
-        $(document).ready(function () {
-            $('#table_id').DataTable();
-            $(".js-delete").on("click", function () {
-                var button = $(this);
-                $.ajax({
-                    url: "/Home/Delete/" + $(this).attr("data-student-id"),
-                    contentType: 'application/json',
-                    method: "DELETE",
-                    success: function () {
-                        button.parents("tr").remove();
-                    }
-                })
-            });
-        });
-    </script>
-}
+@Html.ActionLink("Add New Department", "AddDepartment", "Home") | @Html.ActionLink("View Departments", "ViewDepartment", "Home")
