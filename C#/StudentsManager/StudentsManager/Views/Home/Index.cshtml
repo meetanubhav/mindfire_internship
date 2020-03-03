@@ -6,52 +6,56 @@
 
 <h2>Welcome To Student's Manager</h2>
 
-<table class="table table-bordered table-striped table-hover">
-    <tr class="thead-dark">
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Department Name</th>
-        <th>Department Location</th>
-        <th>Actions</th>
-    </tr>
-    @foreach (var students in Model)
-    {
+<table class="table table-bordered table-striped table-hover" id="table_id">
+    <thead class="thead-dark">
         <tr>
-            <td>
-                @Html.DisplayFor(item => students.StudentId)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.EmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(item => students.DepartmentLocation)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = students.StudentId }) |
-                @*@Html.ActionLink("Delete", "Delete", new { id = students.StudentId }, new { @class = "text-danger" })*@
-                <button data-student-id="@students.StudentId" class="btn btn-sm btn-danger js-delete"> X </button>
-            </td>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Department Name</th>
+            <th>Department Location</th>
+            <th>Actions</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var students in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(item => students.StudentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.EmailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(item => students.DepartmentLocation)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = students.StudentId }) |
+                    @*@Html.ActionLink("Delete", "Delete", new { id = students.StudentId }, new { @class = "text-danger" })*@
+                    <button data-student-id="@students.StudentId" class="btn btn-sm btn-danger js-delete"> Delete </button>
+                </td>
+            </tr>
+        }
+    </tbody>
 
 
 
@@ -60,7 +64,9 @@
 @Html.ActionLink("Add New Student", "AddStudent", "Home") | @Html.ActionLink("Add New Department", "AddDepartment", "Home") | @Html.ActionLink("View Departments", "ViewDepartment", "Home")
 @section scripts{
     <script>
+
         $(document).ready(function () {
+            $('#table_id').DataTable();
             $(".js-delete").on("click", function () {
                 var button = $(this);
                 $.ajax({
