@@ -10,6 +10,8 @@
                 button.parents("tr").remove();
             }
         })
+        $(".change-toast-text").text("SuccessFully Deleted");
+        $('.toast').toast('show');
     });
     $('#myModal').on('shown.bs.modal', function () {
         $('#myInput').trigger('focus')
@@ -42,6 +44,8 @@
                    "</tr>";
                 tableBody = $("#dataTableId tbody");
                 tableBody.append(markup);
+                $(".change-toast-text").text("SuccessFully Added");
+                $('.toast').toast('show');
             },
             failure: function (response) {
                 alert("Failed Adding");

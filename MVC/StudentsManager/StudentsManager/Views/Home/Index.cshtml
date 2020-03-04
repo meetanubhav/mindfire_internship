@@ -7,7 +7,15 @@
 <h2>
     Welcome To Student's Manager
     <button class="btn btn-sm btn-primary ml-xl-5" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i></button>
+    <!-- Toast -->
+    <div class="toast float-right">
+        <div class="toast-header bg-success text-white">
+            <i class="fa fa-check p-2"></i>
+            <span class="change-toast-text"> Succesfully Deleted</span>
+        </div>
+    </div>
 </h2>
+
 <table class="table table-bordered table-striped table-hover" id="dataTableId">
     <thead class="bg-primary text-white">
         <tr>
@@ -64,7 +72,6 @@
 </table>
 
 @Html.ActionLink("Add New Department", "AddDepartment", "Home") | @Html.ActionLink("View Departments", "ViewDepartment", "Home")
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
