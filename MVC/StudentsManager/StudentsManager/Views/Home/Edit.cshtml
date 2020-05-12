@@ -1,10 +1,7 @@
 ﻿@model StudentsManager.Models.StudentDepartment
 @{
-    ViewBag.Title = "Edit";
+    Layout = null;
 }
-
-<h2>Edit</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -53,4 +50,3 @@
         </div>
     </div>
 }
-@Html.ActionLink("Back to Student's list", "Index", "Home")

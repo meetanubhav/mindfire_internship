@@ -15,6 +15,22 @@ namespace StudentsManager.Controllers
         public ActionResult Index()
         {
             //var users = db.Students.Include("Department").ToList();
+            //var data = (from user in db.Students.Include("Department")
+            //            select new StudentDepartment
+            //            {
+            //                StudentId = user.StudentId,
+            //                FirstName = user.FirstName,
+            //                LastName = user.LastName,
+            //                EmailAddress = user.EmailAddress,
+            //                Age = user.Age,
+            //                Gender = user.gender,
+            //                DepartmentName = (user.Department != null) ? user.Department.DepartmentName : "N/A",
+            //                DepartmentLocation = (user.Department != null) ? user.Department.DepartmentLocation : "N/A"
+            //            }).OrderBy(x => x.FirstName).ToList();
+            return View();
+        }
+        public ActionResult GetStudents()
+        {
             var data = (from user in db.Students.Include("Department")
                         select new StudentDepartment
                         {
@@ -27,8 +43,10 @@ namespace StudentsManager.Controllers
                             DepartmentName = (user.Department != null) ? user.Department.DepartmentName : "N/A",
                             DepartmentLocation = (user.Department != null) ? user.Department.DepartmentLocation : "N/A"
                         }).OrderBy(x => x.FirstName).ToList();
-            return View(data);
+
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult AddStudent()
         {
             ViewBag.DepartmentName = db.Department.Select(m => new { m.DepartmentName, m.DepartmentId }).ToList();
@@ -100,10 +118,10 @@ namespace StudentsManager.Controllers
             }
             try
             {
-                var getRow = (from user in db.Students.Include("Department").ToList()
+                var getRow = (from user in db.Students.Include("Department").Where(x=>x.StudentId==id)
                               select new StudentDepartment
                               {
-                                  StudentId = user.StudentId,
+                                 StudentId = user.StudentId,
                                   FirstName = user.FirstName,
                                   LastName = user.LastName,
                                   EmailAddress = user.EmailAddress,
@@ -112,10 +130,10 @@ namespace StudentsManager.Controllers
                                   DepartmentId = (user.Department != null) ? user.Department.DepartmentId : 0,
                                   DepartmentName = (user.Department != null) ? user.Department.DepartmentName : "N/A",
                                   DepartmentLocation = (user.Department != null) ? user.Department.DepartmentLocation : "N/A"
-                              }).Single(m => m.StudentId == id);
+                              }).FirstOrDefault(); ;
                 ViewBag.DepartmentName = db.Department.Select(m => new { m.DepartmentName, m.DepartmentId }).ToList();
                 //ViewBag.DepartmentName = db.Department;
-                return View(getRow);
+                return Json(getRow, JsonRequestBehavior.AllowGet);
             }
             catch
             {
@@ -139,7 +157,7 @@ namespace StudentsManager.Controllers
                 db.Entry(studentFromDB).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return Content("Success");
             }
             else
             {
